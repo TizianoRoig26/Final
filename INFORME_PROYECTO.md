@@ -203,8 +203,10 @@ El flujo de trabajo se compone de 10 nodos específicos, descritos detalladament
     1. Un resumen ejecutivo en formato tabla.
     2. Detalle completo de vulnerabilidades Críticas (con sus recomendaciones y CVE).
     3. Detalle resumido de vulnerabilidades Altas (primeros 5 registros).
-    4. Conteo estadístico desglosado por cada host analizado.
-    5. Recomendaciones generales de saneamiento.
+    4. Detalle de vulnerabilidades Medias.
+    5. Detalle de vulnerabilidades Bajas e Informativas.
+    6. Conteo estadístico desglosado por cada host analizado.
+    7. Recomendaciones generales de saneamiento.
 *   **¿Por qué funciona?**
     El nodo ejecuta lógica nativa de agregación y concatenación de Javascript. Se alimenta directamente de los datos agregados generados en el nodo `Parse Results`. Devuelve un objeto JSON con el texto Markdown compilado dentro de la propiedad `report`.
 
