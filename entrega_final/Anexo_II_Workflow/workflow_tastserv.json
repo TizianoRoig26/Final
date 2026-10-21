@@ -4,7 +4,7 @@
   "id": "eZcFfWr0YiA2pAE3",
   "name": "Vulnerability Scanning Automation",
   "description": null,
-  "active": false,
+  "active": true,
   "isArchived": false,
   "nodes": [
     {
@@ -45,7 +45,7 @@
           "name": "SSH Password account"
         }
       },
-      "notes": "Escanea los 3 objetivos del laboratorio experimental (172.18.0.200, 172.18.0.201, 172.18.0.202) con Nmap (-sV -sC) y genera reporte XML temporal."
+      "notes": "Detecta automaticamente la subred activa del host (o usa 192.168.100.0/24 por defecto) y ejecuta Nmap sin IPs hardcodeadas."
     },
     {
       "parameters": {
@@ -192,6 +192,34 @@
         }
       },
       "notes": "Usa automated_scan.sh con gvm-cli (XML directo). Password: <REDACTADO>. Tarda 15-30 minutos mientras el escaneo corre."
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "trigger-scan",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "e5b6c7d8-9a0b-1c2d-3e4f-5a6b7c8d9e0f",
+      "name": "Webhook - Trigger Scan",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -4864,
+        1448
+      ],
+      "webhookId": "trigger-scan"
+    },
+    {
+      "parameters": {},
+      "id": "b1c2d3e4-f5a6-7b8c-9d0e-1f2a3b4c5d6e",
+      "name": "When clicking 'Test workflow'",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -4864,
+        1048
+      ]
     }
   ],
   "connections": {
@@ -282,6 +310,28 @@
         [
           {
             "node": "Parse Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook - Trigger Scan": {
+      "main": [
+        [
+          {
+            "node": "Execute a command",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking 'Test workflow'": {
+      "main": [
+        [
+          {
+            "node": "Execute a command",
             "type": "main",
             "index": 0
           }
