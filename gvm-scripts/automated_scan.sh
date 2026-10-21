@@ -1,89 +1,112 @@
 #!/bin/sh
 # automated_scan.sh
-# Reemplaza automated_scan.gmp.py usando gvm-cli con XML directo.
-# Todo el output de debug va a stderr, solo el XML del reporte va a stdout.
-# Uso: automated_scan.sh <host_o_rango> <gmp_username> <gmp_password>
+# Wrapper ultra-robusto para n8n -> OpenVAS (Greenbone)
+# Tolera llamadas con 4 argumentos, 3 argumentos, argumentos vacios o desplazados.
 
-set -e
+DEFAULT_HOSTS=""
+DEFAULT_PORTS="22,80,443,5678,8080"
+DEFAULT_USER="admin"
+DEFAULT_PASS="<REDACTADO>"
+SOCKET_PATH="/run/gvmd/gvmd.sock"
 
-TARGET_HOSTS="${1:-192.168.100.0/24}"
-GMP_USER="${2:-admin}"
-GMP_PASS="${3:-<REDACTADO>}"
+ARG1="${1}"
+ARG2="${2}"
+ARG3="${3}"
+ARG4="${4}"
 
-PORT_LIST_ID="33d0cd82-57c6-11e1-8ed1-406186ea4fc5"
-SCAN_CONFIG_ID="daba56c8-73ec-11df-a475-002264764cea"
-SCANNER_ID="08b69003-5fc2-4037-a479-93b440211c73"
+# Normalizar cadenas literales 'undefined' o 'null'
+[ "${ARG1}" = "undefined" ] || [ "${ARG1}" = "null" ] && ARG1=""
+[ "${ARG2}" = "undefined" ] || [ "${ARG2}" = "null" ] && ARG2=""
+[ "${ARG3}" = "undefined" ] || [ "${ARG3}" = "null" ] && ARG3=""
+[ "${ARG4}" = "undefined" ] || [ "${ARG4}" = "null" ] && ARG4=""
 
-TIMESTAMP=$(date +%s)
-TARGET_NAME="Auto-Target-${TIMESTAMP}"
-TASK_NAME="Auto-Scan-${TIMESTAMP}"
+# =========================================================================
+# Resolucion inteligente de argumentos
+# =========================================================================
 
-CLI="gvm-cli --gmp-username ${GMP_USER} --gmp-password ${GMP_PASS} socket"
+# Caso 1: Argumentos desplazados (hosts y puertos vinieron vacios)
+# ej: sh automated_scan.sh admin <password>
+if [ "${ARG1}" = "admin" ] || [ "${ARG2}" = "${DEFAULT_PASS}" ] && [ -z "${ARG3}" ]; then
+    echo "WARN: [automated_scan.sh] Argumentos desplazados detectados sin hosts especificados." >&2
+    TARGET_HOSTS=""
+    TARGET_PORTS="${DEFAULT_PORTS}"
+    GMP_USER="${ARG1:-${DEFAULT_USER}}"
+    GMP_PASS="${ARG2:-${DEFAULT_PASS}}"
 
-echo "DEBUG: Creando target para ${TARGET_HOSTS}" >&2
-TARGET_RESPONSE=$(${CLI} --xml "<create_target><name>${TARGET_NAME}</name><hosts>${TARGET_HOSTS}</hosts><port_list id='${PORT_LIST_ID}'/></create_target>")
-echo "DEBUG: target response: ${TARGET_RESPONSE}" >&2
+# Caso 2: Formato clasico de 3 argumentos: <hosts> <user> <pass> (sin puertos)
+# ej: sh automated_scan.sh 192.168.100.10 admin <password>
+elif [ -n "${ARG1}" ] && [ "${ARG2}" = "admin" ]; then
+    echo "INFO: [automated_scan.sh] Formato de 3 argumentos detectado (<hosts> <user> <pass>). Asignando puertos por defecto." >&2
+    TARGET_HOSTS="${ARG1}"
+    TARGET_PORTS="${DEFAULT_PORTS}"
+    GMP_USER="${ARG2}"
+    GMP_PASS="${ARG3:-${DEFAULT_PASS}}"
 
-TARGET_ID=$(echo "${TARGET_RESPONSE}" | grep -o 'id="[^"]*"' | head -1 | cut -d'"' -f2)
-echo "DEBUG: target_id=${TARGET_ID}" >&2
+# Caso 3: Formato estandar de 4 argumentos: <hosts> <ports> [user] [pass]
+else
+    TARGET_HOSTS="${ARG1}"
+    TARGET_PORTS="${ARG2:-${DEFAULT_PORTS}}"
+    GMP_USER="${ARG3:-${DEFAULT_USER}}"
+    GMP_PASS="${ARG4:-${DEFAULT_PASS}}"
+fi
 
-if [ -z "${TARGET_ID}" ]; then
-    echo "ERROR: No se pudo crear el target. Respuesta: ${TARGET_RESPONSE}" >&2
+# Validar que existan hosts objetivos
+if [ -z "${TARGET_HOSTS}" ]; then
+    echo "ERROR: [automated_scan.sh] No se recibieron hosts objetivos para escanear (TARGET_HOSTS vacio)." >&2
     exit 1
 fi
 
-echo "DEBUG: Creando task" >&2
-TASK_RESPONSE=$(${CLI} --xml "<create_task><name>${TASK_NAME}</name><target id='${TARGET_ID}'/><config id='${SCAN_CONFIG_ID}'/><scanner id='${SCANNER_ID}'/></create_task>")
-echo "DEBUG: task response: ${TASK_RESPONSE}" >&2
+# Sanity check: si TARGET_PORTS no contiene digitos, forzar DEFAULT_PORTS
+if ! echo "${TARGET_PORTS}" | grep -qE '[0-9]'; then
+    echo "WARN: [automated_scan.sh] TARGET_PORTS ('${TARGET_PORTS}') no contiene numeros. Usando ${DEFAULT_PORTS}" >&2
+    TARGET_PORTS="${DEFAULT_PORTS}"
+fi
 
-TASK_ID=$(echo "${TASK_RESPONSE}" | grep -o 'id="[^"]*"' | head -1 | cut -d'"' -f2)
-echo "DEBUG: task_id=${TASK_ID}" >&2
+echo "DEBUG: TARGET_HOSTS=${TARGET_HOSTS}" >&2
+echo "DEBUG: TARGET_PORTS=${TARGET_PORTS}" >&2
+echo "DEBUG: GMP_USER=${GMP_USER}" >&2
+echo "DEBUG: SOCKET_PATH=${SOCKET_PATH}" >&2
 
-if [ -z "${TASK_ID}" ]; then
-    echo "ERROR: No se pudo crear la task. Respuesta: ${TASK_RESPONSE}" >&2
+# --- Verificacion del socket GVM ---
+if [ ! -S "${SOCKET_PATH}" ]; then
+    echo "ERROR: Socket GVM no encontrado en ${SOCKET_PATH}" >&2
+    exit 1
+fi
+echo "DEBUG: Socket GVM OK: ${SOCKET_PATH}" >&2
+
+# --- Verificacion de gvm-script ---
+if ! command -v gvm-script > /dev/null 2>&1; then
+    echo "ERROR: gvm-script no encontrado en PATH" >&2
     exit 1
 fi
 
-echo "DEBUG: Iniciando task" >&2
-START_RESPONSE=$(${CLI} --xml "<start_task task_id='${TASK_ID}'/>")
-echo "DEBUG: start response: ${START_RESPONSE}" >&2
+# --- Archivo de configuracion temporal ---
+CONF_FILE="/tmp/gvm-tools-$$.conf"
+cat > "${CONF_FILE}" << CONF
+[main]
+timeout = 600
 
-REPORT_ID=$(echo "${START_RESPONSE}" | grep -o '<report_id>[^<]*</report_id>' | sed 's/<[^>]*>//g')
-echo "DEBUG: report_id=${REPORT_ID}" >&2
+[gmp]
+username=${GMP_USER}
+password=${GMP_PASS}
+CONF
 
-if [ -z "${REPORT_ID}" ]; then
-    echo "ERROR: No se pudo iniciar la task. Respuesta: ${START_RESPONSE}" >&2
-    exit 1
-fi
+echo "DEBUG: Configuracion temporal creada en ${CONF_FILE}" >&2
 
-# Polling hasta que termine (max 30 minutos)
-MAX_WAIT=1800
-POLL_INTERVAL=15
-ELAPSED=0
+# Limpiar el archivo de config al salir
+trap 'rm -f "${CONF_FILE}"; echo "DEBUG: Conf temporal eliminada." >&2' EXIT
 
-echo "DEBUG: Esperando que el escaneo termine..." >&2
+echo "DEBUG: Lanzando gvm-script..." >&2
 
-while [ ${ELAPSED} -lt ${MAX_WAIT} ]; do
-    STATUS_RESPONSE=$(${CLI} --xml "<get_tasks task_id='${TASK_ID}'/>")
-    STATUS=$(echo "${STATUS_RESPONSE}" | grep -o '<status>[^<]*</status>' | head -1 | sed 's/<[^>]*>//g')
-    PROGRESS=$(echo "${STATUS_RESPONSE}" | grep -o '<progress>[^<]*</progress>' | head -1 | sed 's/<[^>]*>//g')
-    echo "DEBUG: status=${STATUS} progress=${PROGRESS}% elapsed=${ELAPSED}s" >&2
+# Lanzar gvm-script con '--' para delimitar argumentos
+gvm-script \
+    -c "${CONF_FILE}" \
+    socket --socketpath "${SOCKET_PATH}" \
+    /scripts/automated_scan.gmp.py \
+    -- \
+    "${TARGET_HOSTS}" \
+    "${TARGET_PORTS}"
 
-    case "${STATUS}" in
-        Done|Stopped|Interrupted)
-            echo "DEBUG: Escaneo finalizado con status=${STATUS}" >&2
-            break
-            ;;
-    esac
-
-    sleep ${POLL_INTERVAL}
-    ELAPSED=$((ELAPSED + POLL_INTERVAL))
-done
-
-if [ ${ELAPSED} -ge ${MAX_WAIT} ]; then
-    echo "ADVERTENCIA: timeout de ${MAX_WAIT}s alcanzado" >&2
-fi
-
-echo "DEBUG: Obteniendo reporte..." >&2
-${CLI} --xml "<get_reports report_id='${REPORT_ID}' details='1' ignore_pagination='1'/>"
-
+GVM_EXIT=$?
+echo "DEBUG: gvm-script finalizo con codigo de salida: ${GVM_EXIT}" >&2
+exit "${GVM_EXIT}"

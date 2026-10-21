@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-01T20:00:40.099Z",
+  "updatedAt": "2026-09-17T19:38:00.455Z",
   "createdAt": "2026-03-09T21:00:57.764Z",
   "id": "eZcFfWr0YiA2pAE3",
   "name": "Vulnerability Scanning Automation",
@@ -29,7 +29,7 @@
     },
     {
       "parameters": {
-        "command": "=TS=$(date +%Y%m%d_%H%M%S) && nmap -sV -sC -oX /tmp/nmap_scan_${TS}.xml 192.168.100.0/24 && cat /tmp/nmap_scan_${TS}.xml && rm -f /tmp/nmap_scan_${TS}.xml"
+        "command": "=TS=$(date +%Y%m%d_%H%M%S) && nmap -sV -sC -oX /tmp/nmap_scan_${TS}.xml 172.18.0.200 172.18.0.201 172.18.0.202 && cat /tmp/nmap_scan_${TS}.xml && rm -f /tmp/nmap_scan_${TS}.xml"
       },
       "type": "n8n-nodes-base.ssh",
       "typeVersion": 1,
@@ -45,11 +45,11 @@
           "name": "SSH Password account"
         }
       },
-      "notes": "Ajustar el rango de red 192.168.100.0/24 a tu lab real."
+      "notes": "Detecta automaticamente la subred activa del host (o usa 192.168.100.0/24 por defecto) y ejecuta Nmap sin IPs hardcodeadas."
     },
     {
       "parameters": {
-        "jsCode": "// Parsear resultado XML de Nmap SIN dependencias externas (solo regex nativo)\nconst xmlData = $input.first().json.stdout;\n\nconst hostBlocks = xmlData.match(/<host[^>]*>[\\s\\S]*?<\\/host>/g) || [];\n\nconst hosts = hostBlocks.map(block => {\n  const ipMatch = block.match(/<address addr=\"([^\"]+)\" addrtype=\"ipv4\"/);\n  const stateMatch = block.match(/<status state=\"([^\"]+)\"/);\n  const hostnameMatch = block.match(/<hostname name=\"([^\"]+)\"/);\n  const osMatch = block.match(/<osmatch name=\"([^\"]+)\"/);\n\n  const portMatches = block.match(/<port protocol=\"(\\w+)\" portid=\"(\\d+)\">[\\s\\S]*?<\\/port>/g) || [];\n\n  const ports = portMatches.map(portBlock => {\n    const protocol = portBlock.match(/protocol=\"(\\w+)\"/)?.[1] || '';\n    const portid = portBlock.match(/portid=\"(\\d+)\"/)?.[1] || '';\n    const portState = portBlock.match(/<state state=\"([^\"]+)\"/)?.[1] || '';\n    const serviceName = portBlock.match(/<service name=\"([^\"]*)\"/)?.[1] || 'unknown';\n    const serviceVersion = portBlock.match(/version=\"([^\"]*)\"/)?.[1] || '';\n\n    return {\n      port: portid,\n      protocol: protocol,\n      state: portState,\n      service: serviceName,\n      version: serviceVersion\n    };\n  });\n\n  return {\n    ip: ipMatch ? ipMatch[1] : 'Unknown',\n    hostname: hostnameMatch ? hostnameMatch[1] : 'Unknown',\n    state: stateMatch ? stateMatch[1] : 'Unknown',\n    os: osMatch ? osMatch[1] : 'Unknown',\n    ports: ports\n  };\n});\n\nreturn hosts.map(host => ({ json: host }));"
+        "jsCode": "// Parsear resultado XML de Nmap SIN dependencias externas (solo regex nativo)\nconst xmlData = $input.first().json.stdout;\n\n// CORRECCI\u00d3N CR\u00cdTICA: Se exige un espacio o el cierre del tag para evitar las etiquetas <hosthint>\nconst hostBlocks = xmlData.match(/<host(?: [^>]+)?>[\\s\\S]*?<\\/host>/g) || [];\n\nconst hosts = hostBlocks.map(block => {\n  const ipMatch = block.match(/<address addr=\"([^\"]+)\" addrtype=\"ipv4\"/);\n  const stateMatch = block.match(/<status state=\"([^\"]+)\"/);\n  const hostnameMatch = block.match(/<hostname name=\"([^\"]+)\"/);\n  const osMatch = block.match(/<osmatch name=\"([^\"]+)\"/);\n\n  const portMatches = block.match(/<port protocol=\"(\\w+)\" portid=\"(\\d+)\">[\\s\\S]*?<\\/port>/g) || [];\n\n  const ports = portMatches.map(portBlock => {\n    const protocol = portBlock.match(/protocol=\"(\\w+)\"/)?.[1] || '';\n    const portid = portBlock.match(/portid=\"(\\d+)\"/)?.[1] || '';\n    const portState = portBlock.match(/<state state=\"([^\"]+)\"/)?.[1] || '';\n    const serviceName = portBlock.match(/<service name=\"([^\"]*)\"/)?.[1] || 'unknown';\n    const serviceVersion = portBlock.match(/version=\"([^\"]*)\"/)?.[1] || '';\n\n    return {\n      port: portid,\n      protocol: protocol,\n      state: portState,\n      service: serviceName,\n      version: serviceVersion\n    };\n  });\n\n  return {\n    ip: ipMatch ? ipMatch[1] : 'Unknown',\n    hostname: hostnameMatch ? hostnameMatch[1] : 'Unknown',\n    state: stateMatch ? stateMatch[1] : 'Unknown',\n    os: osMatch ? osMatch[1] : 'Unknown',\n    ports: ports\n  };\n});\n\n// Retornar la estructura de elementos JSON requerida por n8n\nreturn hosts.map(host => ({ json: host }));"
       },
       "id": "4aeb0437-47fc-4a27-bb83-bcf90ab6f83e",
       "name": "Parse Nmap XML",
@@ -58,34 +58,36 @@
       "position": [
         -4416,
         1248
-      ]
+      ],
+      "alwaysOutputData": true
     },
     {
       "parameters": {
-        "jsCode": "// Junta todas las IPs detectadas por nmap en un solo string CIDR/lista\n// para pasarlas como UN SOLO argumento al script de gvm-script.\n// Si preferís escanear todo el rango de red en vez de host por host,\n// podés directamente hardcodear el rango acá en vez de usar las IPs de nmap.\nconst items = $input.all();\nconst ips = items.map(item => item.json.ip).filter(ip => ip && ip !== 'Unknown');\n\n// Opción A: pasar todas las IPs separadas por coma (gvm soporta múltiples hosts así)\nconst hostsArg = ips.join(',');\n\nreturn [{ json: { hostsArg } }];"
+        "jsCode": "// Obtener todos los hosts descubiertos por Nmap\nconst items = $input.all();\n\n// Filtrar hosts activos ('up') con IP valida (sin IPs hardcodeadas)\nconst activeHosts = items\n  .map(item => item.json)\n  .filter(h => h && h.state === 'up' && h.ip && h.ip !== 'Unknown');\n\nconst ips = activeHosts.map(h => h.ip);\n\nif (ips.length === 0) {\n  throw new Error('Nmap no encontro ningun host activo en la red.');\n}\n\n// 1. Cadena de hosts separados por coma para OpenVAS\nconst hostsArg = ips.join(',');\n\n// 2. Extraer puertos abiertos encontrados por Nmap en los hosts activos\nconst allPorts = new Set();\nactiveHosts.forEach(h => {\n  if (Array.isArray(h.ports)) {\n    h.ports.forEach(p => {\n      if (p.state === 'open' && p.port) {\n        allPorts.add(p.port);\n      }\n    });\n  }\n});\n\nconst portsArg = allPorts.size > 0\n  ? Array.from(allPorts).sort((a, b) => parseInt(a) - parseInt(b)).join(',')\n  : '22,80,443,5678,8080';\n\nreturn [{\n  json: {\n    hostsArg,\n    portsArg,\n    host_count: ips.length,\n    active_hosts: ips\n  }\n}];"
       },
       "id": "12ab5ae6-5f9d-4b87-ad4f-e5c032e5ec95",
       "name": "Build Hosts Argument",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -4208,
+        -4150,
         1248
       ],
       "notes": "Junta las IPs detectadas por nmap en un solo argumento para el script de gvm-script."
     },
     {
       "parameters": {
-        "jsCode": "// Parsear vulnerabilidades del XML que devuelve gvm-script (stdout del nodo SSH)\n// SIN dependencias externas (solo regex nativo, igual que Parse Nmap XML)\nconst xmlData = $input.first().json.stdout;\n\nconst resultBlocks = xmlData.match(/<result[^>]*>[\\s\\S]*?<\\/result>/g) || [];\n\nconst vulnerabilities = resultBlocks.map(block => {\n  const nameMatch = block.match(/<name>([^<]*)<\\/name>/);\n  const severityMatch = block.match(/<severity>([^<]*)<\\/severity>/);\n  const hostMatch = block.match(/<host[^>]*>([\\s\\S]*?)<\\/host>/);\n  const portMatch = block.match(/<port>([^<]*)<\\/port>/);\n  const descriptionMatch = block.match(/<description>([\\s\\S]*?)<\\/description>/);\n  const solutionMatch = block.match(/<solution[^>]*>([\\s\\S]*?)<\\/solution>/);\n  const cveMatch = block.match(/<cve>([^<]*)<\\/cve>/);\n\n  return {\n    name: nameMatch ? nameMatch[1] : 'Unknown',\n    severity: severityMatch ? parseFloat(severityMatch[1]) : 0,\n    host: hostMatch ? hostMatch[1].replace(/<[^>]+>/g, '').trim() : 'Unknown',\n    port: portMatch ? portMatch[1] : '',\n    description: descriptionMatch ? descriptionMatch[1].trim() : '',\n    solution: solutionMatch ? solutionMatch[1].trim() : 'No solution available',\n    cve: cveMatch ? cveMatch[1] : 'N/A'\n  };\n});\n\nreturn [{ json: { vulnerabilities, scanDate: new Date().toISOString() } }];"
+        "jsCode": "// Parsear resultado XML de OpenVAS SIN dependencias externas\nconst inputJson = $input.first().json;\n\n// 1. VALIDADOR DE ENTRADA: Detiene el flujo si no viene el XML desde OpenVAS\nif (!inputJson.stdout) {\n  throw new Error(\"ERROR: No se encontr\u00f3 el campo 'stdout'. Aseg\u00farate de que el nodo est\u00e9 conectado a la salida del nodo SSH y de ejecutar el nodo SSH primero.\");\n}\n\nconst xmlData = inputJson.stdout;\n\n// 2. Extraer Fecha de inicio del escaneo\nconst scanDateMatch = xmlData.match(/<scan_start>([^<]+)<\\/scan_start>/);\nconst scanDate = scanDateMatch ? scanDateMatch[1] : new Date().toISOString();\n\n// 3. Extraer bloques individuales de resultados\nconst resultBlocks = xmlData.match(/<result id=\"[^\"]+\">[\\s\\S]*?<\\/result>/g) || [];\n\n// Funci\u00f3n auxiliar para limpiar entidades XML\nconst decodeXML = (str) => {\n  if (!str) return '';\n  return str\n    .replace(/&lt;/g, '<')\n    .replace(/&gt;/g, '>')\n    .replace(/&quot;/g, '\"')\n    .replace(/&apos;/g, \"'\")\n    .replace(/&amp;/g, '&');\n};\n\n// 4. Mapeo de datos\nconst vulnerabilities = resultBlocks.map(block => {\n  const nameMatch = block.match(/<name>([^<]+)<\\/name>/);\n  const hostMatch = block.match(/<host>([^<]+)</); \n  const portMatch = block.match(/<port>([^<]+)<\\/port>/);\n  const severityMatch = block.match(/<severity>([^<]+)<\\/severity>/);\n  const threatMatch = block.match(/<threat>([^<]+)<\\/threat>/);\n  const descMatch = block.match(/<description>([\\s\\S]*?)<\\/description>/);\n  const solMatch = block.match(/<solution[^>]*>([\\s\\S]*?)<\\/solution>/);\n  \n  // Extraer CVEs si existen\n  const cveMatches = [...block.matchAll(/<ref type=\"cve\" id=\"([^\"]+)\"\\/>/g)].map(m => m[1]);\n\n  return {\n    name: nameMatch ? decodeXML(nameMatch[1].trim()) : 'Unknown',\n    host: hostMatch ? hostMatch[1].trim() : 'Unknown',\n    port: portMatch ? portMatch[1].trim() : 'Unknown',\n    severity: severityMatch ? parseFloat(severityMatch[1]) : 0.0,\n    threat: threatMatch ? threatMatch[1].trim() : 'Log',\n    description: descMatch ? decodeXML(descMatch[1].trim()) : '',\n    solution: solMatch ? decodeXML(solMatch[1].trim()) : '',\n    cve: cveMatches.length > 0 ? cveMatches.join(', ') : ''\n  };\n});\n\n// 5. Retorno estructurado\nreturn [{\n  json: {\n    scanDate: scanDate,\n    vulnerabilities: vulnerabilities\n  }\n}];"
       },
       "id": "44e332c7-0182-417e-8e64-7b69f0053469",
       "name": "Parse Results",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -3760,
+        -3552,
         1248
       ],
+      "alwaysOutputData": true,
       "notes": "Parsea el XML de salida del script gvm-script. Reemplaza al viejo 'Parse Results' que usaba xml2js."
     },
     {
@@ -97,7 +99,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -3536,
+        -3328,
         1152
       ]
     },
@@ -128,21 +130,21 @@
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.5,
       "position": [
-        -3104,
+        -3088,
         1152
       ],
-      "notes": "Requiere credencial Postgres configurada en n8n y la tabla vulnerability_scans creada. Usa autoMapInputData: los campos del JSON de entrada (scan_date, host, vulnerability_name, severity, port, cve, description, solution) se mapean automáticamente a columnas del mismo nombre."
+      "notes": "Requiere credencial Postgres configurada en n8n y la tabla vulnerability_scans creada. Usa autoMapInputData: los campos del JSON de entrada (scan_date, host, vulnerability_name, severity, port, cve, description, solution) se mapean autom\u00e1ticamente a columnas del mismo nombre."
     },
     {
       "parameters": {
-        "jsCode": "const data = $('Parse Results').first().json;\nconst vulns = data.vulnerabilities;\n\nconst critical = vulns.filter(v => v.severity >= 9.0);\nconst high = vulns.filter(v => v.severity >= 7.0 && v.severity < 9.0);\nconst medium = vulns.filter(v => v.severity >= 4.0 && v.severity < 7.0);\nconst low = vulns.filter(v => v.severity < 4.0);\n\nconst pct = (n) => vulns.length ? ((n / vulns.length) * 100).toFixed(1) : '0.0';\n\nconst report = `\n# Informe de Escaneo de Vulnerabilidades\n\n**Fecha del Escaneo**: ${new Date(data.scanDate).toLocaleString('es-AR')}\n**Hosts Escaneados**: ${[...new Set(vulns.map(v => v.host))].length}\n**Total de Vulnerabilidades**: ${vulns.length}\n\n---\n\n## Resumen Ejecutivo\n\n| Severidad | Cantidad | Porcentaje |\n|-----------|----------|------------|\n| Critica (9.0-10.0) | ${critical.length} | ${pct(critical.length)}% |\n| Alta (7.0-8.9) | ${high.length} | ${pct(high.length)}% |\n| Media (4.0-6.9) | ${medium.length} | ${pct(medium.length)}% |\n| Baja (0.0-3.9) | ${low.length} | ${pct(low.length)}% |\n\n---\n\n## Vulnerabilidades Criticas\n\n${critical.length > 0 ? critical.map((v, i) => `\n### ${i+1}. ${v.name}\n\n**Host**: ${v.host}:${v.port}\n**Severidad**: ${v.severity}/10.0\n**CVE**: ${v.cve}\n\n**Descripcion**:\n${v.description}\n\n**Solucion Recomendada**:\n${v.solution}\n\n---\n`).join('\\n') : '*No se encontraron vulnerabilidades criticas.*\\n'}\n\n## Vulnerabilidades Altas\n\n${high.length > 0 ? high.slice(0, 5).map((v, i) => `\n### ${i+1}. ${v.name}\n\n**Host**: ${v.host}:${v.port}\n**Severidad**: ${v.severity}/10.0\n**CVE**: ${v.cve}\n\n**Descripcion**: ${v.description.substring(0, 200)}...\n\n**Solucion**: ${v.solution.substring(0, 200)}...\n\n---\n`).join('\\n') : '*No se encontraron vulnerabilidades altas.*\\n'}\n\n${high.length > 5 ? `*...y ${high.length - 5} vulnerabilidades altas adicionales.*\\n` : ''}\n\n## Recomendaciones Generales\n\n1. Priorizar la remediacion de vulnerabilidades criticas inmediatamente\n2. Aplicar parches de seguridad en todos los sistemas identificados\n3. Revisar configuraciones de servicios expuestos\n4. Implementar politicas de actualizacion regular\n5. Realizar escaneos de seguimiento despues de aplicar correcciones\n\n---\n\n## Hosts Analizados\n\n${[...new Set(vulns.map(v => v.host))].map(host => {\n  const hostVulns = vulns.filter(v => v.host === host);\n  return `\n### ${host}\n- Total vulnerabilidades: ${hostVulns.length}\n- Criticas: ${hostVulns.filter(v => v.severity >= 9.0).length}\n- Altas: ${hostVulns.filter(v => v.severity >= 7.0 && v.severity < 9.0).length}\n- Medias: ${hostVulns.filter(v => v.severity >= 4.0 && v.severity < 7.0).length}\n- Bajas: ${hostVulns.filter(v => v.severity < 4.0).length}\n`;\n}).join('\\n')}\n\n---\n\n*Informe generado automaticamente por el sistema de escaneo de vulnerabilidades*\n`;\n\nreturn [{\n  json: {\n    report: report,\n    scanDate: data.scanDate,\n    summary: {\n      total: vulns.length,\n      critical: critical.length,\n      high: high.length,\n      medium: medium.length,\n      low: low.length\n    }\n  }\n}];"
+        "jsCode": "const data = $('Parse Results').first().json;\nconst vulns = data.vulnerabilities || [];\n\nconst critical = vulns.filter(v => v.severity >= 9.0);\nconst high = vulns.filter(v => v.severity >= 7.0 && v.severity < 9.0);\nconst medium = vulns.filter(v => v.severity >= 4.0 && v.severity < 7.0);\nconst low = vulns.filter(v => v.severity < 4.0); // Incluye severidad 0 (Informativas)\n\nconst pct = (n) => vulns.length ? ((n / vulns.length) * 100).toFixed(1) : '0.0';\n\n// Funci\u00f3n auxiliar para renderizar los bloques de vulnerabilidades y no repetir c\u00f3digo\nconst renderVulns = (vulnArray, title, limit = 30) => {\n  if (vulnArray.length === 0) return `*No se encontraron vulnerabilidades ${title.toLowerCase()}.*\\n`;\n  \n  let section = '';\n  const visible = vulnArray.slice(0, limit);\n  \n  section += visible.map((v, i) => `\n### ${i+1}. ${v.name}\n\n**Host**: ${v.host}:${v.port}\n**Severidad**: ${v.severity}/10.0\n**CVE**: ${v.cve || 'N/A'}\n\n**Descripcion**:\n${v.description ? (v.description.length > 300 ? v.description.substring(0, 300) + '...' : v.description) : '*Sin descripci\u00f3n.*'}\n\n**Solucion Recomendada**:\n${v.solution ? (v.solution.length > 300 ? v.solution.substring(0, 300) + '...' : v.solution) : '*Sin soluci\u00f3n especificada.*'}\n\n---\n`).join('\\n');\n\n  // Si hay m\u00e1s vulnerabilidades que el l\u00edmite, agregamos un aviso\n  if (vulnArray.length > limit) {\n    section += `*...y ${vulnArray.length - limit} vulnerabilidades ${title.toLowerCase()} adicionales.*\\n`;\n  }\n  \n  return section;\n};\n\nconst report = `\n# Informe de Escaneo de Vulnerabilidades\n\n**Fecha del Escaneo**: ${new Date(data.scanDate).toLocaleString('es-AR')}\n**Hosts Escaneados**: ${[...new Set(vulns.map(v => v.host))].length}\n**Total de Vulnerabilidades**: ${vulns.length}\n\n---\n\n## Resumen Ejecutivo\n\n| Severidad | Cantidad | Porcentaje |\n|-----------|----------|------------|\n| Cr\u00edtica (9.0-10.0) | ${critical.length} | ${pct(critical.length)}% |\n| Alta (7.0-8.9) | ${high.length} | ${pct(high.length)}% |\n| Media (4.0-6.9) | ${medium.length} | ${pct(medium.length)}% |\n| Baja e Informativa (0.0-3.9) | ${low.length} | ${pct(low.length)}% |\n\n---\n\n## Vulnerabilidades Cr\u00edticas\n${renderVulns(critical, 'cr\u00edticas', 10)}\n\n## Vulnerabilidades Altas\n${renderVulns(high, 'altas', 10)}\n\n## Vulnerabilidades Medias\n${renderVulns(medium, 'medias', 20)}\n\n## Vulnerabilidades Bajas e Informativas\n${renderVulns(low, 'bajas e informativas', 30)}\n\n## Recomendaciones Generales\n\n1. Priorizar la remediaci\u00f3n de vulnerabilidades cr\u00edticas y altas inmediatamente.\n2. Aplicar parches de seguridad para mitigar las vulnerabilidades de severidad media (como la transmisi\u00f3n de credenciales FTP en texto claro).\n3. Revisar los hallazgos bajos e informativos (ej. banners expuestos, m\u00e9todos HTTP permitidos) para reducir la superficie de ataque y mejorar el bastionado (hardening) de los servidores.\n4. Implementar pol\u00edticas de actualizaci\u00f3n regular.\n5. Realizar escaneos de seguimiento despu\u00e9s de aplicar correcciones.\n\n---\n\n## Hosts Analizados\n\n${[...new Set(vulns.map(v => v.host))].map(host => {\n  const hostVulns = vulns.filter(v => v.host === host);\n  return `\n### ${host}\n- Total vulnerabilidades: ${hostVulns.length}\n- Cr\u00edticas: ${hostVulns.filter(v => v.severity >= 9.0).length}\n- Altas: ${hostVulns.filter(v => v.severity >= 7.0 && v.severity < 9.0).length}\n- Medias: ${hostVulns.filter(v => v.severity >= 4.0 && v.severity < 7.0).length}\n- Bajas/Informativas: ${hostVulns.filter(v => v.severity < 4.0).length}\n`;\n}).join('\\n')}\n\n---\n\n*Informe generado autom\u00e1ticamente por el sistema de escaneo de vulnerabilidades*\n`;\n\nreturn [{\n  json: {\n    report: report,\n    scanDate: data.scanDate,\n    summary: {\n      total: vulns.length,\n      critical: critical.length,\n      high: high.length,\n      medium: medium.length,\n      low: low.length\n    }\n  }\n}];"
       },
       "id": "baa2c620-e8a2-4530-8785-94b76e3b6842",
       "name": "Generate Report",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -3520,
+        -3312,
         1328
       ]
     },
@@ -160,7 +162,7 @@
       "type": "n8n-nodes-base.emailSend",
       "typeVersion": 2.1,
       "position": [
-        -3296,
+        -3088,
         1328
       ],
       "webhookId": "305d7777-4242-4f84-a7e7-33e55af2c8bc",
@@ -173,23 +175,23 @@
     },
     {
       "parameters": {
-        "command": "=docker compose -f /home/tizi/docker-compose.yml run -T --rm -v /home/tizi/gvm-scripts:/scripts gvm-tools gvm-script --gmp-username admin --gmp-password 'NuevaPassword123!' socket /scripts/automated_scan.gmp.py \\\"{{$json.hostsArg}}\\\""
+        "command": "=docker compose -f /home/tizi/docker-compose.yml run -T --rm -v /home/tizi/gvm-scripts:/scripts gvm-tools sh /scripts/automated_scan.sh \"{{$json.hostsArg}}\" \"{{$json.portsArg || '22,80,443,5678,8080'}}\" admin '<REDACTADO>'"
       },
       "type": "n8n-nodes-base.ssh",
       "typeVersion": 1,
       "position": [
-        -3984,
+        -3776,
         1248
       ],
-      "id": "f238d640-370a-463a-9b65-9adae447cb73",
-      "name": "Run OpenVAS Scan (gvm-script)",
+      "id": "46cafc21-0a8e-4813-9e2e-932be74159dd",
+      "name": "Run OpenVAS Scan (gvm-script)1",
       "credentials": {
         "sshPassword": {
           "id": "wBZUi3DXpaPemsr0",
           "name": "SSH Password account"
         }
       },
-      "notes": "REEMPLAZA a los 9 nodos viejos (Authenticate, Create Target, Create Task, Start Task, Wait, Get Reports + los 3 Extract-ID). Ajustar: ruta del docker-compose.yml, ruta del volumen de scripts, password real. Puede tardar varios minutos (el script hace polling interno hasta que el escaneo termine)."
+      "notes": "Usa automated_scan.sh con gvm-cli (XML directo). Password: <REDACTADO>. Tarda 15-30 minutos mientras el escaneo corre."
     }
   ],
   "connections": {
@@ -230,7 +232,7 @@
       "main": [
         [
           {
-            "node": "Run OpenVAS Scan (gvm-script)",
+            "node": "Run OpenVAS Scan (gvm-script)1",
             "type": "main",
             "index": 0
           }
@@ -275,7 +277,7 @@
         ]
       ]
     },
-    "Run OpenVAS Scan (gvm-script)": {
+    "Run OpenVAS Scan (gvm-script)1": {
       "main": [
         [
           {
@@ -297,9 +299,9 @@
     "templateCredsSetupCompleted": true
   },
   "pinData": {},
-  "versionId": "3a6db7ae-0e96-4821-a2c7-9639bf312701",
+  "versionId": "6c2dd8e7-2cf4-452c-91cd-97834774432b",
   "activeVersionId": null,
-  "versionCounter": 198,
+  "versionCounter": 246,
   "triggerCount": 0,
   "tags": [],
   "shared": [

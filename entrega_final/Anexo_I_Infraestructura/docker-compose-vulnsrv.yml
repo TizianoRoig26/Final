@@ -1,0 +1,29 @@
+services:
+  vuln-srv1:
+    image: vuln-srv1
+    container_name: vuln-srv1
+    restart: unless-stopped
+    networks:
+      greenbone_net:
+        ipv4_address: 172.18.0.200
+
+  vuln-srv2:
+    image: vuln-srv2
+    container_name: vuln-srv2
+    restart: unless-stopped
+    networks:
+      greenbone_net:
+        ipv4_address: 172.18.0.201
+
+  vuln-srv3:
+    image: vuln-srv3
+    container_name: vuln-srv3
+    restart: unless-stopped
+    networks:
+      greenbone_net:
+        ipv4_address: 172.18.0.202
+
+networks:
+  greenbone_net:
+    external: true
+    name: greenbone-community-edition_default

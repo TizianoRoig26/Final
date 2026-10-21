@@ -1,0 +1,132 @@
+ Container greenbone-community-edition-data-objects-1 Running 
+ Container greenbone-community-edition-cert-bund-data-1 Running 
+ Container greenbone-community-edition-dfn-cert-data-1 Running 
+ Container greenbone-community-edition-pg-gvm-1 Running 
+ Container greenbone-community-edition-redis-server-1 Running 
+ Container greenbone-community-edition-notus-data-1 Running 
+ Container greenbone-community-edition-scap-data-1 Running 
+ Container greenbone-community-edition-vulnerability-tests-1 Running 
+ Container greenbone-community-edition-ospd-openvas-1 Running 
+ Container greenbone-community-edition-report-formats-1 Running 
+ Container greenbone-community-edition-gvmd-1 Running 
+ Container greenbone-community-edition-data-objects-1 Waiting 
+ Container greenbone-community-edition-pg-gvm-migrator-1 Starting 
+ Container greenbone-community-edition-configure-openvas-1 Starting 
+ Container greenbone-community-edition-gpg-data-1 Starting 
+ Container greenbone-community-edition-cert-bund-data-1 Waiting 
+ Container greenbone-community-edition-cert-bund-data-1 Healthy 
+ Container greenbone-community-edition-data-objects-1 Healthy 
+ Container greenbone-community-edition-pg-gvm-migrator-1 Started 
+ Container greenbone-community-edition-pg-gvm-migrator-1 Waiting 
+ Container greenbone-community-edition-configure-openvas-1 Started 
+ Container greenbone-community-edition-gpg-data-1 Started 
+ Container greenbone-community-edition-notus-data-1 Waiting 
+ Container greenbone-community-edition-gpg-data-1 Waiting 
+ Container greenbone-community-edition-configure-openvas-1 Waiting 
+ Container greenbone-community-edition-vulnerability-tests-1 Waiting 
+ Container greenbone-community-edition-pg-gvm-migrator-1 Exited 
+ Container greenbone-community-edition-report-formats-1 Waiting 
+ Container greenbone-community-edition-scap-data-1 Waiting 
+ Container greenbone-community-edition-cert-bund-data-1 Waiting 
+ Container greenbone-community-edition-dfn-cert-data-1 Waiting 
+ Container greenbone-community-edition-data-objects-1 Waiting 
+ Container greenbone-community-edition-notus-data-1 Healthy 
+ Container greenbone-community-edition-gpg-data-1 Exited 
+ Container greenbone-community-edition-configure-openvas-1 Exited 
+ Container greenbone-community-edition-vulnerability-tests-1 Healthy 
+ Container greenbone-community-edition-dfn-cert-data-1 Healthy 
+ Container greenbone-community-edition-cert-bund-data-1 Healthy 
+ Container greenbone-community-edition-report-formats-1 Healthy 
+ Container greenbone-community-edition-scap-data-1 Healthy 
+ Container greenbone-community-edition-data-objects-1 Healthy 
+ Container greenbone-community-edition-gvm-tools-run-84a45acf2225 Creating 
+ Container greenbone-community-edition-gvm-tools-run-84a45acf2225 Created 
+DEBUG: TARGET_HOSTS=172.18.0.200,172.18.0.201,172.18.0.202
+DEBUG: TARGET_PORTS=21,22,80
+DEBUG: GMP_USER=admin
+DEBUG: SOCKET_PATH=/run/gvmd/gvmd.sock
+DEBUG: Socket GVM OK: /run/gvmd/gvmd.sock
+DEBUG: Configuracion temporal creada en /tmp/gvm-tools-1.conf
+DEBUG: Lanzando gvm-script...
+[GMP] argv=['/scripts/automated_scan.gmp.py', '172.18.0.200,172.18.0.201,172.18.0.202', '21,22,80']
+[GMP] hosts=172.18.0.200,172.18.0.201,172.18.0.202  ports=21,22,80
+[GMP] 1. Creando Port List dinamica: T:21,22,80
+[GMP] port_list_id=c56e4248-b344-484a-ad2c-bceabfb2ef94
+[GMP] 2. Creando Target para 3 host(s): 172.18.0.200, 172.18.0.201, 172.18.0.202
+[GMP] target_id=746e0a2e-1d71-4f90-b6bf-ee4e752485f9
+[GMP] 3. Buscando configuracion 'Full and fast'...
+[GMP] config_id=daba56c8-73ec-11df-a475-002264764cea  scanner_id=08b69003-5fc2-4037-a479-93b440211c73
+[GMP] 4. Creando y lanzando Task...
+[GMP] task_id=afe653b4-7dba-463a-ac37-d0d6b9a1bb65  report_id=2ee5b76b-f32c-441e-a2ff-14ef3a3ef43a
+[GMP] 5. Polling hasta que el escaneo termine...
+[GMP] status=Requested  progress=0%  elapsed=0s
+[GMP] status=Running  progress=0%  elapsed=15s
+[GMP] status=Running  progress=0%  elapsed=30s
+[GMP] status=Running  progress=0%  elapsed=45s
+[GMP] status=Running  progress=0%  elapsed=60s
+[GMP] status=Running  progress=0%  elapsed=75s
+[GMP] status=Running  progress=1%  elapsed=90s
+[GMP] status=Running  progress=5%  elapsed=105s
+[GMP] status=Running  progress=5%  elapsed=120s
+[GMP] status=Running  progress=6%  elapsed=135s
+[GMP] status=Running  progress=11%  elapsed=150s
+[GMP] status=Running  progress=13%  elapsed=165s
+[GMP] status=Running  progress=13%  elapsed=180s
+[GMP] status=Running  progress=26%  elapsed=195s
+[GMP] status=Running  progress=33%  elapsed=210s
+[GMP] status=Running  progress=42%  elapsed=225s
+[GMP] status=Running  progress=50%  elapsed=240s
+[GMP] status=Running  progress=57%  elapsed=255s
+[GMP] status=Running  progress=60%  elapsed=270s
+[GMP] status=Running  progress=63%  elapsed=285s
+[GMP] status=Running  progress=70%  elapsed=300s
+[GMP] status=Running  progress=74%  elapsed=315s
+[GMP] status=Running  progress=74%  elapsed=330s
+[GMP] status=Running  progress=74%  elapsed=345s
+[GMP] status=Running  progress=76%  elapsed=360s
+[GMP] status=Running  progress=77%  elapsed=375s
+[GMP] status=Running  progress=79%  elapsed=390s
+[GMP] status=Running  progress=80%  elapsed=405s
+[GMP] status=Running  progress=82%  elapsed=420s
+[GMP] status=Running  progress=83%  elapsed=435s
+[GMP] status=Running  progress=83%  elapsed=450s
+[GMP] status=Running  progress=83%  elapsed=465s
+[GMP] status=Running  progress=84%  elapsed=480s
+[GMP] status=Running  progress=84%  elapsed=495s
+[GMP] status=Running  progress=86%  elapsed=510s
+[GMP] status=Running  progress=86%  elapsed=525s
+[GMP] status=Running  progress=86%  elapsed=540s
+[GMP] status=Running  progress=87%  elapsed=555s
+[GMP] status=Running  progress=88%  elapsed=570s
+[GMP] status=Running  progress=90%  elapsed=585s
+[GMP] status=Running  progress=92%  elapsed=600s
+[GMP] status=Running  progress=95%  elapsed=615s
+[GMP] status=Running  progress=95%  elapsed=630s
+[GMP] status=Running  progress=95%  elapsed=645s
+[GMP] status=Running  progress=96%  elapsed=660s
+[GMP] status=Running  progress=96%  elapsed=675s
+[GMP] status=Running  progress=96%  elapsed=690s
+[GMP] status=Running  progress=96%  elapsed=705s
+[GMP] status=Running  progress=96%  elapsed=720s
+[GMP] status=Running  progress=96%  elapsed=735s
+[GMP] status=Running  progress=96%  elapsed=750s
+[GMP] status=Running  progress=96%  elapsed=765s
+[GMP] status=Running  progress=97%  elapsed=780s
+[GMP] status=Running  progress=98%  elapsed=795s
+[GMP] status=Running  progress=98%  elapsed=810s
+[GMP] status=Running  progress=98%  elapsed=825s
+[GMP] status=Running  progress=98%  elapsed=840s
+[GMP] status=Running  progress=98%  elapsed=855s
+[GMP] status=Running  progress=98%  elapsed=870s
+[GMP] status=Running  progress=98%  elapsed=885s
+[GMP] status=Running  progress=98%  elapsed=900s
+[GMP] status=Running  progress=98%  elapsed=915s
+[GMP] status=Running  progress=98%  elapsed=930s
+[GMP] status=Running  progress=98%  elapsed=945s
+[GMP] status=Processing  progress=100%  elapsed=960s
+[GMP] status=Done  progress=-1%  elapsed=975s
+[GMP] Escaneo finalizado: Done
+[GMP] 6. Extrayendo XML del reporte...
+[GMP] XML enviado a stdout. Fin.
+DEBUG: gvm-script finalizo con codigo de salida: 0
+DEBUG: Conf temporal eliminada.

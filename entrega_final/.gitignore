@@ -1,0 +1,14 @@
+# Environment variables (creds reales)
+.env
+
+# Logs y temporales
+*.log
+/tmp/
+__pycache__/
+*.pyc
+
+# IDE / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
