@@ -33,8 +33,9 @@ RUN echo "ServerTokens Full" >> /etc/apache2/apache2.conf && \
     echo '<Directory /var/www/html>\n    Options Indexes FollowSymLinks\n    AllowOverride None\n    Require all granted\n</Directory>' > /etc/apache2/conf-available/security-lab.conf && \
     a2enconf security-lab
 
-# Crear archivos de prueba en web para verificar directory listing
-RUN echo '<html><body><h1>Laboratorio TASTSERV - Servidor 3 (Apache 2.4.41 + FTP + SSH)</h1></body></html>' > /var/www/html/index.html && \
+# Crear archivos de prueba en web para verificar directory listing y secretos
+RUN mkdir -p /secretos && echo "credenciales_internas=REDACTADO" > /secretos/config.txt && \
+    echo '<html><body><h1>Laboratorio TASTSERV - Servidor 3 (Apache 2.4.41 + FTP + SSH)</h1></body></html>' > /var/www/html/index.html && \
     mkdir -p /var/www/html/backup && \
     echo "backup_db_dummy.sql" > /var/www/html/backup/datos.txt
 

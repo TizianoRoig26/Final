@@ -1,15 +1,59 @@
-version: "3"
+version: "3.8"
 
 services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: security_db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=security_scans
+      - POSTGRES_USER=n8n_user
+      - POSTGRES_PASSWORD=cPU3MX00cQED7Vc4rlo6Df9B
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./init-db:/docker-entrypoint-initdb.d:ro
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - greenbone_net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U n8n_user -d security_scans"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
   n8n:
-    image: n8nio/n8n
+    image: n8nio/n8n:latest
     container_name: n8n
-    ports: 
+    restart: unless-stopped
+    user: root
+    ports:
       - "5678:5678"
     volumes:
-      - ~/.n8n:/home/node/.n8n
-    restart: always
-    enviroment:
-    	- N8N_BASIC_AUTH_ACTIVE=true
-    	- N8N_BASIC_AUTH_USER=Tizi
-    	- N8N_BASIC_AUTH_PASSWORD=<REDACTADO>
+      - /home/tizi/.n8n:/home/node/.n8n
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./bin/docker:/usr/local/bin/docker:ro
+      - ./gvm-scripts:/scripts:ro
+      - /tmp:/tmp
+    environment:
+      - N8N_USER_FOLDER=/home/node
+      - N8N_BASIC_AUTH_ACTIVE=false
+      - N8N_COMMUNITY_PACKAGES_ENABLED=true
+      - NODE_FUNCTION_ALLOW_BUILTIN=*
+      - NODE_FUNCTION_ALLOW_EXTERNAL=*
+      - GENERIC_TIMEZONE=America/Argentina/Mendoza
+      - TZ=America/Argentina/Mendoza
+      - EXECUTIONS_TIMEOUT=-1
+    networks:
+      - greenbone_net
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
+
+networks:
+  greenbone_net:
+    external: true
+    name: greenbone-community-edition_default

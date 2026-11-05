@@ -1,0 +1,401 @@
+{
+  "updatedAt": "2026-09-17T19:38:00.455Z",
+  "createdAt": "2026-03-09T21:00:57.764Z",
+  "id": "eZcFfWr0YiA2pAE3",
+  "name": "Vulnerability Scanning Automation",
+  "description": null,
+  "active": true,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 2 * * *"
+            }
+          ]
+        }
+      },
+      "id": "977eb4b6-39ba-44e7-b00a-34a75d13ace8",
+      "name": "Cron Trigger - 2AM Diario",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -4864,
+        1248
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "privateKey",
+        "command": "set -eu\n[ -f \"$HOME/scan.env\" ] && . \"$HOME/scan.env\"\n\nif [ -n \"${SCAN_TARGET:-}\" ]; then\n  TARGET=\"$SCAN_TARGET\"\nelse\n  IFACE=$(ip -4 route show default | awk '{for(i=1;i<=NF;i++) if($i==\"dev\"){print $(i+1); exit}}')\n  [ -n \"$IFACE\" ] || { echo \"ERROR: no se pudo detectar la interfaz de la ruta por defecto\" >&2; exit 2; }\n  CIDR=$(ip -o -4 addr show dev \"$IFACE\" scope global | awk '{print $4; exit}')\n  [ -n \"$CIDR\" ] || { echo \"ERROR: la interfaz $IFACE no tiene IPv4 global\" >&2; exit 2; }\n  IP=${CIDR%/*}; PREFIX=${CIDR#*/}\n  case \"$IP\" in\n    10.*|192.168.*|172.1[6-9].*|172.2[0-9].*|172.3[01].*) ;;\n    *) echo \"ERROR: red no privada ($CIDR). Define SCAN_TARGET explicitamente.\" >&2; exit 3 ;;\n  esac\n  if [ \"$PREFIX\" -lt 24 ]; then TARGET=\"${IP%.*}.0/24\"; else TARGET=\"$CIDR\"; fi\nfi\n\necho \"Objetivo de escaneo: $TARGET\" >&2\n\nOPTS=\"-sV -T4 -n --open --top-ports 1000 --host-timeout 5m\"\nif [ \"$(id -u)\" -eq 0 ]; then NMAP=\"nmap\"; OPTS=\"$OPTS -O --osscan-limit\"\nelif sudo -n true 2>/dev/null; then NMAP=\"sudo -n nmap\"; OPTS=\"$OPTS -O --osscan-limit\"\nelse NMAP=\"nmap\"; fi\n\nexec $NMAP $OPTS -oX - $TARGET"
+      },
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [
+        -4624,
+        1248
+      ],
+      "id": "e0915c46-16bf-4779-b17d-3a9847b479c9",
+      "name": "Execute a command",
+      "notes": "Autodetecta la red local IPv4 de la ruta por defecto y ejecuta Nmap via SSH.\nOverride: exportar SCAN_TARGET=\"cidr1 cidr2\" en $HOME/scan.env del host.\nCon SCAN_TARGET manual, el tope /24 NO se aplica (responsabilidad del operador).\nSin privilegios de root/sudo, omite -O (deteccion de OS). XML por stdout, logs por stderr.",
+      "credentials": {
+        "sshPrivateKey": {
+          "id": "sshHostScanner01",
+          "name": "SSH Host Scanner"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const first = $input.first()?.json ?? {};\nif (typeof first.code === 'number' && first.code !== 0) {\n  throw new Error(`Nmap/SSH termino con codigo ${first.code}: ${(first.stderr || '').trim() || 'sin detalle en stderr'}`);\n}\nconst xml = first.stdout || '';\nif (!xml.includes('<nmaprun')) {\n  throw new Error('La salida de Nmap no es un XML valido (falta <nmaprun>). stderr: ' + ((first.stderr || '').trim() || '(vacio)'));\n}\nconst decode = (s) => (s || '').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'\"').replace(/&apos;/g,\"'\").replace(/&amp;/g,'&');\nconst attr = (tag, name) => { const m = (tag || '').match(new RegExp('\\\\s' + name + '=\"([^\"]*)\"')); return m ? decode(m[1]) : ''; };\n\nconst hostBlocks = xml.match(/<host(?:\\s[^>]*)?>[\\s\\S]*?<\\/host>/g) || [];\nconst hosts = hostBlocks.map((block) => {\n  const addrTags = block.match(/<address\\s[^>]*\\/?>/g) || [];\n  const ipv4 = addrTags.find((t) => attr(t, 'addrtype') === 'ipv4');\n  const statusTag = (block.match(/<status\\s[^>]*\\/?>/) || [''])[0];\n  const hostnameTag = (block.match(/<hostname\\s[^>]*\\/?>/) || [''])[0];\n  const osTag = (block.match(/<osmatch\\s[^>]*\\/?>/) || [''])[0];\n  const ports = (block.match(/<port\\s[^>]*>[\\s\\S]*?<\\/port>/g) || []).map((p) => {\n    const head = p.match(/<port\\s[^>]*>/)[0];\n    const stateTag = (p.match(/<state\\s[^>]*\\/?>/) || [''])[0];\n    const svcTag = (p.match(/<service\\s[^>]*\\/?>/) || [''])[0];\n    return {\n      port: attr(head, 'portid'), protocol: attr(head, 'protocol'), state: attr(stateTag, 'state'),\n      service: attr(svcTag, 'name') || 'unknown',\n      version: [attr(svcTag, 'product'), attr(svcTag, 'version')].filter(Boolean).join(' ')\n    };\n  });\n  return {\n    ip: ipv4 ? attr(ipv4, 'addr') : 'Unknown', hostname: attr(hostnameTag, 'name') || 'Unknown',\n    state: attr(statusTag, 'state') || 'Unknown', os: attr(osTag, 'name') || 'Unknown', ports\n  };\n});\nreturn hosts.map((h) => ({ json: h }));"
+      },
+      "id": "4aeb0437-47fc-4a27-bb83-bcf90ab6f83e",
+      "name": "Parse Nmap XML",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -4416,
+        1248
+      ],
+      "alwaysOutputData": true,
+      "notes": "Parsea el XML de Nmap. Valida exit code SSH y estructura XML. Ignora hosthint/hostscript. Extrae atributos desde tags completos."
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all().map((i) => i.json);\nconst active = items.filter((h) => h && h.state === 'up' && /^\\d{1,3}(\\.\\d{1,3}){3}$/.test(h.ip || ''));\nif (!active.length) throw new Error('Nmap no encontro ningun host activo en la red escaneada.');\nconst ports = new Set();\nactive.forEach((h) => (h.ports || []).forEach((p) => { if (p.state === 'open' && p.protocol === 'tcp' && p.port) ports.add(Number(p.port)); }));\nconst portList = ports.size ? [...ports].sort((a, b) => a - b).join(',') : '22,80,443,5678,8080';\nconst tz = 'America/Argentina/Mendoza';\nconst now = new Date();\nconst formatter = new Intl.DateTimeFormat('en-CA', {\n  timeZone: tz,\n  year: 'numeric',\n  month: '2-digit',\n  day: '2-digit',\n  hour: '2-digit',\n  minute: '2-digit',\n  second: '2-digit',\n  hour12: false\n});\nconst parts = formatter.formatToParts(now).reduce((acc, p) => ({ ...acc, [p.type]: p.value }), {});\nconst scan_id = `scan_${parts.year}${parts.month}${parts.day}_${parts.hour}${parts.minute}${parts.second}`;\nconst hostsArg = active.map((h) => h.ip).join(',');\nconst portsArg = portList;\nif (!/^[0-9.,]+$/.test(hostsArg) || !/^(T:)?[0-9,]+$/.test(portsArg)) throw new Error('Argumentos con formato invalido.');\nreturn [{ json: { scan_id, hostsArg, portsArg, host_count: active.length, active_hosts: active.map((h) => h.ip) } }];"
+      },
+      "id": "12ab5ae6-5f9d-4b87-ad4f-e5c032e5ec95",
+      "name": "Build Hosts Argument",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -4150,
+        1248
+      ],
+      "notes": "Filtra hosts activos, construye argumentos para OpenVAS, genera scan_id unico y valida formato con regex antes de emitir."
+    },
+    {
+      "parameters": {
+        "jsCode": "const inputJson = $input.first().json;\n\nif (inputJson.code === 75) {\n  throw new Error('Ya hay un escaneo en curso en el host (lock activo). Reintent\u00e1 en unos minutos.');\n}\nif (typeof inputJson.code === 'number' && inputJson.code !== 0) {\n  throw new Error(`OpenVAS/SSH termino con codigo ${inputJson.code}: ${(inputJson.stderr || '').trim() || 'sin detalle en stderr'}`);\n}\n\nconst xmlData = inputJson.stdout || '';\n\n// Detectar error GMP (status 4xx/5xx)\nconst respMatch = xmlData.match(/<get_reports_response[^>]*status=\"(\\d+)\"[^>]*status_text=\"([^\"]*)\"/);\nif (respMatch && parseInt(respMatch[1], 10) >= 400) {\n  throw new Error(`GMP devolvio error ${respMatch[1]}: ${respMatch[2]}`);\n}\n\n// Distinguir reporte invalido o truncado de 0 vulnerabilidades (exigir apertura y cierre </report>)\nif (!xmlData || !xmlData.includes('<report') || !xmlData.includes('</report>')) {\n  throw new Error(`Salida de OpenVAS no contiene un reporte XML valido o completo (falta <report> o </report>). Primeros 300 chars: ${xmlData.substring(0, 300)}`);\n}\n\nconst scanDateMatch = xmlData.match(/<scan_start>([^<]+)<\\/scan_start>/) || xmlData.match(/<creation_time>([^<]+)<\\/creation_time>/);\nconst scanDate = scanDateMatch ? new Date(scanDateMatch[1]).toISOString() : new Date().toISOString();\n\nconst scan_id = $('Build Hosts Argument').first().json.scan_id || 'unknown';\n\nconst decodeXML = (str) => {\n  if (!str) return '';\n  return str\n    .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '\"')\n    .replace(/&apos;/g, \"'\").replace(/&amp;/g, '&');\n};\n\n// Eliminar bloques internos <detection>...</detection> para evitar truncamiento por tags <result> anidados\nconst cleanXml = xmlData.replace(/<detection>[\\s\\S]*?<\\/detection>/g, '');\nconst resultBlocks = cleanXml.match(/<result id=\"[^\"]+\">[\\s\\S]*?<\\/result>/g) || [];\n\nconst vulnerabilities = resultBlocks.map(block => {\n  const nameMatch = block.match(/<name>([^<]+)<\\/name>/);\n  const hostMatch = block.match(/<host(?:\\s[^>]*)?>([^<]+)/);\n  const portMatch = block.match(/<port>([^<]+)<\\/port>/);\n  const severityMatch = block.match(/<severity>([^<]+)<\\/severity>/);\n  const threatMatch = block.match(/<threat>([^<]+)<\\/threat>/);\n  const descMatch = block.match(/<description>([\\s\\S]*?)<\\/description>/);\n  const solMatch = block.match(/<solution[^>]*>([\\s\\S]*?)<\\/solution>/);\n  const cveMatches = [...block.matchAll(/<ref\\s+[^>]*?(?:type=\"cve\"[^>]*?id=\"([^\"]+)\"|id=\"([^\"]+)\"[^>]*?type=\"cve\")[^>]*\\/?>/g)].map(m => m[1] || m[2]);\n\n  const rawPort = portMatch ? portMatch[1].trim() : null;\n  const cleanPort = (rawPort && !/^general/i.test(rawPort)) ? rawPort : null;\n  const rawSev = severityMatch ? parseFloat(severityMatch[1]) : 0.0;\n  const severity = (!isNaN(rawSev) && rawSev >= 0) ? Math.min(Math.max(rawSev, 0.0), 10.0) : 0.0;\n\n  return {\n    name: nameMatch ? decodeXML(nameMatch[1].trim()) : 'Vulnerabilidad sin nombre',\n    host: hostMatch ? hostMatch[1].trim() : 'Unknown',\n    port: cleanPort,\n    severity,\n    threat: threatMatch ? threatMatch[1].trim() : (severity >= 7.0 ? 'High' : severity >= 4.0 ? 'Medium' : severity > 0 ? 'Low' : 'Log'),\n    description: descMatch ? decodeXML(descMatch[1].trim()) : '',\n    solution: solMatch ? decodeXML(solMatch[1].trim()) : '',\n    cve: cveMatches.length > 0 ? cveMatches.join(', ') : null,\n    scan_date: scanDate\n  };\n});\n\nreturn [{\n  json: {\n    scan_id,\n    scanDate,\n    vulnerabilities,\n    total_found: vulnerabilities.length\n  }\n}];\n"
+      },
+      "id": "44e332c7-0182-417e-8e64-7b69f0053469",
+      "name": "Parse Results",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -3552,
+        1248
+      ],
+      "alwaysOutputData": true,
+      "notes": "Parsea XML de OpenVAS. Maneja code=75 (lock), errores GMP (4xx/5xx), reporte invalido o truncado (falta </report>). Distingue 0 hallazgos de error. Toma scan_id de Build Hosts Argument."
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $input.first().json;\nconst vulnerabilities = data.vulnerabilities || [];\n\nif (vulnerabilities.length === 0) {\n  return [];\n}\n\nreturn vulnerabilities.map(vuln => ({\n  json: {\n    scan_id: data.scan_id,\n    scan_date: vuln.scan_date || data.scanDate,\n    host: vuln.host,\n    vulnerability_name: vuln.name,\n    severity: vuln.severity,\n    port: vuln.port,\n    cve: vuln.cve,\n    description: vuln.description,\n    solution: vuln.solution\n  }\n}));"
+      },
+      "id": "368d4237-2c18-4c13-b23a-45cf7ef625b7",
+      "name": "Flatten Vulnerabilities",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -3328,
+        1152
+      ],
+      "notes": "Aplana vulnerabilidades a items individuales con exactamente las 9 claves del INSERT en PostgreSQL. Con 0 hallazgos devuelve [] y el nodo Postgres no corre."
+    },
+    {
+      "parameters": {
+        "schema": {
+          "__rl": true,
+          "value": "public",
+          "mode": "list"
+        },
+        "table": {
+          "__rl": true,
+          "value": "vulnerability_scans",
+          "mode": "list"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "e560cdb9-ea75-4e44-ae60-fcaf9954479c",
+      "name": "Store in PostgreSQL1",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        -3088,
+        1152
+      ],
+      "notes": "Almacena hallazgos en security_db. onError=continueRegularOutput: si Postgres falla, el email se envia igual.",
+      "credentials": {
+        "postgres": {
+          "id": "pGvM9xK2qL8rT4yZ",
+          "name": "Postgres account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $('Parse Results').first().json;\nconst vulns = data.vulnerabilities || [];\nconst buildData = $('Build Hosts Argument').first().json;\nconst allHosts = buildData.active_hosts || [];\nconst scan_id = data.scan_id || buildData.scan_id || 'desconocido';\n\nconst critical = vulns.filter(v => v.severity >= 9.0);\nconst high = vulns.filter(v => v.severity >= 7.0 && v.severity < 9.0);\nconst medium = vulns.filter(v => v.severity >= 4.0 && v.severity < 7.0);\nconst low = vulns.filter(v => v.severity < 4.0);\n\nconst pct = (n) => vulns.length ? ((n / vulns.length) * 100).toFixed(1) : '0.0';\n\nconst tzOpts = { timeZone: 'America/Argentina/Mendoza', hour12: false };\nconst scanDateStr = new Date(data.scanDate).toLocaleString('es-AR', tzOpts);\n\nconst renderVulns = (vulnArray, title, limit = 10) => {\n  if (vulnArray.length === 0) return `*No se encontraron vulnerabilidades ${title.toLowerCase()}.*\\n`;\n  let section = '';\n  const visible = vulnArray.slice(0, limit);\n  section += visible.map((v, i) => `\n### ${i+1}. ${v.name}\n\n**Host**: ${v.host}${v.port ? ':' + v.port : ''}\n**Severidad**: ${v.severity}/10.0\n**CVE**: ${v.cve || 'N/A'}\n\n**Descripcion**:\n${v.description ? (v.description.length > 300 ? v.description.substring(0, 300) + '...' : v.description) : '*Sin descripcion.*'}\n\n**Solucion Recomendada**:\n${v.solution ? (v.solution.length > 300 ? v.solution.substring(0, 300) + '...' : v.solution) : '*Sin solucion especificada.*'}\n\n---\n`).join('\\n');\n  if (vulnArray.length > limit) {\n    section += `*...y ${vulnArray.length - limit} vulnerabilidades ${title.toLowerCase()} adicionales.*\\n`;\n  }\n  return section;\n};\n\nconst hostSection = allHosts.map(host => {\n  const hostVulns = vulns.filter(v => v.host === host);\n  return `\n### ${host}\n- Total: ${hostVulns.length} | Criticas: ${hostVulns.filter(v => v.severity >= 9.0).length} | Altas: ${hostVulns.filter(v => v.severity >= 7.0 && v.severity < 9.0).length} | Medias: ${hostVulns.filter(v => v.severity >= 4.0 && v.severity < 7.0).length} | Bajas/Info: ${hostVulns.filter(v => v.severity < 4.0).length}`;\n}).join('\\n');\n\nconst noHallazgos = vulns.length === 0 ? '\\n> **Escaneo completado sin hallazgos de vulnerabilidades.**\\n' : '';\n\nconst report = `\n# Informe de Escaneo de Vulnerabilidades\n\n**ID de Escaneo**: ${scan_id}\n**Fecha del Escaneo**: ${scanDateStr}\n**Hosts Escaneados**: ${allHosts.length} (${allHosts.join(', ')})\n**Total de Vulnerabilidades**: ${vulns.length}\n${noHallazgos}\n---\n\n## Resumen Ejecutivo\n\n| Severidad | Cantidad | Porcentaje |\n|-----------|----------|------------|\n| Critica (9.0-10.0) | ${critical.length} | ${pct(critical.length)}% |\n| Alta (7.0-8.9) | ${high.length} | ${pct(high.length)}% |\n| Media (4.0-6.9) | ${medium.length} | ${pct(medium.length)}% |\n| Baja e Informativa (0.0-3.9) | ${low.length} | ${pct(low.length)}% |\n\n---\n\n## Vulnerabilidades Criticas\n${renderVulns(critical, 'criticas', 10)}\n\n## Vulnerabilidades Altas\n${renderVulns(high, 'altas', 10)}\n\n## Vulnerabilidades Medias\n${renderVulns(medium, 'medias', 15)}\n\n## Vulnerabilidades Bajas e Informativas\n${renderVulns(low, 'bajas e informativas', 20)}\n\n---\n\n## Resumen por Host\n${hostSection || '*Sin datos de hosts.*'}\n\n---\n\n## Recomendaciones Generales\n\n1. Priorizar la remediacion de vulnerabilidades criticas y altas de forma inmediata.\n2. Aplicar parches y actualizaciones de seguridad para todos los servicios con hallazgos medios o superiores.\n3. Revisar banners expuestos, metodos HTTP innecesarios y configuraciones debiles para reducir la superficie de ataque.\n4. Implementar politicas de actualizacion regular de software y firmware.\n5. Realizar escaneos de seguimiento tras aplicar correcciones para verificar la remediacion.\n\n---\n\n*Informe generado automaticamente por el sistema de escaneo de vulnerabilidades TASTSERV*\n`;\n\nreturn [{\n  json: {\n    report,\n    scanDate: data.scanDate,\n    summary: {\n      scan_id,\n      total: vulns.length,\n      critical: critical.length,\n      high: high.length,\n      medium: medium.length,\n      low: low.length\n    }\n  }\n}];"
+      },
+      "id": "baa2c620-e8a2-4530-8785-94b76e3b6842",
+      "name": "Generate Report",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -3312,
+        1328
+      ],
+      "notes": "Genera informe Markdown. Maneja 0 hallazgos. Lista TODOS los hosts escaneados. Usa timezone America/Argentina/Mendoza y hour12: false."
+    },
+    {
+      "parameters": {
+        "fromEmail": "from@example.com",
+        "toEmail": "to@example.com",
+        "subject": "=Reporte de Vulnerabilidades - {{new Date($json.scanDate).toLocaleString('es-AR')}}",
+        "emailFormat": "text",
+        "text": "={{ $json.report }}",
+        "options": {}
+      },
+      "id": "8ae4b168-d224-454e-8b78-12d40a0a2c61",
+      "name": "Send Email Notification",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        -3088,
+        1328
+      ],
+      "webhookId": "305d7777-4242-4f84-a7e7-33e55af2c8bc",
+      "credentials": {
+        "smtp": {
+          "id": "1EwFK7SuJ9YAUwbc",
+          "name": "SMTP account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "privateKey",
+        "command": "=flock -n -E 75 /tmp/n8n_gvm_scan.lock docker compose -f /home/tizi/docker-compose.yml run -T --rm -v /home/tizi/gvm-scripts:/scripts gvm-tools sh /scripts/automated_scan.sh \"{{$json.hostsArg}}\" \"{{$json.portsArg}}\" \"{{$json.scan_id}}\""
+      },
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [
+        -3776,
+        1248
+      ],
+      "id": "46cafc21-0a8e-4813-9e2e-932be74159dd",
+      "name": "Run OpenVAS Scan (gvm-script)1",
+      "notes": "Ejecuta OpenVAS via SSH. flock evita ejecuciones concurrentes: codigo 75 = ya hay un escaneo en curso. Credenciales GVM se leen de /home/tizi/.gvm.env en el contenedor. XML del reporte por stdout.",
+      "credentials": {
+        "sshPrivateKey": {
+          "id": "sshHostScanner01",
+          "name": "SSH Host Scanner"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "trigger-scan",
+        "responseMode": "onReceived",
+        "options": {},
+        "authentication": "headerAuth"
+      },
+      "id": "e5b6c7d8-9a0b-1c2d-3e4f-5a6b7c8d9e0f",
+      "name": "Webhook - Trigger Scan",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -4864,
+        1448
+      ],
+      "webhookId": "trigger-scan",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "webhookHeaderAuth01",
+          "name": "Webhook Scan Header Auth"
+        }
+      },
+      "notes": "Webhook de disparo manual/API. Requiere header de autenticacion (credencial a configurar manualmente). responseMode=onReceived: responde 200 inmediatamente."
+    },
+    {
+      "parameters": {},
+      "id": "b1c2d3e4-f5a6-7b8c-9d0e-1f2a3b4c5d6e",
+      "name": "When clicking 'Test workflow'",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -4864,
+        1048
+      ]
+    }
+  ],
+  "connections": {
+    "Cron Trigger - 2AM Diario": {
+      "main": [
+        [
+          {
+            "node": "Execute a command",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute a command": {
+      "main": [
+        [
+          {
+            "node": "Parse Nmap XML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Nmap XML": {
+      "main": [
+        [
+          {
+            "node": "Build Hosts Argument",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Hosts Argument": {
+      "main": [
+        [
+          {
+            "node": "Run OpenVAS Scan (gvm-script)1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Results": {
+      "main": [
+        [
+          {
+            "node": "Flatten Vulnerabilities",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Generate Report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Flatten Vulnerabilities": {
+      "main": [
+        [
+          {
+            "node": "Store in PostgreSQL1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Report": {
+      "main": [
+        [
+          {
+            "node": "Send Email Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run OpenVAS Scan (gvm-script)1": {
+      "main": [
+        [
+          {
+            "node": "Parse Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook - Trigger Scan": {
+      "main": [
+        [
+          {
+            "node": "Execute a command",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking 'Test workflow'": {
+      "main": [
+        [
+          {
+            "node": "Execute a command",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "America/Argentina/Mendoza",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "pinData": {},
+  "versionId": "6c2dd8e7-2cf4-452c-91cd-97834774432b",
+  "activeVersionId": null,
+  "versionCounter": 246,
+  "triggerCount": 0,
+  "tags": [],
+  "shared": [
+    {
+      "updatedAt": "2026-03-09T21:00:57.770Z",
+      "createdAt": "2026-03-09T21:00:57.770Z",
+      "role": "workflow:owner",
+      "workflowId": "eZcFfWr0YiA2pAE3",
+      "projectId": "749OtELVzm7DZlwl",
+      "project": {
+        "updatedAt": "2026-03-09T20:53:39.019Z",
+        "createdAt": "2026-03-09T20:53:08.109Z",
+        "id": "749OtELVzm7DZlwl",
+        "name": "Tiziano Roig <tizianoroig26@hotmail.com>",
+        "type": "personal",
+        "icon": null,
+        "description": null,
+        "creatorId": "161f07a4-14ce-4543-9426-998d529725a9"
+      }
+    }
+  ],
+  "versionMetadata": {
+    "name": null,
+    "description": null
+  }
+}

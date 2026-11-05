@@ -30,6 +30,9 @@ RUN echo "ServerTokens Full" >> /usr/local/apache2/conf/httpd.conf && \
     echo "ServerSignature On" >> /usr/local/apache2/conf/httpd.conf && \
     echo "TraceEnable On" >> /usr/local/apache2/conf/httpd.conf
 
+# Crear directorio de secretos
+RUN mkdir -p /secretos && echo "credenciales_internas=REDACTADO" > /secretos/config.txt
+
 # Pagina HTML sencilla
 RUN echo '<html><body><h1>Laboratorio TASTSERV - Servidor 2 (Apache 2.4.49)</h1></body></html>' > /usr/local/apache2/htdocs/index.html
 
