@@ -1,4 +1,19 @@
-.n8n
+# Archivo de elementos previos no incluidos en la estructura limpia
+archive/
+
+# Secretos y variables de entorno local
 .env
-node_modules
-otros
+*.env
+!.env.example
+
+# Datos locales de aplicaciones y dependencias
+.n8n/
+node_modules/
+__pycache__/
+*.py[cod]
+*.log
+
+# Archivos de respaldo temporales
+*.bak*
+*.tmp
+*.swp
