@@ -1,0 +1,146 @@
+host,port,vulnerability_name,severity,cve
+172.18.0.200,21/tcp,Anonymous FTP Login Reporting,6.4,CVE-1999-0497
+172.18.0.200,21/tcp,FTP Unencrypted Cleartext Login,4.8,
+172.18.0.200,21/tcp,FTP Banner Detection,0.0,
+172.18.0.200,21/tcp,Services,0.0,
+172.18.0.200,21/tcp,SSL/TLS: FTP Missing Support For AUTH TLS,0.0,
+172.18.0.200,21/tcp,vsftpd FTP Server Detection (FTP),0.0,
+172.18.0.200,22/tcp,"OpenSSH 7.7 - 7.9, 8.x < 8.1 Integer Overflow Vulnerability",7.8,CVE-2019-16905
+172.18.0.200,22/tcp,"Diffie-Hellman Ephemeral Key Exchange DoS Vulnerability (SSH, D(HE)ater)",7.5,"CVE-2002-20001, CVE-2022-40735, CVE-2024-41996"
+172.18.0.200,22/tcp,OpenBSD OpenSSH <= 8.6 Command Injection Vulnerability,7.4,CVE-2020-15778
+172.18.0.200,22/tcp,OpenSSH 6.2 <= 8.7 Privilege Escalation Vulnerability,7.0,CVE-2021-41617
+172.18.0.200,22/tcp,OpenBSD OpenSSH 6.8p1 - 9.9p1 MitM Vulnerability,6.8,CVE-2025-26465
+172.18.0.200,22/tcp,OpenBSD OpenSSH < 9.6 Multiple Vulnerabilities (Terrapin Attack),6.5,"CVE-2023-48795, CVE-2023-51384, CVE-2023-51385"
+172.18.0.200,22/tcp,OpenBSD OpenSSH Information Disclosure Vulnerability (CVE-2020-14145),5.9,CVE-2020-14145
+172.18.0.200,22/tcp,OpenSSH Information Disclosure Vulnerability (CVE-2016-20012),5.3,CVE-2016-20012
+172.18.0.200,22/tcp,OpenBSD OpenSSH < 9.2 Unspecified Vulnerability,5.0,
+172.18.0.200,22/tcp,OpenBSD OpenSSH < 9.3 Unspecified Vulnerability,5.0,
+172.18.0.200,22/tcp,Weak Encryption Algorithm(s) Supported (SSH),4.3,
+172.18.0.200,22/tcp,OpenBSD OpenSSH < 9.1 Multiple Vulnerabilities,4.0,
+172.18.0.200,22/tcp,OpenBSD OpenSSH 7.4 - 9.9 Unspecified Vulnerability,3.8,CVE-2025-32728
+172.18.0.200,22/tcp,Weak MAC Algorithm(s) Supported (SSH),2.6,
+172.18.0.200,22/tcp,OpenBSD OpenSSH < 10.1 Multiple Vulnerabilities,2.4,"CVE-2025-61984, CVE-2025-61985"
+172.18.0.200,22/tcp,SSH Protocol Versions Supported,0.0,
+172.18.0.200,22/tcp,SSH Server type and version,0.0,
+172.18.0.200,22/tcp,SSH Protocol Algorithms Supported,0.0,
+172.18.0.200,22/tcp,Services,0.0,
+172.18.0.200,22/tcp,PQC Key Exchange (KEX) Algorithm(s) Missing (SSH),0.0,
+172.18.0.200,,TCP Timestamps Information Disclosure,2.6,
+172.18.0.200,,ICMP Timestamp Reply Information Disclosure,2.1,CVE-1999-0524
+172.18.0.200,,OpenSSH Detection Consolidation,0.0,
+172.18.0.200,,CPE Inventory,0.0,
+172.18.0.200,,OS Detection Consolidation and Reporting,0.0,
+172.18.0.200,,Traceroute,0.0,
+172.18.0.200,,Hostname Determination Reporting,0.0,
+172.18.0.200,,IP Forwarding Enabled - Active Check,0.0,CVE-1999-0511
+172.18.0.200,,Unknown OS and Service Banner Reporting,0.0,
+172.18.0.201,22/tcp,"OpenSSH 7.7 - 7.9, 8.x < 8.1 Integer Overflow Vulnerability",7.8,CVE-2019-16905
+172.18.0.201,22/tcp,"Diffie-Hellman Ephemeral Key Exchange DoS Vulnerability (SSH, D(HE)ater)",7.5,"CVE-2002-20001, CVE-2022-40735, CVE-2024-41996"
+172.18.0.201,22/tcp,OpenBSD OpenSSH <= 8.6 Command Injection Vulnerability,7.4,CVE-2020-15778
+172.18.0.201,22/tcp,OpenSSH 6.2 <= 8.7 Privilege Escalation Vulnerability,7.0,CVE-2021-41617
+172.18.0.201,22/tcp,OpenBSD OpenSSH 6.8p1 - 9.9p1 MitM Vulnerability,6.8,CVE-2025-26465
+172.18.0.201,22/tcp,OpenBSD OpenSSH < 9.6 Multiple Vulnerabilities (Terrapin Attack),6.5,"CVE-2023-48795, CVE-2023-51384, CVE-2023-51385"
+172.18.0.201,22/tcp,OpenBSD OpenSSH Information Disclosure Vulnerability (CVE-2020-14145),5.9,CVE-2020-14145
+172.18.0.201,22/tcp,OpenSSH Information Disclosure Vulnerability (CVE-2016-20012),5.3,CVE-2016-20012
+172.18.0.201,22/tcp,OpenBSD OpenSSH < 9.2 Unspecified Vulnerability,5.0,
+172.18.0.201,22/tcp,OpenBSD OpenSSH < 9.3 Unspecified Vulnerability,5.0,
+172.18.0.201,22/tcp,Weak Encryption Algorithm(s) Supported (SSH),4.3,
+172.18.0.201,22/tcp,OpenBSD OpenSSH < 9.1 Multiple Vulnerabilities,4.0,
+172.18.0.201,22/tcp,OpenBSD OpenSSH 7.4 - 9.9 Unspecified Vulnerability,3.8,CVE-2025-32728
+172.18.0.201,22/tcp,Weak MAC Algorithm(s) Supported (SSH),2.6,
+172.18.0.201,22/tcp,OpenBSD OpenSSH < 10.1 Multiple Vulnerabilities,2.4,"CVE-2025-61984, CVE-2025-61985"
+172.18.0.201,22/tcp,SSH Protocol Versions Supported,0.0,
+172.18.0.201,22/tcp,Services,0.0,
+172.18.0.201,22/tcp,SSH Protocol Algorithms Supported,0.0,
+172.18.0.201,22/tcp,SSH Server type and version,0.0,
+172.18.0.201,22/tcp,PQC Key Exchange (KEX) Algorithm(s) Missing (SSH),0.0,
+172.18.0.201,80/tcp,Apache HTTP Server 2.4.7 - 2.4.51 Multiple Vulnerabilities - Linux,8.2,CVE-2021-44224
+172.18.0.201,80/tcp,Apache HTTP Server 2.4.30 - 2.4.55 HTTP Request Smuggling Vulnerability - Linux,7.5,CVE-2023-27522
+172.18.0.201,80/tcp,Apache HTTP Server < 2.4.58 'mod_macro' Out-of-bounds Read Vulnerability - Linux,7.5,CVE-2023-31122
+172.18.0.201,80/tcp,Apache HTTP Server < 2.4.59 Multiple Vulnerabilities - Linux,7.5,"CVE-2023-38709, CVE-2024-24795, CVE-2024-27316"
+172.18.0.201,80/tcp,Apache HTTP Server 2.4.17 - 2.4.57 DoS Vulnerability - Linux,5.9,CVE-2023-45802
+172.18.0.201,80/tcp,HTTP Debugging Methods (TRACE/TRACK) Enabled,5.8,"CVE-2003-1567, CVE-2004-2320, CVE-2004-2763, CVE-2005-3398, CVE-2006-4683, CVE-2007-3008, CVE-2008-7253, CVE-2009-2823, CVE-2010-0386, CVE-2012-2223, CVE-2014-7883"
+172.18.0.201,80/tcp,Apache HTTP Server 2.4.7 - 2.4.65 Authentication Bypass Vulnerability - Linux,5.8,CVE-2025-66200
+172.18.0.201,80/tcp,Apache HTTP Server 2.4.26 < 2.4.64 DoS Vulnerability - Linux,5.0,CVE-2025-49630
+172.18.0.201,80/tcp,Apache HTTP Server 2.4.17 < 2.4.64 DoS Vulnerability - Linux,5.0,CVE-2025-53020
+172.18.0.201,80/tcp,Apache HTTP Server 2.4.35 < 2.4.64 Access Control Bypass Vulnerability - Linux,5.0,CVE-2025-23048
+172.18.0.201,80/tcp,Apache HTTP Server < 2.4.64 Multiple Vulnerabilities - Linux,5.0,"CVE-2024-42516, CVE-2024-43204, CVE-2024-47252, CVE-2025-49812"
+172.18.0.201,80/tcp,Apache HTTP Server < 2.4.66 SSI Vulnerability - Linux,4.3,CVE-2025-58098
+172.18.0.201,80/tcp,Apache HTTP Server 2.4.x < 2.4.66 Improper Neutralization Vulnerability - Linux,4.3,CVE-2025-65082
+172.18.0.201,80/tcp,Apache HTTP Server 2.4.30 - 2.4.65 Integer Overflow Vulnerability - Linux,2.6,CVE-2025-55753
+172.18.0.201,80/tcp,HTTP Server Banner Enumeration,0.0,
+172.18.0.201,80/tcp,Web Application Scanning Consolidation / Info Reporting,0.0,
+172.18.0.201,80/tcp,Services,0.0,
+172.18.0.201,80/tcp,HTTP Server type and version,0.0,
+172.18.0.201,80/tcp,Allowed HTTP Methods Enumeration,0.0,
+172.18.0.201,80/tcp,HTTP Security Headers Detection,0.0,
+172.18.0.201,,TCP Timestamps Information Disclosure,2.6,
+172.18.0.201,,ICMP Timestamp Reply Information Disclosure,2.1,CVE-1999-0524
+172.18.0.201,,OS Detection Consolidation and Reporting,0.0,
+172.18.0.201,,IP Forwarding Enabled - Active Check,0.0,CVE-1999-0511
+172.18.0.201,,Hostname Determination Reporting,0.0,
+172.18.0.201,,Traceroute,0.0,
+172.18.0.201,,CPE Inventory,0.0,
+172.18.0.201,,Apache HTTP Server Detection Consolidation,0.0,
+172.18.0.201,,OpenSSH Detection Consolidation,0.0,
+172.18.0.202,21/tcp,Anonymous FTP Login Reporting,6.4,CVE-1999-0497
+172.18.0.202,21/tcp,FTP Unencrypted Cleartext Login,4.8,
+172.18.0.202,21/tcp,vsftpd FTP Server Detection (FTP),0.0,
+172.18.0.202,21/tcp,Services,0.0,
+172.18.0.202,21/tcp,FTP Banner Detection,0.0,
+172.18.0.202,21/tcp,SSL/TLS: FTP Missing Support For AUTH TLS,0.0,
+172.18.0.202,22/tcp,"Diffie-Hellman Ephemeral Key Exchange DoS Vulnerability (SSH, D(HE)ater)",7.5,"CVE-2002-20001, CVE-2022-40735, CVE-2024-41996"
+172.18.0.202,22/tcp,OpenBSD OpenSSH <= 8.6 Command Injection Vulnerability,7.4,CVE-2020-15778
+172.18.0.202,22/tcp,OpenSSH 8.2 < 8.5 Memory Corruption Vulnerability,7.1,CVE-2021-28041
+172.18.0.202,22/tcp,OpenSSH 6.2 <= 8.7 Privilege Escalation Vulnerability,7.0,CVE-2021-41617
+172.18.0.202,22/tcp,OpenBSD OpenSSH 6.8p1 - 9.9p1 MitM Vulnerability,6.8,CVE-2025-26465
+172.18.0.202,22/tcp,OpenBSD OpenSSH < 9.6 Multiple Vulnerabilities (Terrapin Attack),6.5,"CVE-2023-48795, CVE-2023-51384, CVE-2023-51385"
+172.18.0.202,22/tcp,OpenBSD OpenSSH Information Disclosure Vulnerability (CVE-2020-14145),5.9,CVE-2020-14145
+172.18.0.202,22/tcp,OpenSSH Information Disclosure Vulnerability (CVE-2016-20012),5.3,CVE-2016-20012
+172.18.0.202,22/tcp,OpenBSD OpenSSH < 9.2 Unspecified Vulnerability,5.0,
+172.18.0.202,22/tcp,OpenBSD OpenSSH < 9.3 Unspecified Vulnerability,5.0,
+172.18.0.202,22/tcp,Weak Encryption Algorithm(s) Supported (SSH),4.3,
+172.18.0.202,22/tcp,OpenBSD OpenSSH < 9.1 Multiple Vulnerabilities,4.0,
+172.18.0.202,22/tcp,OpenBSD OpenSSH 7.4 - 9.9 Unspecified Vulnerability,3.8,CVE-2025-32728
+172.18.0.202,22/tcp,Weak MAC Algorithm(s) Supported (SSH),2.6,
+172.18.0.202,22/tcp,OpenBSD OpenSSH < 10.1 Multiple Vulnerabilities,2.4,"CVE-2025-61984, CVE-2025-61985"
+172.18.0.202,22/tcp,Services,0.0,
+172.18.0.202,22/tcp,PQC Key Exchange (KEX) Algorithm(s) Missing (SSH),0.0,
+172.18.0.202,22/tcp,SSH Protocol Algorithms Supported,0.0,
+172.18.0.202,22/tcp,SSH Protocol Versions Supported,0.0,
+172.18.0.202,22/tcp,SSH Server type and version,0.0,
+172.18.0.202,80/tcp,Apache HTTP Server 2.4.7 - 2.4.51 Multiple Vulnerabilities - Linux,8.2,CVE-2021-44224
+172.18.0.202,80/tcp,Apache HTTP Server < 2.4.58 'mod_macro' Out-of-bounds Read Vulnerability - Linux,7.5,CVE-2023-31122
+172.18.0.202,80/tcp,Apache HTTP Server 2.4.30 < 2.4.49 DoS Vulnerability - Linux,7.5,CVE-2021-36160
+172.18.0.202,80/tcp,Apache HTTP Server < 2.4.59 Multiple Vulnerabilities - Linux,7.5,"CVE-2023-38709, CVE-2024-24795, CVE-2024-27316"
+172.18.0.202,80/tcp,Apache HTTP Server 2.4.41 - 2.4.46 NULL Pointer Dereference Vulnerability - Linux,7.5,CVE-2020-13950
+172.18.0.202,80/tcp,Apache HTTP Server 2.4.17 < 2.4.49 'mod_proxy' HTTP/2 Request Smuggling Vulnerability - Linux,7.5,CVE-2021-33193
+172.18.0.202,80/tcp,Apache HTTP Server 2.4.30 - 2.4.55 HTTP Request Smuggling Vulnerability - Linux,7.5,CVE-2023-27522
+172.18.0.202,80/tcp,Apache HTTP Server 2.4.0 < 2.4.42 Multiple Vulnerabilities - Linux,6.1,"CVE-2020-1927, CVE-2020-1934"
+172.18.0.202,80/tcp,Apache HTTP Server 2.4.17 - 2.4.57 DoS Vulnerability - Linux,5.9,CVE-2023-45802
+172.18.0.202,80/tcp,Apache HTTP Server 2.4.7 - 2.4.65 Authentication Bypass Vulnerability - Linux,5.8,CVE-2025-66200
+172.18.0.202,80/tcp,Apache HTTP Server 2.4.39 - 2.4.46 Unexpected URL Matching Vulnerability - Linux,5.3,CVE-2021-30641
+172.18.0.202,80/tcp,Apache HTTP Server 2.4.6 - 2.4.46 Tunneling Misconfiguration Vulnerability - Linux,5.3,CVE-2019-17567
+172.18.0.202,80/tcp,Apache HTTP Server 2.4.17 < 2.4.64 DoS Vulnerability - Linux,5.0,CVE-2025-53020
+172.18.0.202,80/tcp,Apache HTTP Server 2.4.26 < 2.4.64 DoS Vulnerability - Linux,5.0,CVE-2025-49630
+172.18.0.202,80/tcp,Enabled Directory Listing/Indexing Detection (HTTP),5.0,"CVE-1999-0569, CVE-2023-37599, CVE-2024-1076"
+172.18.0.202,80/tcp,Apache HTTP Server 2.4.35 < 2.4.64 Access Control Bypass Vulnerability - Linux,5.0,CVE-2025-23048
+172.18.0.202,80/tcp,Apache HTTP Server < 2.4.64 Multiple Vulnerabilities - Linux,5.0,"CVE-2024-42516, CVE-2024-43204, CVE-2024-47252, CVE-2025-49812"
+172.18.0.202,80/tcp,Apache HTTP Server 2.4.x < 2.4.66 Improper Neutralization Vulnerability - Linux,4.3,CVE-2025-65082
+172.18.0.202,80/tcp,Apache HTTP Server < 2.4.66 SSI Vulnerability - Linux,4.3,CVE-2025-58098
+172.18.0.202,80/tcp,Apache HTTP Server 2.4.30 - 2.4.65 Integer Overflow Vulnerability - Linux,2.6,CVE-2025-55753
+172.18.0.202,80/tcp,HTTP Server type and version,0.0,
+172.18.0.202,80/tcp,Allowed HTTP Methods Enumeration,0.0,
+172.18.0.202,80/tcp,HTTP Security Headers Detection,0.0,
+172.18.0.202,80/tcp,Services,0.0,
+172.18.0.202,80/tcp,HTTP Server Banner Enumeration,0.0,
+172.18.0.202,80/tcp,Web Application Scanning Consolidation / Info Reporting,0.0,
+172.18.0.202,,ICMP Timestamp Reply Information Disclosure,2.1,CVE-1999-0524
+172.18.0.202,,OS Detection Consolidation and Reporting,0.0,
+172.18.0.202,,IP Forwarding Enabled - Active Check,0.0,CVE-1999-0511
+172.18.0.202,,OpenSSH Detection Consolidation,0.0,
+172.18.0.202,,CPE Inventory,0.0,
+172.18.0.202,,Traceroute,0.0,
+172.18.0.202,,Unknown OS and Service Banner Reporting,0.0,
+172.18.0.202,,Apache HTTP Server Detection Consolidation,0.0,
+172.18.0.202,,Hostname Determination Reporting,0.0,
