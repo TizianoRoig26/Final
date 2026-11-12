@@ -1,0 +1,45 @@
+{
+  "condicion": "Manual",
+  "corrida_numero": 4,
+  "operador": "Tiziano Roig",
+  "greenbone_task_id": "da8ce8cd-9303-49a5-bcc4-fdf695797940",
+  "greenbone_task_name": "n8n_manual_scan_M4_task",
+  "greenbone_report_id": "aaaab60b-7a4d-4733-9966-da1abee544d7",
+  "filtro_primario": "levels=chmlg rows=-1 min_qod=0",
+  "filtro_defecto": "min_qod=70 rows=-1",
+  "marcas_tiempo": {
+    "T0_inicio": "2026-11-12T21:19:37.984Z",
+    "T1_nmap_fin_estimado": "2026-11-12T21:19:50.204Z",
+    "T2_lanzamiento": "2026-11-12T21:28:37.981Z",
+    "gvmd_start_time_utc": "2026-11-12 21:29:07+00",
+    "gvmd_end_time_utc": "2026-11-12 21:46:47+00",
+    "T3_comando_retorna": "2026-11-12T21:46:52.951Z"
+  },
+  "duraciones": {
+    "nmap_segundos": 12.22,
+    "intervalo_inspeccion_operador_segundos": 527.8,
+    "T_escaneo_gvmd_segundos": 1060.0,
+    "T_escaneo_gvmd_min_seg": "17m 40s",
+    "T_medido_desde_lanzamiento_segundos": 1089.0,
+    "T_medido_desde_lanzamiento_min_seg": "18m 09s",
+    "T_medido_total_segundos": 1629.0,
+    "T_medido_total_min_seg": "27m 09s",
+    "T_operador_total_segundos": 1635.0,
+    "T_operador_total_min_seg": "27m 15s"
+  },
+  "efectividad": {
+    "total_hallazgos_primario": 272,
+    "total_hallazgos_defecto": 91,
+    "core_detectados": 28,
+    "core_total": 28,
+    "core_porcentaje": 100.0,
+    "ampliado_detectados": 4,
+    "ampliado_total": 10,
+    "ampliado_porcentaje": 40.0,
+    "total_detectados": 32,
+    "total_referencia": 38,
+    "total_porcentaje": 84.2
+  },
+  "versiones_referencia": "datos/camino_b/ficha_tecnica/",
+  "incidentes": "Ninguno. Corrida manual M4 ejecutada e integrada exitosamente. Se desglosa el intervalo de inspección humana previo al lanzamiento de OpenVAS."
+}

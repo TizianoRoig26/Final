@@ -1,0 +1,3 @@
+T0_inicio 2026-11-12T21:19:37.984Z
+T2_lanzamiento 2026-11-12T21:28:37.981Z
+T3_comando_retorna 2026-11-12T21:46:52.951Z
