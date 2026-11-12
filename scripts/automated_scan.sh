@@ -24,12 +24,14 @@ fi
 
 # 1. Resolver credenciales sin exponerlas en comandos ni logs
 USER="${GVM_USER:-admin}"
+export KEEP_GVM_OBJECTS="${KEEP_GVM_OBJECTS:-1}"
 PASS="${GVM_PASSWORD:-}"
 
 if [ -z "${PASS}" ]; then
     if [ -f "/home/tizi/.gvm.env" ]; then
         . "/home/tizi/.gvm.env"
         USER="${GVM_USER:-admin}"
+export KEEP_GVM_OBJECTS="${KEEP_GVM_OBJECTS:-1}"
         PASS="${GVM_PASSWORD:-}"
     fi
 fi
