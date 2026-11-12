@@ -1,0 +1,49 @@
+{
+  "condicion": "Automatizada",
+  "corrida_numero": 3,
+  "operador": "Tiziano Roig",
+  "scan_id": "scan_20261112_174550",
+  "n8n_execution_id": 398,
+  "n8n_workflow_id": "eZcFfWr0YiA2pAE3",
+  "greenbone_task_id": "1abac8ed-89e4-4e7d-a16d-6774d3f26d5c",
+  "greenbone_task_name": "n8n_scan_20261112_174550_task",
+  "greenbone_report_id": "8b708cd1-555f-4406-a6c2-0bb864b4b719",
+  "filtro_primario": "levels=chmlg rows=-1 min_qod=0",
+  "filtro_defecto": "min_qod=70 rows=-1",
+  "marcas_tiempo": {
+    "T0_inicio": "2026-11-12T20:45:38.933Z",
+    "T0b_curl_retorna": "2026-11-12T20:45:39.091Z",
+    "gvmd_end_time_utc": "2026-11-12 21:02:34+00",
+    "n8n_stopped_at_utc": "2026-11-12 21:02:39.316"
+  },
+  "duraciones": {
+    "T_medido_segundos": 1015.1,
+    "T_medido_min_seg": "16m 55s",
+    "T_flujo_segundos": 1020.4,
+    "T_flujo_min_seg": "17m 00s",
+    "diferencia_frente_M3_segundos": -391.5,
+    "ahorro_porcentual_frente_M3": "-27.8 %"
+  },
+  "efectividad": {
+    "total_hallazgos_primario": 272,
+    "total_hallazgos_defecto": 91,
+    "total_hallazgos_postgresql": 169,
+    "desglose_postgresql": {
+      "criticas": 23,
+      "altas": 23,
+      "medias": 49,
+      "bajas_info": 74
+    },
+    "core_detectados": 28,
+    "core_total": 28,
+    "core_porcentaje": 100.0,
+    "ampliado_detectados": 4,
+    "ampliado_total": 10,
+    "ampliado_porcentaje": 40.0,
+    "total_detectados": 32,
+    "total_referencia": 38,
+    "total_porcentaje": 84.2
+  },
+  "versiones_referencia": "datos/camino_b/ficha_tecnica/",
+  "incidentes": "Ninguno. Corrida completada con persistencia total en PostgreSQL (169 registros, 23 críticas)."
+}
