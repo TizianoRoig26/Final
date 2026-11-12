@@ -1,0 +1,19 @@
+n_registro,fecha_utc,scan_id,condicion,modo_disparo,greenbone_task_name,greenbone_report_id,total_hallazgos,criticas,duracion_seg,estado,motivo_o_serie
+1,2026-09-17 04:48:00,scan_sep_08,Automatizada,cron,Auto-Scan-1789620531,8,134,0,1005,Done,Serie preliminar septiembre (192.168.100.x)
+2,2026-09-17 12:10:12,manual_run_1,Manual,manual_cli,Manual-Scan-01,N/A,20,0,1391,Done,Serie experimental tesis (M1 septiembre)
+3,2026-09-18 11:45:54,manual_run_2,Manual,manual_cli,Manual-Scan-02,N/A,22,0,1051,Done,Serie experimental tesis (M2 septiembre)
+4,2026-09-18 12:03:43,manual_run_3,Manual,manual_cli,Manual-Scan-03,N/A,22,0,954,Done,Serie experimental tesis (M3 septiembre)
+5,2026-09-19 12:12:28,manual_run_4,Manual,manual_cli,Manual-Scan-04,N/A,22,0,1008,Done,Serie experimental tesis (M4 septiembre)
+6,2026-09-20 11:10:12,auto_run_1,Automatizada,cron,Auto-Scan-1789701033,18,111,2,1005,Done,Serie experimental tesis (A1 septiembre)
+7,2026-09-20 12:06:45,auto_run_2,Automatizada,cron,Auto-Scan-1789702129,19,132,2,967,Done,Serie experimental tesis (A2 septiembre)
+8,2026-09-20 12:29:07,manual_run_5,Manual,manual_cli,Manual-Scan-05,N/A,22,0,1065,Done,Serie experimental tesis (M5 septiembre)
+9,2026-09-20 16:42:08,auto_run_3,Automatizada,cron,Auto-Scan-1789704575,21,112,2,928,Done,Serie experimental tesis (A3 septiembre)
+10,2026-09-22 12:18:31,auto_run_4,Automatizada,cron,Auto-Scan-1789747779,29,110,0,1008,Done,Serie experimental tesis (A4 septiembre)
+11,2026-09-22 19:10:00,auto_scan_31,Automatizada,manual,Auto-Scan-1790104220,31,174,2,1045,Done,Escaneo complementario 22/09 (172.18.0.x)
+12,2026-09-23 11:23:45,auto_run_5,Automatizada,cron,Auto-Scan-1790160000,32,112,2,1026,Done,Serie experimental tesis (A5 septiembre)
+13,2026-11-10 10:42:11,scan_20261110_104211,Automatizada,manual,n8n_scan_20261110_104211_task,53,169,23,1020,Done,Corrida 1 filtro corregido chmlg
+14,2026-11-11 14:50:39,scan_20261111_145039,Automatizada,manual,n8n_scan_20261111_145039_task,54,156,23,1040,Done,Corrida 2 filtro corregido chmlg
+15,2026-11-11 15:08:58,scan_20261111_150858,Automatizada,manual,n8n_scan_20261111_150858_task,55,169,23,1118,Done,Corrida 3 filtro corregido chmlg
+16,2026-11-12 15:21:32,scan_20261112_122144,Automatizada,manual,n8n_scan_20261112_122144_task,56,169,23,1255,Done,Corrida matutina 12/11 (ejecución #356)
+17,2026-11-12 16:17:40,scan_20261112_131752,Automatizada,manual,n8n_scan_20261112_131752_task,57,169,23,1099,Done,Corrida intermedia 12/11 (ejecución #366)
+18,2026-11-12 17:15:17,scan_20261112_141530,Automatizada,manual,n8n_scan_20261112_141530_task,58,169,23,1212,Done,Corrida vespertina 12/11 (ejecución #373)
