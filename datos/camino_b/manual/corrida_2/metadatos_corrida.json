@@ -1,0 +1,40 @@
+{
+  "condicion": "Manual",
+  "corrida_numero": 2,
+  "operador": "Tiziano Roig",
+  "scan_id": "manual_scan_M2",
+  "greenbone_task_id": "705f579f-13f2-4134-a7ab-8bd08745d665",
+  "greenbone_task_name": "n8n_manual_scan_M2_task",
+  "greenbone_report_id": "8ac495a9-f933-4511-8c2b-03759ac63f69",
+  "filtro_primario": "levels=chmlg rows=-1 min_qod=0",
+  "filtro_defecto": "min_qod=70 rows=-1",
+  "marcas_tiempo": {
+    "T0_inicio": "2026-11-12T19:27:44.063Z",
+    "T1_nmap_fin": "2026-11-12T19:27:56.587Z",
+    "T2_lanzamiento": "2026-11-12T19:27:56.594Z",
+    "T3_comando_retorna": "2026-11-12T19:46:15.102Z",
+    "gvmd_end_time_utc": "2026-11-12 19:46:04+00"
+  },
+  "duraciones": {
+    "T_medido_segundos": 1100,
+    "T_medido_min_seg": "18m 20s",
+    "T_nmap_segundos": 12.5,
+    "T_traspaso_segundos": 0.007,
+    "T_openvas_segundos": 1087.5
+  },
+  "efectividad": {
+    "total_hallazgos_primario": 272,
+    "total_hallazgos_defecto": 91,
+    "core_detectados": 28,
+    "core_total": 28,
+    "core_porcentaje": 100.0,
+    "ampliado_detectados": 4,
+    "ampliado_total": 10,
+    "ampliado_porcentaje": 40.0,
+    "total_detectados": 32,
+    "total_referencia": 38,
+    "total_porcentaje": 84.2
+  },
+  "versiones_referencia": "datos/camino_b/ficha_tecnica/",
+  "incidentes": "Ninguno. Corrida completada sin errores."
+}
