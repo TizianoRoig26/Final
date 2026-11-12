@@ -82,9 +82,9 @@ def match_item(ref, findings):
         if f_ip and f_ip != ref_host:
             continue
             
-        # Filtro de puerto (para puertos específicos)
+        # Filtro de puerto (para puertos específicos o hallazgos generales de servicio)
         if ref_port.isdigit():
-            if f_port and not f_port.startswith(ref_port):
+            if f_port and not f_port.startswith(ref_port) and not f_port.startswith('general'):
                 continue
 
         candidates.append(f)
@@ -190,3 +190,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
