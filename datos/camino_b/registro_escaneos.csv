@@ -20,3 +20,4 @@ n_registro,fecha_utc,scan_id,condicion,modo_disparo,greenbone_task_name,greenbon
 19,2026-11-12 18:18:33,manual_scan_M1,Manual,manual_cli,n8n_manual_scan_M1_task,ce734594-c06e-4d29-8803-37330e3c45c9,272,23,1448,Done,Replica pareada Camino B - Corrida M1
 20,2026-11-12 18:53:49,scan_20261112_155403,Automatizada,webhook,n8n_scan_20261112_155403_task,748bce6b-35be-44dd-927c-41d6ff6996fb,270,23,1212,Done,Replica pareada Camino B - Corrida A1
 21,2026-11-12 19:27:44,manual_scan_M2,Manual,manual_cli,n8n_manual_scan_M2_task,8ac495a9-f933-4511-8c2b-03759ac63f69,272,23,1100,Done,Replica pareada Camino B - Corrida M2
+22,2026-11-12 19:50:18,scan_20261112_165030,Automatizada,webhook,n8n_scan_20261112_165030_task,58c89220-60f6-4b6e-be97-afec967c9bc3,271,23,1130,Done,Replica pareada Camino B - Corrida A2
