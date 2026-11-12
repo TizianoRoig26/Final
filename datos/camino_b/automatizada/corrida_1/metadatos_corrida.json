@@ -1,0 +1,49 @@
+{
+  "condicion": "Automatizada",
+  "corrida_numero": 1,
+  "operador": "Tiziano Roig",
+  "scan_id": "scan_20261112_155403",
+  "n8n_execution_id": 385,
+  "n8n_workflow_id": "eZcFfWr0YiA2pAE3",
+  "greenbone_task_id": "9352fa38-2000-40f2-b2f0-e7496ee58c21",
+  "greenbone_task_name": "n8n_scan_20261112_155403_task",
+  "greenbone_report_id": "748bce6b-35be-44dd-927c-41d6ff6996fb",
+  "filtro_primario": "levels=chmlg rows=-1 min_qod=0",
+  "filtro_defecto": "min_qod=70 rows=-1",
+  "marcas_tiempo": {
+    "T0_inicio": "2026-11-12T18:53:49.476Z",
+    "T0b_curl_retorna": "2026-11-12T18:53:50.120Z",
+    "gvmd_end_time_utc": "2026-11-12 19:14:02+00",
+    "n8n_stopped_at_utc": "2026-11-12 19:14:08.318"
+  },
+  "duraciones": {
+    "T_medido_segundos": 1212.5,
+    "T_medido_min_seg": "20m 12s",
+    "T_flujo_segundos": 1218.8,
+    "T_flujo_min_seg": "20m 19s",
+    "diferencia_frente_M1_segundos": -235.5,
+    "ahorro_porcentual_frente_M1": "-16.3 %"
+  },
+  "efectividad": {
+    "total_hallazgos_primario": 270,
+    "total_hallazgos_defecto": 89,
+    "total_hallazgos_postgresql": 167,
+    "desglose_postgresql": {
+      "criticas": 23,
+      "altas": 23,
+      "medias": 49,
+      "bajas_info": 72
+    },
+    "core_detectados": 27,
+    "core_total": 28,
+    "core_porcentaje": 96.4,
+    "ampliado_detectados": 4,
+    "ampliado_total": 10,
+    "ampliado_porcentaje": 40.0,
+    "total_detectados": 31,
+    "total_referencia": 38,
+    "total_porcentaje": 81.6
+  },
+  "versiones_referencia": "datos/camino_b/ficha_tecnica/",
+  "incidentes": "Ninguno. Corrida completada sin errores."
+}

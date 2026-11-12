@@ -1,0 +1,1132 @@
+id,scan_date,host,vulnerability_name,severity,port,cve,description,solution,scan_source,scan_id,created_at
+2113,2026-11-12 18:55:09+00,172.18.0.202,Apache HTTP Server 2.4.17 - 2.4.57 DoS Vulnerability - Linux,5.9,80/tcp,CVE-2023-45802,"Installed version: 2.4.41
+Fixed version:     2.4.58
+Installation
+path / port:       80/tcp",Update to version 2.4.58 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2114,2026-11-12 18:55:09+00,172.18.0.201,Apache HTTP Server 2.4.17 - 2.4.57 DoS Vulnerability - Linux,5.9,80/tcp,CVE-2023-45802,"Installed version: 2.4.49
+Fixed version:     2.4.58
+Installation
+path / port:       80/tcp",Update to version 2.4.58 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2105,2026-11-12 18:55:09+00,172.18.0.201,Allowed HTTP Methods Enumeration,0.0,80/tcp,,"The following list contains the URLs and corresponding supported HTTP methods.
+
+URL                                                   | HTTP Methods
+----------------------------------------------------------------------------------------------------------------------
+http://vuln-srv2.greenbone-community-edition_default/ | OPTIONS,HEAD,GET,POST,TRACE (obtained via HTTP OPTIONS method)","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2106,2026-11-12 18:55:09+00,172.18.0.202,Allowed HTTP Methods Enumeration,0.0,80/tcp,,"The following list contains the URLs and corresponding supported HTTP methods.
+
+URL                                                   | HTTP Methods
+----------------------------------------------------------------------------------------------------------------
+http://vuln-srv3.greenbone-community-edition_default/ | GET,POST,OPTIONS,HEAD (obtained via HTTP OPTIONS method)","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2107,2026-11-12 18:55:09+00,172.18.0.200,Anonymous FTP Login Reporting,6.4,21/tcp,CVE-1999-0497,"It was possible to login to the remote FTP service with the following anonymous account(s):
+
+anonymous:anonymous@example.com
+ftp:anonymous@example.com
+
+Here are the contents of the remote FTP directory listing:
+
+Account ""anonymous"":
+
+-rw-r--r--    1 0        0              40 Nov 11 22:55 leeme.txt
+
+Account ""ftp"":
+
+-rw-r--r--    1 0        0              40 Nov 11 22:55 leeme.txt","If you do not want to share files, you should disable anonymous
+  logins.",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2108,2026-11-12 18:55:09+00,172.18.0.202,Anonymous FTP Login Reporting,6.4,21/tcp,CVE-1999-0497,"It was possible to login to the remote FTP service with the following anonymous account(s):
+
+anonymous:anonymous@example.com
+ftp:anonymous@example.com
+
+Here are the contents of the remote FTP directory listing:
+
+Account ""anonymous"":
+
+-rw-r--r--    1 0        0              40 Nov 11 22:55 leeme.txt
+
+Account ""ftp"":
+
+-rw-r--r--    1 0        0              40 Nov 11 22:55 leeme.txt","If you do not want to share files, you should disable anonymous
+  logins.",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2109,2026-11-12 18:55:09+00,172.18.0.202,Apache HTTP Server 2.4.0 - 2.4.46 Multiple Vulnerabilities - Linux,9.8,80/tcp,"CVE-2020-35452, CVE-2021-26690, CVE-2021-26691","Installed version: 2.4.41
+Fixed version:     2.4.48
+Installation
+path / port:       80/tcp",Update to version 2.4.48 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2110,2026-11-12 18:55:09+00,172.18.0.201,Apache HTTP Server 2.4.0 - 2.4.55 HTTP Request Smuggling Vulnerability - Linux,9.8,80/tcp,CVE-2023-25690,"Installed version: 2.4.49
+Fixed version:     2.4.56
+Installation
+path / port:       80/tcp",Update to version 2.4.56 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2111,2026-11-12 18:55:09+00,172.18.0.202,Apache HTTP Server 2.4.0 - 2.4.55 HTTP Request Smuggling Vulnerability - Linux,9.8,80/tcp,CVE-2023-25690,"Installed version: 2.4.41
+Fixed version:     2.4.56
+Installation
+path / port:       80/tcp",Update to version 2.4.56 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2112,2026-11-12 18:55:09+00,172.18.0.202,Apache HTTP Server 2.4.0 < 2.4.42 Multiple Vulnerabilities - Linux,6.1,80/tcp,"CVE-2020-1927, CVE-2020-1934","Installed version: 2.4.41
+Fixed version:     2.4.42
+Installation
+path / port:       80/tcp",Update to version 2.4.42 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2115,2026-11-12 18:55:09+00,172.18.0.202,Apache HTTP Server 2.4.17 < 2.4.49 'mod_proxy' HTTP/2 Request Smuggling Vulnerability - Linux,7.5,80/tcp,CVE-2021-33193,"Installed version: 2.4.41
+Fixed version:     2.4.49
+Installation
+path / port:       80/tcp",Update to version 2.4.49 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2116,2026-11-12 18:55:09+00,172.18.0.201,Apache HTTP Server 2.4.17 < 2.4.64 DoS Vulnerability - Linux,5.0,80/tcp,CVE-2025-53020,"Installed version: 2.4.49
+Fixed version:     2.4.64
+Installation
+path / port:       80/tcp",Update to version 2.4.64 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2117,2026-11-12 18:55:09+00,172.18.0.202,Apache HTTP Server 2.4.17 < 2.4.64 DoS Vulnerability - Linux,5.0,80/tcp,CVE-2025-53020,"Installed version: 2.4.41
+Fixed version:     2.4.64
+Installation
+path / port:       80/tcp",Update to version 2.4.64 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2118,2026-11-12 18:55:09+00,172.18.0.201,Apache HTTP Server 2.4.26 < 2.4.64 DoS Vulnerability - Linux,5.0,80/tcp,CVE-2025-49630,"Installed version: 2.4.49
+Fixed version:     2.4.64
+Installation
+path / port:       80/tcp",Update to version 2.4.64 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2119,2026-11-12 18:55:09+00,172.18.0.202,Apache HTTP Server 2.4.26 < 2.4.64 DoS Vulnerability - Linux,5.0,80/tcp,CVE-2025-49630,"Installed version: 2.4.41
+Fixed version:     2.4.64
+Installation
+path / port:       80/tcp",Update to version 2.4.64 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2120,2026-11-12 18:55:09+00,172.18.0.201,Apache HTTP Server 2.4.30 - 2.4.55 HTTP Request Smuggling Vulnerability - Linux,7.5,80/tcp,CVE-2023-27522,"Installed version: 2.4.49
+Fixed version:     2.4.56
+Installation
+path / port:       80/tcp",Update to version 2.4.56 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2121,2026-11-12 18:55:09+00,172.18.0.202,Apache HTTP Server 2.4.30 - 2.4.55 HTTP Request Smuggling Vulnerability - Linux,7.5,80/tcp,CVE-2023-27522,"Installed version: 2.4.41
+Fixed version:     2.4.56
+Installation
+path / port:       80/tcp",Update to version 2.4.56 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2122,2026-11-12 18:55:09+00,172.18.0.202,Apache HTTP Server 2.4.30 - 2.4.65 Integer Overflow Vulnerability - Linux,2.6,80/tcp,CVE-2025-55753,"Installed version: 2.4.41
+Fixed version:     2.4.66
+Installation
+path / port:       80/tcp",Update to version 2.4.66 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2123,2026-11-12 18:55:09+00,172.18.0.201,Apache HTTP Server 2.4.30 - 2.4.65 Integer Overflow Vulnerability - Linux,2.6,80/tcp,CVE-2025-55753,"Installed version: 2.4.49
+Fixed version:     2.4.66
+Installation
+path / port:       80/tcp",Update to version 2.4.66 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2124,2026-11-12 18:55:09+00,172.18.0.202,Apache HTTP Server 2.4.30 < 2.4.49 DoS Vulnerability - Linux,7.5,80/tcp,CVE-2021-36160,"Installed version: 2.4.41
+Fixed version:     2.4.49
+Installation
+path / port:       80/tcp",Update to version 2.4.49 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2125,2026-11-12 18:55:09+00,172.18.0.202,Apache HTTP Server 2.4.35 < 2.4.64 Access Control Bypass Vulnerability - Linux,5.0,80/tcp,CVE-2025-23048,"Installed version: 2.4.41
+Fixed version:     2.4.64
+Installation
+path / port:       80/tcp",Update to version 2.4.64 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2126,2026-11-12 18:55:09+00,172.18.0.201,Apache HTTP Server 2.4.35 < 2.4.64 Access Control Bypass Vulnerability - Linux,5.0,80/tcp,CVE-2025-23048,"Installed version: 2.4.49
+Fixed version:     2.4.64
+Installation
+path / port:       80/tcp",Update to version 2.4.64 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2127,2026-11-12 18:55:09+00,172.18.0.202,Apache HTTP Server 2.4.39 - 2.4.46 Unexpected URL Matching Vulnerability - Linux,5.3,80/tcp,CVE-2021-30641,"Installed version: 2.4.41
+Fixed version:     2.4.48
+Installation
+path / port:       80/tcp",Update to version 2.4.48 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2128,2026-11-12 18:55:09+00,172.18.0.202,Apache HTTP Server 2.4.41 - 2.4.46 NULL Pointer Dereference Vulnerability - Linux,7.5,80/tcp,CVE-2020-13950,"Installed version: 2.4.41
+Fixed version:     2.4.48
+Installation
+path / port:       80/tcp",Update to version 2.4.48 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2129,2026-11-12 18:55:09+00,172.18.0.201,Apache HTTP Server 2.4.49 - 2.4.50 Directory Traversal / RCE Vulnerability - Active Check,9.8,80/tcp,CVE-2021-42013,"It was possible to read ""etc/passwd"" through http://vuln-srv2.greenbone-community-edition_default/cgi-bin/.%%32%65/.%%32%65/.%%32%65/.%%32%65/.%%32%65/.%%32%65/etc/passwd
+
+Result:
+
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+_apt:x:100:65534::/nonexistent:/usr/sbin/nologin
+sshd:x:101:65534::/run/sshd:/usr/sbin/nologin
+labuser:x:1000:1000::/home/labuser:/bin/bash",Update to version 2.4.51 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2130,2026-11-12 18:55:09+00,172.18.0.201,Apache HTTP Server 2.4.49 - 2.4.50 Directory Traversal / RCE Vulnerability - Linux,9.8,80/tcp,CVE-2021-42013,"Installed version: 2.4.49
+Fixed version:     2.4.51
+Installation
+path / port:       80/tcp",Update to version 2.4.51 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2131,2026-11-12 18:55:09+00,172.18.0.201,Apache HTTP Server 2.4.49 Directory Traversal / RCE Vulnerability - Active Check,9.8,80/tcp,CVE-2021-41773,"It was possible to read ""etc/passwd"" through http://vuln-srv2.greenbone-community-edition_default/cgi-bin/.%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd
+
+Result:
+
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+_apt:x:100:65534::/nonexistent:/usr/sbin/nologin
+sshd:x:101:65534::/run/sshd:/usr/sbin/nologin
+labuser:x:1000:1000::/home/labuser:/bin/bash",Update to version 2.4.50 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2132,2026-11-12 18:55:09+00,172.18.0.201,Apache HTTP Server 2.4.49 Multiple Vulnerabilities - Linux,9.8,80/tcp,"CVE-2021-41524, CVE-2021-41773","Installed version: 2.4.49
+Fixed version:     2.4.50
+Installation
+path / port:       80/tcp",Update to version 2.4.50 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2133,2026-11-12 18:55:09+00,172.18.0.202,Apache HTTP Server 2.4.6 - 2.4.46 Tunneling Misconfiguration Vulnerability - Linux,5.3,80/tcp,CVE-2019-17567,"Installed version: 2.4.41
+Fixed version:     2.4.48
+Installation
+path / port:       80/tcp",Update to version 2.4.48 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2134,2026-11-12 18:55:09+00,172.18.0.202,Apache HTTP Server 2.4.7 - 2.4.51 Multiple Vulnerabilities - Linux,8.2,80/tcp,CVE-2021-44224,"Installed version: 2.4.41
+Fixed version:     2.4.52
+Installation
+path / port:       80/tcp",Update to version 2.4.52 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2135,2026-11-12 18:55:09+00,172.18.0.201,Apache HTTP Server 2.4.7 - 2.4.51 Multiple Vulnerabilities - Linux,8.2,80/tcp,CVE-2021-44224,"Installed version: 2.4.49
+Fixed version:     2.4.52
+Installation
+path / port:       80/tcp",Update to version 2.4.52 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2136,2026-11-12 18:55:09+00,172.18.0.202,Apache HTTP Server 2.4.7 - 2.4.65 Authentication Bypass Vulnerability - Linux,5.8,80/tcp,CVE-2025-66200,"Installed version: 2.4.41
+Fixed version:     2.4.66
+Installation
+path / port:       80/tcp",Update to version 2.4.66 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2137,2026-11-12 18:55:09+00,172.18.0.201,Apache HTTP Server 2.4.7 - 2.4.65 Authentication Bypass Vulnerability - Linux,5.8,80/tcp,CVE-2025-66200,"Installed version: 2.4.49
+Fixed version:     2.4.66
+Installation
+path / port:       80/tcp",Update to version 2.4.66 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2138,2026-11-12 18:55:09+00,172.18.0.202,Apache HTTP Server 2.4.x < 2.4.66 Improper Neutralization Vulnerability - Linux,4.3,80/tcp,CVE-2025-65082,"Installed version: 2.4.41
+Fixed version:     2.4.66
+Installation
+path / port:       80/tcp",Update to version 2.4.66 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2139,2026-11-12 18:55:09+00,172.18.0.201,Apache HTTP Server 2.4.x < 2.4.66 Improper Neutralization Vulnerability - Linux,4.3,80/tcp,CVE-2025-65082,"Installed version: 2.4.49
+Fixed version:     2.4.66
+Installation
+path / port:       80/tcp",Update to version 2.4.66 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2140,2026-11-12 18:55:09+00,172.18.0.202,Apache HTTP Server < 2.4.49 Multiple Vulnerabilities - Linux,9.8,80/tcp,"CVE-2021-34798, CVE-2021-39275, CVE-2021-40438","Installed version: 2.4.41
+Fixed version:     2.4.49
+Installation
+path / port:       80/tcp",Update to version 2.4.49 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2141,2026-11-12 18:55:09+00,172.18.0.201,Apache HTTP Server < 2.4.54 Multiple Vulnerabilities - Linux,9.8,80/tcp,"CVE-2022-26377, CVE-2022-28614, CVE-2022-28615, CVE-2022-29404, CVE-2022-30556, CVE-2022-31813","Installed version: 2.4.49
+Fixed version:     2.4.54
+Installation
+path / port:       80/tcp",Update to version 2.4.54 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2142,2026-11-12 18:55:09+00,172.18.0.202,Apache HTTP Server < 2.4.54 Multiple Vulnerabilities - Linux,9.8,80/tcp,"CVE-2022-26377, CVE-2022-28614, CVE-2022-28615, CVE-2022-29404, CVE-2022-30556, CVE-2022-31813","Installed version: 2.4.41
+Fixed version:     2.4.54
+Installation
+path / port:       80/tcp",Update to version 2.4.54 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2143,2026-11-12 18:55:09+00,172.18.0.201,Apache HTTP Server < 2.4.55 Multiple Vulnerabilities - Linux,9.0,80/tcp,"CVE-2006-20001, CVE-2022-36760, CVE-2022-37436","Installed version: 2.4.49
+Fixed version:     2.4.55
+Installation
+path / port:       80/tcp",Update to version 2.4.55 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2144,2026-11-12 18:55:09+00,172.18.0.202,Apache HTTP Server < 2.4.55 Multiple Vulnerabilities - Linux,9.0,80/tcp,"CVE-2006-20001, CVE-2022-36760, CVE-2022-37436","Installed version: 2.4.41
+Fixed version:     2.4.55
+Installation
+path / port:       80/tcp",Update to version 2.4.55 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2145,2026-11-12 18:55:09+00,172.18.0.201,Apache HTTP Server < 2.4.58 'mod_macro' Out-of-bounds Read Vulnerability - Linux,7.5,80/tcp,CVE-2023-31122,"Installed version: 2.4.49
+Fixed version:     2.4.58
+Installation
+path / port:       80/tcp",Update to version 2.4.58 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2146,2026-11-12 18:55:09+00,172.18.0.202,Apache HTTP Server < 2.4.58 'mod_macro' Out-of-bounds Read Vulnerability - Linux,7.5,80/tcp,CVE-2023-31122,"Installed version: 2.4.41
+Fixed version:     2.4.58
+Installation
+path / port:       80/tcp",Update to version 2.4.58 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2147,2026-11-12 18:55:09+00,172.18.0.201,Apache HTTP Server < 2.4.59 Multiple Vulnerabilities - Linux,7.5,80/tcp,"CVE-2023-38709, CVE-2024-24795, CVE-2024-27316","Installed version: 2.4.49
+Fixed version:     2.4.59
+Installation
+path / port:       80/tcp",Update to version 2.4.59 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2148,2026-11-12 18:55:09+00,172.18.0.202,Apache HTTP Server < 2.4.59 Multiple Vulnerabilities - Linux,7.5,80/tcp,"CVE-2023-38709, CVE-2024-24795, CVE-2024-27316","Installed version: 2.4.41
+Fixed version:     2.4.59
+Installation
+path / port:       80/tcp",Update to version 2.4.59 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2149,2026-11-12 18:55:09+00,172.18.0.202,Apache HTTP Server < 2.4.60 Multiple Vulnerabilities - Linux,9.8,80/tcp,"CVE-2024-36387, CVE-2024-38473, CVE-2024-38474, CVE-2024-38475, CVE-2024-38476, CVE-2024-38477, CVE-2024-39573","Installed version: 2.4.41
+Fixed version:     2.4.60
+Installation
+path / port:       80/tcp",Update to version 2.4.60 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2150,2026-11-12 18:55:09+00,172.18.0.201,Apache HTTP Server < 2.4.60 Multiple Vulnerabilities - Linux,9.8,80/tcp,"CVE-2024-36387, CVE-2024-38473, CVE-2024-38474, CVE-2024-38475, CVE-2024-38476, CVE-2024-38477, CVE-2024-39573","Installed version: 2.4.49
+Fixed version:     2.4.60
+Installation
+path / port:       80/tcp",Update to version 2.4.60 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2151,2026-11-12 18:55:09+00,172.18.0.201,Apache HTTP Server < 2.4.64 Multiple Vulnerabilities - Linux,5.0,80/tcp,"CVE-2024-42516, CVE-2024-43204, CVE-2024-47252, CVE-2025-49812","Installed version: 2.4.49
+Fixed version:     2.4.64
+Installation
+path / port:       80/tcp",Update to version 2.4.64 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2152,2026-11-12 18:55:09+00,172.18.0.202,Apache HTTP Server < 2.4.64 Multiple Vulnerabilities - Linux,5.0,80/tcp,"CVE-2024-42516, CVE-2024-43204, CVE-2024-47252, CVE-2025-49812","Installed version: 2.4.41
+Fixed version:     2.4.64
+Installation
+path / port:       80/tcp",Update to version 2.4.64 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2153,2026-11-12 18:55:09+00,172.18.0.202,Apache HTTP Server < 2.4.66 SSI Vulnerability - Linux,4.3,80/tcp,CVE-2025-58098,"Installed version: 2.4.41
+Fixed version:     2.4.66
+Installation
+path / port:       80/tcp",Update to version 2.4.66 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2154,2026-11-12 18:55:09+00,172.18.0.201,Apache HTTP Server < 2.4.66 SSI Vulnerability - Linux,4.3,80/tcp,CVE-2025-58098,"Installed version: 2.4.49
+Fixed version:     2.4.66
+Installation
+path / port:       80/tcp",Update to version 2.4.66 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2155,2026-11-12 18:55:09+00,172.18.0.202,Apache HTTP Server <= 2.4.51 Buffer Overflow Vulnerability - Linux,9.8,80/tcp,CVE-2021-44790,"Installed version: 2.4.41
+Fixed version:     2.4.52
+Installation
+path / port:       80/tcp",Update to version 2.4.52 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2156,2026-11-12 18:55:09+00,172.18.0.201,Apache HTTP Server <= 2.4.51 Buffer Overflow Vulnerability - Linux,9.8,80/tcp,CVE-2021-44790,"Installed version: 2.4.49
+Fixed version:     2.4.52
+Installation
+path / port:       80/tcp",Update to version 2.4.52 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2157,2026-11-12 18:55:09+00,172.18.0.202,Apache HTTP Server <= 2.4.52 Multiple Vulnerabilities - Linux,9.8,80/tcp,"CVE-2022-22719, CVE-2022-22720, CVE-2022-22721, CVE-2022-23943","Installed version: 2.4.41
+Fixed version:     2.4.53
+Installation
+path / port:       80/tcp",Update to version 2.4.53 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2158,2026-11-12 18:55:09+00,172.18.0.201,Apache HTTP Server <= 2.4.52 Multiple Vulnerabilities - Linux,9.8,80/tcp,"CVE-2022-22719, CVE-2022-22720, CVE-2022-22721, CVE-2022-23943","Installed version: 2.4.49
+Fixed version:     2.4.53
+Installation
+path / port:       80/tcp",Update to version 2.4.53 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2159,2026-11-12 18:55:09+00,172.18.0.201,Apache HTTP Server Detection Consolidation,0.0,,,"Detected Apache HTTP Server
+
+Version:       2.4.49
+Location:      80/tcp
+CPE:           cpe:/a:apache:http_server:2.4.49
+
+Concluded from version/product identification result:
+Server: Apache/2.4.49 (Unix)","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2160,2026-11-12 18:55:09+00,172.18.0.202,Apache HTTP Server Detection Consolidation,0.0,,,"Detected Apache HTTP Server
+
+Version:       2.4.41
+Location:      80/tcp
+CPE:           cpe:/a:apache:http_server:2.4.41
+
+Concluded from version/product identification result:
+Server: Apache/2.4.41 (Ubuntu)","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2161,2026-11-12 18:55:09+00,172.18.0.201,CPE Inventory,0.0,,,"172.18.0.201|cpe:/a:apache:http_server:2.4.49
+172.18.0.201|cpe:/a:ietf:secure_shell_protocol:2.0
+172.18.0.201|cpe:/a:openbsd:openssh:7.9p1
+172.18.0.201|cpe:/o:debian:debian_linux:10","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2162,2026-11-12 18:55:09+00,172.18.0.202,CPE Inventory,0.0,,,"172.18.0.202|cpe:/a:apache:http_server:2.4.41
+172.18.0.202|cpe:/a:ietf:secure_shell_protocol:2.0
+172.18.0.202|cpe:/a:openbsd:openssh:8.2p1
+172.18.0.202|cpe:/a:vsftpd_project:vsftpd:3.0.5
+172.18.0.202|cpe:/o:canonical:ubuntu_linux:20.04","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2163,2026-11-12 18:55:09+00,172.18.0.200,CPE Inventory,0.0,,,"172.18.0.200|cpe:/a:ietf:secure_shell_protocol:2.0
+172.18.0.200|cpe:/a:openbsd:openssh:7.9p1
+172.18.0.200|cpe:/a:vsftpd_project:vsftpd:3.0.3
+172.18.0.200|cpe:/o:debian:debian_linux:10","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2164,2026-11-12 18:55:09+00,172.18.0.201,"Diffie-Hellman Ephemeral Key Exchange DoS Vulnerability (SSH, D(HE)ater)",7.5,22/tcp,"CVE-2002-20001, CVE-2022-40735, CVE-2024-41996","The remote SSH server supports the following DHE KEX algorithm(s):
+
+diffie-hellman-group14-sha1
+diffie-hellman-group14-sha256
+diffie-hellman-group16-sha512
+diffie-hellman-group18-sha512
+diffie-hellman-group-exchange-sha256","- DHE key exchange should be disabled if no other mitigation
+  mechanism can be used and either elliptic-curve variant of Diffie-Hellman (ECDHE) or RSA key
+  exchange is supported by the clients. The fact that RSA key exchange is not forward secret should
+  be considered.
+
+  - Limit the maximum number of concurrent connections in e.g. the configuration of the remote
+  server. For OpenSSH this limit can be configured via the 'MaxStartups' option, for other products
+  please refer to the manual of the product in question on configuration possibilities.",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2165,2026-11-12 18:55:09+00,172.18.0.202,"Diffie-Hellman Ephemeral Key Exchange DoS Vulnerability (SSH, D(HE)ater)",7.5,22/tcp,"CVE-2002-20001, CVE-2022-40735, CVE-2024-41996","The remote SSH server supports the following DHE KEX algorithm(s):
+
+diffie-hellman-group14-sha256
+diffie-hellman-group16-sha512
+diffie-hellman-group18-sha512
+diffie-hellman-group-exchange-sha256","- DHE key exchange should be disabled if no other mitigation
+  mechanism can be used and either elliptic-curve variant of Diffie-Hellman (ECDHE) or RSA key
+  exchange is supported by the clients. The fact that RSA key exchange is not forward secret should
+  be considered.
+
+  - Limit the maximum number of concurrent connections in e.g. the configuration of the remote
+  server. For OpenSSH this limit can be configured via the 'MaxStartups' option, for other products
+  please refer to the manual of the product in question on configuration possibilities.",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2166,2026-11-12 18:55:09+00,172.18.0.200,"Diffie-Hellman Ephemeral Key Exchange DoS Vulnerability (SSH, D(HE)ater)",7.5,22/tcp,"CVE-2002-20001, CVE-2022-40735, CVE-2024-41996","The remote SSH server supports the following DHE KEX algorithm(s):
+
+diffie-hellman-group14-sha1
+diffie-hellman-group14-sha256
+diffie-hellman-group16-sha512
+diffie-hellman-group18-sha512
+diffie-hellman-group-exchange-sha256","- DHE key exchange should be disabled if no other mitigation
+  mechanism can be used and either elliptic-curve variant of Diffie-Hellman (ECDHE) or RSA key
+  exchange is supported by the clients. The fact that RSA key exchange is not forward secret should
+  be considered.
+
+  - Limit the maximum number of concurrent connections in e.g. the configuration of the remote
+  server. For OpenSSH this limit can be configured via the 'MaxStartups' option, for other products
+  please refer to the manual of the product in question on configuration possibilities.",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2167,2026-11-12 18:55:09+00,172.18.0.202,Enabled Directory Listing/Indexing Detection (HTTP),5.0,80/tcp,"CVE-1999-0569, CVE-2023-37599, CVE-2024-1076","The following directories with an enabled directory listing/indexing were identified:
+
+http://vuln-srv3.greenbone-community-edition_default/backup
+
+Please review the content manually.","If not needed disable the directory listing/indexing within the
+  web servers config.",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2168,2026-11-12 18:55:09+00,172.18.0.200,FTP Banner Detection,0.0,21/tcp,,"Remote FTP server banner:
+
+220 vsftpd 3.0.3
+
+This is probably (a):
+
+- vsftpd
+
+Server operating system information collected via ""SYST"" command:
+
+215 UNIX Type: L8
+
+Server status information collected via ""STAT"" command:
+
+211-FTP server status:
+     Connected to 172.18.0.6
+     Logged in as ftp
+     TYPE: ASCII
+     No session bandwidth limit
+     Session timeout in seconds is 300
+     Control connection is plain text
+     Data connections will be plain text
+     At session startup, client count was 1
+     vsFTPd 3.0.3 - secure, fast, stable
+211 End of status","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2169,2026-11-12 18:55:09+00,172.18.0.202,FTP Banner Detection,0.0,21/tcp,,"Remote FTP server banner:
+
+220 vsftpd 3.0.5
+
+This is probably (a):
+
+- vsftpd
+
+Server operating system information collected via ""SYST"" command:
+
+215 UNIX Type: L8
+
+Server status information collected via ""STAT"" command:
+
+211-FTP server status:
+     Connected to 172.18.0.6
+     Logged in as ftp
+     TYPE: ASCII
+     No session bandwidth limit
+     Session timeout in seconds is 300
+     Control connection is plain text
+     Data connections will be plain text
+     At session startup, client count was 1
+     vsFTPd 3.0.5 - secure, fast, stable
+211 End of status","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2188,2026-11-12 18:55:09+00,172.18.0.201,OpenBSD OpenSSH 6.8p1 - 9.9p1 MitM Vulnerability,6.8,22/tcp,CVE-2025-26465,"Installed version: 7.9p1
+Fixed version:     9.9p2
+Installation
+path / port:       22/tcp",Update to version 9.9p2 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2170,2026-11-12 18:55:09+00,172.18.0.200,FTP Unencrypted Cleartext Login,4.8,21/tcp,,"The remote FTP service accepts logins without a previous sent 'AUTH TLS' command. Response(s):
+
+Non-anonymous sessions: 331 Please specify the password.
+Anonymous sessions:     331 Please specify the password.","Enable FTPS or enforce the connection via the 'AUTH TLS' command. Please see
+  the manual of the FTP service for more information.",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2171,2026-11-12 18:55:09+00,172.18.0.202,FTP Unencrypted Cleartext Login,4.8,21/tcp,,"The remote FTP service accepts logins without a previous sent 'AUTH TLS' command. Response(s):
+
+Non-anonymous sessions: 331 Please specify the password.
+Anonymous sessions:     331 Please specify the password.","Enable FTPS or enforce the connection via the 'AUTH TLS' command. Please see
+  the manual of the FTP service for more information.",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2172,2026-11-12 18:55:09+00,172.18.0.200,Hostname Determination Reporting,0.0,,,"Hostname determination for IP 172.18.0.200:
+
+Hostname|Source
+vuln-srv1.greenbone-community-edition_default|Reverse-DNS","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2173,2026-11-12 18:55:09+00,172.18.0.202,Hostname Determination Reporting,0.0,,,"Hostname determination for IP 172.18.0.202:
+
+Hostname|Source
+vuln-srv3.greenbone-community-edition_default|Reverse-DNS","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2174,2026-11-12 18:55:09+00,172.18.0.201,Hostname Determination Reporting,0.0,,,"Hostname determination for IP 172.18.0.201:
+
+Hostname|Source
+vuln-srv2.greenbone-community-edition_default|Reverse-DNS","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2175,2026-11-12 18:55:09+00,172.18.0.201,HTTP Debugging Methods (TRACE/TRACK) Enabled,5.8,80/tcp,"CVE-2003-1567, CVE-2004-2320, CVE-2004-2763, CVE-2005-3398, CVE-2006-4683, CVE-2007-3008, CVE-2008-7253, CVE-2009-2823, CVE-2010-0386, CVE-2012-2223, CVE-2014-7883",The web server has the following HTTP methods enabled: TRACE,"Disable the TRACE and TRACK methods in your web server
+  configuration.
+
+  Please see the manual of your web server or the references for more information.",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2176,2026-11-12 18:55:09+00,172.18.0.202,HTTP Security Headers Detection,0.0,80/tcp,,"Missing Headers                   | More Information
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Content-Security-Policy           | https://owasp.org/www-project-secure-headers/#content-security-policy
+Cross-Origin-Embedder-Policy      | https://scotthelme.co.uk/coop-and-coep/, Note: This is an upcoming header
+Cross-Origin-Opener-Policy        | https://scotthelme.co.uk/coop-and-coep/, Note: This is an upcoming header
+Cross-Origin-Resource-Policy      | https://scotthelme.co.uk/coop-and-coep/, Note: This is an upcoming header
+Document-Policy                   | https://w3c.github.io/webappsec-feature-policy/document-policy#document-policy-http-header
+Feature-Policy                    | https://owasp.org/www-project-secure-headers/#feature-policy, Note: The Feature Policy header has been renamed to Permissions Policy
+Permissions-Policy                | https://w3c.github.io/webappsec-feature-policy/#permissions-policy-http-header-field
+Referrer-Policy                   | https://owasp.org/www-project-secure-headers/#referrer-policy
+Sec-Fetch-Dest                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90
+Sec-Fetch-Mode                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90
+Sec-Fetch-Site                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90
+Sec-Fetch-User                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90
+X-Content-Type-Options            | https://owasp.org/www-project-secure-headers/#x-content-type-options
+X-Frame-Options                   | https://owasp.org/www-project-secure-headers/#x-frame-options
+X-Permitted-Cross-Domain-Policies | https://owasp.org/www-project-secure-headers/#x-permitted-cross-domain-policies
+X-XSS-Protection                  | https://owasp.org/www-project-secure-headers/#x-xss-protection, Note: Most major browsers have dropped / deprecated support for this header in 2020.","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2177,2026-11-12 18:55:09+00,172.18.0.201,HTTP Security Headers Detection,0.0,80/tcp,,"Missing Headers                   | More Information
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Content-Security-Policy           | https://owasp.org/www-project-secure-headers/#content-security-policy
+Cross-Origin-Embedder-Policy      | https://scotthelme.co.uk/coop-and-coep/, Note: This is an upcoming header
+Cross-Origin-Opener-Policy        | https://scotthelme.co.uk/coop-and-coep/, Note: This is an upcoming header
+Cross-Origin-Resource-Policy      | https://scotthelme.co.uk/coop-and-coep/, Note: This is an upcoming header
+Document-Policy                   | https://w3c.github.io/webappsec-feature-policy/document-policy#document-policy-http-header
+Feature-Policy                    | https://owasp.org/www-project-secure-headers/#feature-policy, Note: The Feature Policy header has been renamed to Permissions Policy
+Permissions-Policy                | https://w3c.github.io/webappsec-feature-policy/#permissions-policy-http-header-field
+Referrer-Policy                   | https://owasp.org/www-project-secure-headers/#referrer-policy
+Sec-Fetch-Dest                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90
+Sec-Fetch-Mode                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90
+Sec-Fetch-Site                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90
+Sec-Fetch-User                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90
+X-Content-Type-Options            | https://owasp.org/www-project-secure-headers/#x-content-type-options
+X-Frame-Options                   | https://owasp.org/www-project-secure-headers/#x-frame-options
+X-Permitted-Cross-Domain-Policies | https://owasp.org/www-project-secure-headers/#x-permitted-cross-domain-policies
+X-XSS-Protection                  | https://owasp.org/www-project-secure-headers/#x-xss-protection, Note: Most major browsers have dropped / deprecated support for this header in 2020.","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2178,2026-11-12 18:55:09+00,172.18.0.201,HTTP Server Banner Enumeration,0.0,80/tcp,,"It was possible to enumerate the following HTTP server banner(s):
+
+Server banner                | Enumeration technique
+-----------------------------------------------------------------------------------------------
+Server: Apache/2.4.49 (Unix) | Invalid HTTP 00.5 GET request (non-existent HTTP version) to '/'","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2179,2026-11-12 18:55:09+00,172.18.0.202,HTTP Server Banner Enumeration,0.0,80/tcp,,"It was possible to enumerate the following HTTP server banner(s):
+
+Server banner                  | Enumeration technique
+-------------------------------------------------------------------------------------------------
+Server: Apache/2.4.41 (Ubuntu) | Invalid HTTP 00.5 GET request (non-existent HTTP version) to '/'","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2180,2026-11-12 18:55:09+00,172.18.0.201,HTTP Server type and version,0.0,80/tcp,,"The remote HTTP Server banner is:
+
+Server: Apache/2.4.49 (Unix)","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2181,2026-11-12 18:55:09+00,172.18.0.202,HTTP Server type and version,0.0,80/tcp,,"The remote HTTP Server banner is:
+
+Server: Apache/2.4.41 (Ubuntu)","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2182,2026-11-12 18:55:09+00,172.18.0.200,ICMP Timestamp Reply Information Disclosure,2.1,,CVE-1999-0524,"The following response / ICMP packet has been received:
+- ICMP Type: 14
+- ICMP Code: 0","Various mitigations are possible:
+
+  - Disable the support for ICMP timestamp on the remote host completely
+
+  - Protect the remote host by a firewall, and block ICMP packets passing through the firewall in
+  either direction (either completely or only for untrusted networks)",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2183,2026-11-12 18:55:09+00,172.18.0.201,ICMP Timestamp Reply Information Disclosure,2.1,,CVE-1999-0524,"The following response / ICMP packet has been received:
+- ICMP Type: 14
+- ICMP Code: 0","Various mitigations are possible:
+
+  - Disable the support for ICMP timestamp on the remote host completely
+
+  - Protect the remote host by a firewall, and block ICMP packets passing through the firewall in
+  either direction (either completely or only for untrusted networks)",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2184,2026-11-12 18:55:09+00,172.18.0.202,ICMP Timestamp Reply Information Disclosure,2.1,,CVE-1999-0524,"The following response / ICMP packet has been received:
+- ICMP Type: 14
+- ICMP Code: 0","Various mitigations are possible:
+
+  - Disable the support for ICMP timestamp on the remote host completely
+
+  - Protect the remote host by a firewall, and block ICMP packets passing through the firewall in
+  either direction (either completely or only for untrusted networks)",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2185,2026-11-12 18:55:09+00,172.18.0.200,IP Forwarding Enabled - Active Check,0.0,,CVE-1999-0511,It was possible to route a TCP packet through the target host and received an answer which means IP forwarding is enabled.,"",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2186,2026-11-12 18:55:09+00,172.18.0.201,IP Forwarding Enabled - Active Check,0.0,,CVE-1999-0511,It was possible to route a TCP packet through the target host and received an answer which means IP forwarding is enabled.,"",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2187,2026-11-12 18:55:09+00,172.18.0.202,IP Forwarding Enabled - Active Check,0.0,,CVE-1999-0511,It was possible to route a TCP packet through the target host and received an answer which means IP forwarding is enabled.,"",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2189,2026-11-12 18:55:09+00,172.18.0.200,OpenBSD OpenSSH 6.8p1 - 9.9p1 MitM Vulnerability,6.8,22/tcp,CVE-2025-26465,"Installed version: 7.9p1
+Fixed version:     9.9p2
+Installation
+path / port:       22/tcp",Update to version 9.9p2 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2190,2026-11-12 18:55:09+00,172.18.0.202,OpenBSD OpenSSH 6.8p1 - 9.9p1 MitM Vulnerability,6.8,22/tcp,CVE-2025-26465,"Installed version: 8.2p1
+Fixed version:     9.9p2
+Installation
+path / port:       22/tcp",Update to version 9.9p2 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2191,2026-11-12 18:55:09+00,172.18.0.202,OpenBSD OpenSSH 7.4 - 9.9 Unspecified Vulnerability,3.8,22/tcp,CVE-2025-32728,"Installed version: 8.2p1
+Fixed version:     10.0
+Installation
+path / port:       22/tcp",Update to version 10.0 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2192,2026-11-12 18:55:09+00,172.18.0.200,OpenBSD OpenSSH 7.4 - 9.9 Unspecified Vulnerability,3.8,22/tcp,CVE-2025-32728,"Installed version: 7.9p1
+Fixed version:     10.0
+Installation
+path / port:       22/tcp",Update to version 10.0 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2193,2026-11-12 18:55:09+00,172.18.0.201,OpenBSD OpenSSH 7.4 - 9.9 Unspecified Vulnerability,3.8,22/tcp,CVE-2025-32728,"Installed version: 7.9p1
+Fixed version:     10.0
+Installation
+path / port:       22/tcp",Update to version 10.0 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2194,2026-11-12 18:55:09+00,172.18.0.200,OpenBSD OpenSSH < 10.1 Multiple Vulnerabilities,2.4,22/tcp,"CVE-2025-61984, CVE-2025-61985","Installed version: 7.9p1
+Fixed version:     10.1
+Installation
+path / port:       22/tcp",Update to version 10.1 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2195,2026-11-12 18:55:09+00,172.18.0.202,OpenBSD OpenSSH < 10.1 Multiple Vulnerabilities,2.4,22/tcp,"CVE-2025-61984, CVE-2025-61985","Installed version: 8.2p1
+Fixed version:     10.1
+Installation
+path / port:       22/tcp",Update to version 10.1 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2196,2026-11-12 18:55:09+00,172.18.0.201,OpenBSD OpenSSH < 10.1 Multiple Vulnerabilities,2.4,22/tcp,"CVE-2025-61984, CVE-2025-61985","Installed version: 7.9p1
+Fixed version:     10.1
+Installation
+path / port:       22/tcp",Update to version 10.1 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2197,2026-11-12 18:55:09+00,172.18.0.202,OpenBSD OpenSSH < 9.1 Multiple Vulnerabilities,4.0,22/tcp,,"Installed version: 8.2p1
+Fixed version:     9.1
+Installation
+path / port:       22/tcp",Update to version 9.1 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2198,2026-11-12 18:55:09+00,172.18.0.200,OpenBSD OpenSSH < 9.1 Multiple Vulnerabilities,4.0,22/tcp,,"Installed version: 7.9p1
+Fixed version:     9.1
+Installation
+path / port:       22/tcp",Update to version 9.1 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2199,2026-11-12 18:55:09+00,172.18.0.201,OpenBSD OpenSSH < 9.1 Multiple Vulnerabilities,4.0,22/tcp,,"Installed version: 7.9p1
+Fixed version:     9.1
+Installation
+path / port:       22/tcp",Update to version 9.1 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2200,2026-11-12 18:55:09+00,172.18.0.200,OpenBSD OpenSSH < 9.2 Unspecified Vulnerability,5.0,22/tcp,,"Installed version: 7.9p1
+Fixed version:     9.2
+Installation
+path / port:       22/tcp",Update to version 9.2 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2201,2026-11-12 18:55:09+00,172.18.0.201,OpenBSD OpenSSH < 9.2 Unspecified Vulnerability,5.0,22/tcp,,"Installed version: 7.9p1
+Fixed version:     9.2
+Installation
+path / port:       22/tcp",Update to version 9.2 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2202,2026-11-12 18:55:09+00,172.18.0.202,OpenBSD OpenSSH < 9.2 Unspecified Vulnerability,5.0,22/tcp,,"Installed version: 8.2p1
+Fixed version:     9.2
+Installation
+path / port:       22/tcp",Update to version 9.2 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2203,2026-11-12 18:55:09+00,172.18.0.201,OpenBSD OpenSSH < 9.3 Unspecified Vulnerability,5.0,22/tcp,,"Installed version: 7.9p1
+Fixed version:     9.3
+Installation
+path / port:       22/tcp",Update to version 9.3 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2204,2026-11-12 18:55:09+00,172.18.0.200,OpenBSD OpenSSH < 9.3 Unspecified Vulnerability,5.0,22/tcp,,"Installed version: 7.9p1
+Fixed version:     9.3
+Installation
+path / port:       22/tcp",Update to version 9.3 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2205,2026-11-12 18:55:09+00,172.18.0.202,OpenBSD OpenSSH < 9.3 Unspecified Vulnerability,5.0,22/tcp,,"Installed version: 8.2p1
+Fixed version:     9.3
+Installation
+path / port:       22/tcp",Update to version 9.3 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2206,2026-11-12 18:55:09+00,172.18.0.201,OpenBSD OpenSSH < 9.3p2 RCE Vulnerability,9.8,22/tcp,CVE-2023-38408,"Installed version: 7.9p1
+Fixed version:     9.3p2
+Installation
+path / port:       22/tcp",Update to version 9.3p2 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2207,2026-11-12 18:55:09+00,172.18.0.200,OpenBSD OpenSSH < 9.3p2 RCE Vulnerability,9.8,22/tcp,CVE-2023-38408,"Installed version: 7.9p1
+Fixed version:     9.3p2
+Installation
+path / port:       22/tcp",Update to version 9.3p2 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2208,2026-11-12 18:55:09+00,172.18.0.202,OpenBSD OpenSSH < 9.3p2 RCE Vulnerability,9.8,22/tcp,CVE-2023-38408,"Installed version: 8.2p1
+Fixed version:     9.3p2
+Installation
+path / port:       22/tcp",Update to version 9.3p2 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2209,2026-11-12 18:55:09+00,172.18.0.202,OpenBSD OpenSSH < 9.6 Multiple Vulnerabilities (Terrapin Attack),6.5,22/tcp,"CVE-2023-48795, CVE-2023-51384, CVE-2023-51385","Installed version: 8.2p1
+Fixed version:     9.6
+Installation
+path / port:       22/tcp","Update to version 9.6 or later.
+
+  Note: Client and Server implementations need to run a fixed version to mitigate the Terrapin
+  flaw.",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2210,2026-11-12 18:55:09+00,172.18.0.200,OpenBSD OpenSSH < 9.6 Multiple Vulnerabilities (Terrapin Attack),6.5,22/tcp,"CVE-2023-48795, CVE-2023-51384, CVE-2023-51385","Installed version: 7.9p1
+Fixed version:     9.6
+Installation
+path / port:       22/tcp","Update to version 9.6 or later.
+
+  Note: Client and Server implementations need to run a fixed version to mitigate the Terrapin
+  flaw.",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2211,2026-11-12 18:55:09+00,172.18.0.201,OpenBSD OpenSSH < 9.6 Multiple Vulnerabilities (Terrapin Attack),6.5,22/tcp,"CVE-2023-48795, CVE-2023-51384, CVE-2023-51385","Installed version: 7.9p1
+Fixed version:     9.6
+Installation
+path / port:       22/tcp","Update to version 9.6 or later.
+
+  Note: Client and Server implementations need to run a fixed version to mitigate the Terrapin
+  flaw.",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2212,2026-11-12 18:55:09+00,172.18.0.200,OpenBSD OpenSSH <= 8.6 Command Injection Vulnerability,7.4,22/tcp,CVE-2020-15778,"Installed version: 7.9p1
+Fixed version:     None
+Installation
+path / port:       22/tcp","No known solution was made available for at least one year
+  since the disclosure of this vulnerability. Likely none will be provided anymore. General solution
+  options are to upgrade to a newer release, disable respective features, remove the product or
+  replace the product by another one.",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2213,2026-11-12 18:55:09+00,172.18.0.202,OpenBSD OpenSSH <= 8.6 Command Injection Vulnerability,7.4,22/tcp,CVE-2020-15778,"Installed version: 8.2p1
+Fixed version:     None
+Installation
+path / port:       22/tcp","No known solution was made available for at least one year
+  since the disclosure of this vulnerability. Likely none will be provided anymore. General solution
+  options are to upgrade to a newer release, disable respective features, remove the product or
+  replace the product by another one.",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2214,2026-11-12 18:55:09+00,172.18.0.201,OpenBSD OpenSSH <= 8.6 Command Injection Vulnerability,7.4,22/tcp,CVE-2020-15778,"Installed version: 7.9p1
+Fixed version:     None
+Installation
+path / port:       22/tcp","No known solution was made available for at least one year
+  since the disclosure of this vulnerability. Likely none will be provided anymore. General solution
+  options are to upgrade to a newer release, disable respective features, remove the product or
+  replace the product by another one.",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2215,2026-11-12 18:55:09+00,172.18.0.202,OpenBSD OpenSSH Information Disclosure Vulnerability (CVE-2020-14145),5.9,22/tcp,CVE-2020-14145,"Installed version: 8.2p1
+Fixed version:     8.5
+Installation
+path / port:       22/tcp",Update to version 8.5 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2216,2026-11-12 18:55:09+00,172.18.0.201,OpenBSD OpenSSH Information Disclosure Vulnerability (CVE-2020-14145),5.9,22/tcp,CVE-2020-14145,"Installed version: 7.9p1
+Fixed version:     8.5
+Installation
+path / port:       22/tcp",Update to version 8.5 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2217,2026-11-12 18:55:09+00,172.18.0.200,OpenBSD OpenSSH Information Disclosure Vulnerability (CVE-2020-14145),5.9,22/tcp,CVE-2020-14145,"Installed version: 7.9p1
+Fixed version:     8.5
+Installation
+path / port:       22/tcp",Update to version 8.5 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2218,2026-11-12 18:55:09+00,172.18.0.202,OpenSSH 6.2 <= 8.7 Privilege Escalation Vulnerability,7.0,22/tcp,CVE-2021-41617,"Installed version: 8.2p1
+Fixed version:     8.8
+Installation
+path / port:       22/tcp",Update to version 8.8 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2219,2026-11-12 18:55:09+00,172.18.0.201,OpenSSH 6.2 <= 8.7 Privilege Escalation Vulnerability,7.0,22/tcp,CVE-2021-41617,"Installed version: 7.9p1
+Fixed version:     8.8
+Installation
+path / port:       22/tcp",Update to version 8.8 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2220,2026-11-12 18:55:09+00,172.18.0.200,OpenSSH 6.2 <= 8.7 Privilege Escalation Vulnerability,7.0,22/tcp,CVE-2021-41617,"Installed version: 7.9p1
+Fixed version:     8.8
+Installation
+path / port:       22/tcp",Update to version 8.8 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2221,2026-11-12 18:55:09+00,172.18.0.200,"OpenSSH 7.7 - 7.9, 8.x < 8.1 Integer Overflow Vulnerability",7.8,22/tcp,CVE-2019-16905,"Installed version: 7.9p1
+Fixed version:     8.1
+Installation
+path / port:       22/tcp",Update to version 8.1 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2222,2026-11-12 18:55:09+00,172.18.0.201,"OpenSSH 7.7 - 7.9, 8.x < 8.1 Integer Overflow Vulnerability",7.8,22/tcp,CVE-2019-16905,"Installed version: 7.9p1
+Fixed version:     8.1
+Installation
+path / port:       22/tcp",Update to version 8.1 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2223,2026-11-12 18:55:09+00,172.18.0.202,OpenSSH 8.2 < 8.5 Memory Corruption Vulnerability,7.1,22/tcp,CVE-2021-28041,"Installed version: 8.2p1
+Fixed version:     8.5
+Installation
+path / port:       22/tcp",Update to version 8.5 or later.,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2224,2026-11-12 18:55:09+00,172.18.0.202,OpenSSH Detection Consolidation,0.0,,,"Detected OpenSSH Server
+
+Version:       8.2p1
+Location:      22/tcp
+CPE:           cpe:/a:openbsd:openssh:8.2p1
+
+Concluded from version/product identification result:
+SSH-2.0-OpenSSH_8.2p1 Ubuntu-4ubuntu0.13","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2225,2026-11-12 18:55:09+00,172.18.0.201,OpenSSH Detection Consolidation,0.0,,,"Detected OpenSSH Server
+
+Version:       7.9p1
+Location:      22/tcp
+CPE:           cpe:/a:openbsd:openssh:7.9p1
+
+Concluded from version/product identification result:
+SSH-2.0-OpenSSH_7.9p1 Debian-10+deb10u4","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2226,2026-11-12 18:55:09+00,172.18.0.200,OpenSSH Detection Consolidation,0.0,,,"Detected OpenSSH Server
+
+Version:       7.9p1
+Location:      22/tcp
+CPE:           cpe:/a:openbsd:openssh:7.9p1
+
+Concluded from version/product identification result:
+SSH-2.0-OpenSSH_7.9p1 Debian-10+deb10u4","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2227,2026-11-12 18:55:09+00,172.18.0.200,OpenSSH Information Disclosure Vulnerability (CVE-2016-20012),5.3,22/tcp,CVE-2016-20012,"Installed version: 7.9p1
+Fixed version:     None
+Installation
+path / port:       22/tcp","No known solution was made available for at least one year since
+  the disclosure of this vulnerability. Likely none will be provided anymore. General solution options
+  are to upgrade to a newer release, disable respective features, remove the product or replace the
+  product by another one.",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2228,2026-11-12 18:55:09+00,172.18.0.201,OpenSSH Information Disclosure Vulnerability (CVE-2016-20012),5.3,22/tcp,CVE-2016-20012,"Installed version: 7.9p1
+Fixed version:     None
+Installation
+path / port:       22/tcp","No known solution was made available for at least one year since
+  the disclosure of this vulnerability. Likely none will be provided anymore. General solution options
+  are to upgrade to a newer release, disable respective features, remove the product or replace the
+  product by another one.",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2229,2026-11-12 18:55:09+00,172.18.0.202,OpenSSH Information Disclosure Vulnerability (CVE-2016-20012),5.3,22/tcp,CVE-2016-20012,"Installed version: 8.2p1
+Fixed version:     None
+Installation
+path / port:       22/tcp","No known solution was made available for at least one year since
+  the disclosure of this vulnerability. Likely none will be provided anymore. General solution options
+  are to upgrade to a newer release, disable respective features, remove the product or replace the
+  product by another one.",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2230,2026-11-12 18:55:09+00,172.18.0.201,Operating System (OS) End of Life (EOL) Detection,10.0,,,"The ""Debian GNU/Linux"" Operating System on the remote host has reached the end of life.
+
+CPE:               cpe:/o:debian:debian_linux:10
+Installed version,
+build or SP:       10
+EOL date:          2024-06-30
+EOL info:          https://en.wikipedia.org/wiki/List_of_Debian_releases#Release_table","Update the OS on the remote host to a version which is still
+  supported and receiving security updates by the vendor.
+
+  Note / Important: Please create an override for this result if the target host is a:
+
+  - Windows system with Extended Security Updates (ESU)
+
+  - System with additional 3rd-party / non-vendor security updates like e.g. from 'TuxCare',
+  'Freexian Extended LTS' or similar",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2264,2026-11-12 18:55:09+00,172.18.0.201,Weak Encryption Algorithm(s) Supported (SSH),4.3,22/tcp,,"The remote SSH server supports the following weak client-to-server encryption algorithm(s):
+
+3des-cbc
+aes128-cbc
+aes192-cbc
+aes256-cbc
+
+
+The remote SSH server supports the following weak server-to-client encryption algorithm(s):
+
+3des-cbc
+aes128-cbc
+aes192-cbc
+aes256-cbc",Disable the reported weak encryption algorithm(s).,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2231,2026-11-12 18:55:09+00,172.18.0.200,Operating System (OS) End of Life (EOL) Detection,10.0,,,"The ""Debian GNU/Linux"" Operating System on the remote host has reached the end of life.
+
+CPE:               cpe:/o:debian:debian_linux:10
+Installed version,
+build or SP:       10
+EOL date:          2024-06-30
+EOL info:          https://en.wikipedia.org/wiki/List_of_Debian_releases#Release_table","Update the OS on the remote host to a version which is still
+  supported and receiving security updates by the vendor.
+
+  Note / Important: Please create an override for this result if the target host is a:
+
+  - Windows system with Extended Security Updates (ESU)
+
+  - System with additional 3rd-party / non-vendor security updates like e.g. from 'TuxCare',
+  'Freexian Extended LTS' or similar",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2232,2026-11-12 18:55:09+00,172.18.0.200,OS Detection Consolidation and Reporting,0.0,,,"Best matching OS:
+
+OS:           Debian GNU/Linux 10
+Version:      10
+CPE:          cpe:/o:debian:debian_linux:10
+Found by VT:  1.3.6.1.4.1.25623.1.0.105586 (Operating System (OS) Detection (SSH Banner))
+Concluded from SSH banner on port 22/tcp: SSH-2.0-OpenSSH_7.9p1 Debian-10+deb10u4
+Setting key ""Host/runs_unixoide"" based on this information
+
+Other OS detections (in order of reliability):
+
+OS:           Linux/Unix
+CPE:          cpe:/o:linux:kernel
+Found by VT:  1.3.6.1.4.1.25623.1.0.111050 (vsftpd FTP Server Detection (FTP))","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2233,2026-11-12 18:55:09+00,172.18.0.202,OS Detection Consolidation and Reporting,0.0,,,"Best matching OS:
+
+OS:           Ubuntu 20.04
+Version:      20.04
+CPE:          cpe:/o:canonical:ubuntu_linux:20.04
+Found by VT:  1.3.6.1.4.1.25623.1.0.105586 (Operating System (OS) Detection (SSH Banner))
+Concluded from SSH banner on port 22/tcp: SSH-2.0-OpenSSH_8.2p1 Ubuntu-4ubuntu0.13
+Setting key ""Host/runs_unixoide"" based on this information
+
+Other OS detections (in order of reliability):
+
+OS:           Ubuntu 19.10 or 20.04
+Version:      19.10 or 20.04
+CPE:          cpe:/o:canonical:ubuntu_linux:20.04
+Found by VT:  1.3.6.1.4.1.25623.1.0.111067 (Operating System (OS) Detection (HTTP))
+Concluded from HTTP Server banner on port 80/tcp: Server: Apache/2.4.41 (Ubuntu)
+
+OS:           Linux/Unix
+CPE:          cpe:/o:linux:kernel
+Found by VT:  1.3.6.1.4.1.25623.1.0.111050 (vsftpd FTP Server Detection (FTP))","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2234,2026-11-12 18:55:09+00,172.18.0.201,OS Detection Consolidation and Reporting,0.0,,,"Best matching OS:
+
+OS:           Debian GNU/Linux 10
+Version:      10
+CPE:          cpe:/o:debian:debian_linux:10
+Found by VT:  1.3.6.1.4.1.25623.1.0.105586 (Operating System (OS) Detection (SSH Banner))
+Concluded from SSH banner on port 22/tcp: SSH-2.0-OpenSSH_7.9p1 Debian-10+deb10u4
+Setting key ""Host/runs_unixoide"" based on this information
+
+Other OS detections (in order of reliability):
+
+OS:           Linux/Unix
+CPE:          cpe:/o:linux:kernel
+Found by VT:  1.3.6.1.4.1.25623.1.0.111067 (Operating System (OS) Detection (HTTP))
+Concluded from HTTP Server banner on port 80/tcp: Server: Apache/2.4.49 (Unix)","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2235,2026-11-12 18:55:09+00,172.18.0.202,PQC Key Exchange (KEX) Algorithm(s) Missing (SSH),0.0,22/tcp,,The remote SSH server is NOT supporting at least ONE PQC KEX algorithm.,"Update the remote SSH server to a version supporting PQC KEX
+  algorithms (e.g. OpenSSH 8.9 or later) and enable relevant PQC KEX algorithms accordingly.
+
+  Please see the references/manual of the remote SSH server and/or contact the vendor of it for more
+  support.",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2236,2026-11-12 18:55:09+00,172.18.0.201,PQC Key Exchange (KEX) Algorithm(s) Missing (SSH),0.0,22/tcp,,The remote SSH server is NOT supporting at least ONE PQC KEX algorithm.,"Update the remote SSH server to a version supporting PQC KEX
+  algorithms (e.g. OpenSSH 8.9 or later) and enable relevant PQC KEX algorithms accordingly.
+
+  Please see the references/manual of the remote SSH server and/or contact the vendor of it for more
+  support.",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2237,2026-11-12 18:55:09+00,172.18.0.200,PQC Key Exchange (KEX) Algorithm(s) Missing (SSH),0.0,22/tcp,,The remote SSH server is NOT supporting at least ONE PQC KEX algorithm.,"Update the remote SSH server to a version supporting PQC KEX
+  algorithms (e.g. OpenSSH 8.9 or later) and enable relevant PQC KEX algorithms accordingly.
+
+  Please see the references/manual of the remote SSH server and/or contact the vendor of it for more
+  support.",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2238,2026-11-12 18:55:09+00,172.18.0.202,Services,0.0,80/tcp,,A web server is running on this port,"",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2239,2026-11-12 18:55:09+00,172.18.0.200,Services,0.0,21/tcp,,"An FTP server is running on this port.
+Here is its banner : 
+220 vsftpd 3.0.3","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2240,2026-11-12 18:55:09+00,172.18.0.201,Services,0.0,22/tcp,,An ssh server is running on this port,"",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2241,2026-11-12 18:55:09+00,172.18.0.201,Services,0.0,80/tcp,,A web server is running on this port,"",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2242,2026-11-12 18:55:09+00,172.18.0.202,Services,0.0,22/tcp,,An ssh server is running on this port,"",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2243,2026-11-12 18:55:09+00,172.18.0.200,Services,0.0,22/tcp,,An ssh server is running on this port,"",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2244,2026-11-12 18:55:09+00,172.18.0.202,Services,0.0,21/tcp,,"An FTP server is running on this port.
+Here is its banner : 
+220 vsftpd 3.0.5","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2245,2026-11-12 18:55:09+00,172.18.0.200,SSH Protocol Algorithms Supported,0.0,22/tcp,,"The following options are supported by the remote SSH service:
+
+kex_algorithms:
+curve25519-sha256,curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group16-sha512,diffie-hellman-group18-sha512,diffie-hellman-group14-sha256,diffie-hellman-group14-sha1,kex-strict-s-v00@openssh.com
+
+server_host_key_algorithms:
+rsa-sha2-512,rsa-sha2-256,ssh-rsa,ecdsa-sha2-nistp256,ssh-ed25519
+
+encryption_algorithms_client_to_server:
+3des-cbc,aes128-cbc,aes192-cbc,aes256-cbc
+
+encryption_algorithms_server_to_client:
+3des-cbc,aes128-cbc,aes192-cbc,aes256-cbc
+
+mac_algorithms_client_to_server:
+hmac-md5,hmac-sha1,umac-64@openssh.com
+
+mac_algorithms_server_to_client:
+hmac-md5,hmac-sha1,umac-64@openssh.com
+
+compression_algorithms_client_to_server:
+none,zlib@openssh.com
+
+compression_algorithms_server_to_client:
+none,zlib@openssh.com","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2265,2026-11-12 18:55:09+00,172.18.0.202,Weak Encryption Algorithm(s) Supported (SSH),4.3,22/tcp,,"The remote SSH server supports the following weak client-to-server encryption algorithm(s):
+
+3des-cbc
+aes128-cbc
+aes192-cbc
+aes256-cbc
+
+
+The remote SSH server supports the following weak server-to-client encryption algorithm(s):
+
+3des-cbc
+aes128-cbc
+aes192-cbc
+aes256-cbc",Disable the reported weak encryption algorithm(s).,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2266,2026-11-12 18:55:09+00,172.18.0.200,Weak Encryption Algorithm(s) Supported (SSH),4.3,22/tcp,,"The remote SSH server supports the following weak client-to-server encryption algorithm(s):
+
+3des-cbc
+aes128-cbc
+aes192-cbc
+aes256-cbc
+
+
+The remote SSH server supports the following weak server-to-client encryption algorithm(s):
+
+3des-cbc
+aes128-cbc
+aes192-cbc
+aes256-cbc",Disable the reported weak encryption algorithm(s).,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2246,2026-11-12 18:55:09+00,172.18.0.201,SSH Protocol Algorithms Supported,0.0,22/tcp,,"The following options are supported by the remote SSH service:
+
+kex_algorithms:
+curve25519-sha256,curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group16-sha512,diffie-hellman-group18-sha512,diffie-hellman-group14-sha256,diffie-hellman-group14-sha1,kex-strict-s-v00@openssh.com
+
+server_host_key_algorithms:
+rsa-sha2-512,rsa-sha2-256,ssh-rsa,ecdsa-sha2-nistp256,ssh-ed25519
+
+encryption_algorithms_client_to_server:
+3des-cbc,aes128-cbc,aes192-cbc,aes256-cbc
+
+encryption_algorithms_server_to_client:
+3des-cbc,aes128-cbc,aes192-cbc,aes256-cbc
+
+mac_algorithms_client_to_server:
+hmac-md5,hmac-sha1,umac-64@openssh.com
+
+mac_algorithms_server_to_client:
+hmac-md5,hmac-sha1,umac-64@openssh.com
+
+compression_algorithms_client_to_server:
+none,zlib@openssh.com
+
+compression_algorithms_server_to_client:
+none,zlib@openssh.com","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2247,2026-11-12 18:55:09+00,172.18.0.202,SSH Protocol Algorithms Supported,0.0,22/tcp,,"The following options are supported by the remote SSH service:
+
+kex_algorithms:
+curve25519-sha256,curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group16-sha512,diffie-hellman-group18-sha512,diffie-hellman-group14-sha256,kex-strict-s-v00@openssh.com
+
+server_host_key_algorithms:
+rsa-sha2-512,rsa-sha2-256,ssh-rsa,ecdsa-sha2-nistp256,ssh-ed25519
+
+encryption_algorithms_client_to_server:
+3des-cbc,aes128-cbc,aes192-cbc,aes256-cbc
+
+encryption_algorithms_server_to_client:
+3des-cbc,aes128-cbc,aes192-cbc,aes256-cbc
+
+mac_algorithms_client_to_server:
+hmac-md5,hmac-sha1,umac-64@openssh.com
+
+mac_algorithms_server_to_client:
+hmac-md5,hmac-sha1,umac-64@openssh.com
+
+compression_algorithms_client_to_server:
+none,zlib@openssh.com
+
+compression_algorithms_server_to_client:
+none,zlib@openssh.com","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2248,2026-11-12 18:55:09+00,172.18.0.202,SSH Protocol Versions Supported,0.0,22/tcp,,"The remote SSH Server supports the following SSH Protocol Versions:
+1.99
+2.0","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2249,2026-11-12 18:55:09+00,172.18.0.200,SSH Protocol Versions Supported,0.0,22/tcp,,"The remote SSH Server supports the following SSH Protocol Versions:
+1.99
+2.0","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2250,2026-11-12 18:55:09+00,172.18.0.201,SSH Protocol Versions Supported,0.0,22/tcp,,"The remote SSH Server supports the following SSH Protocol Versions:
+1.99
+2.0","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2251,2026-11-12 18:55:09+00,172.18.0.201,SSH Server type and version,0.0,22/tcp,,"Remote SSH server banner: SSH-2.0-OpenSSH_7.9p1 Debian-10+deb10u4
+Remote SSH supported authentication: none,password,publickey,hostbased,keyboard-interactive
+Remote SSH text/login banner: (not available)
+
+This is probably (a):
+
+- OpenSSH
+
+Concluded from remote connection attempt with credentials:
+
+Login:    OpenVASVT
+Password: OpenVASVT","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2252,2026-11-12 18:55:09+00,172.18.0.202,SSH Server type and version,0.0,22/tcp,,"Remote SSH server banner: SSH-2.0-OpenSSH_8.2p1 Ubuntu-4ubuntu0.13
+Remote SSH supported authentication: none,password,publickey,hostbased,keyboard-interactive
+Remote SSH text/login banner: (not available)
+
+This is probably (a):
+
+- OpenSSH
+
+Concluded from remote connection attempt with credentials:
+
+Login:    OpenVASVT
+Password: OpenVASVT","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2253,2026-11-12 18:55:09+00,172.18.0.200,SSH Server type and version,0.0,22/tcp,,"Remote SSH server banner: SSH-2.0-OpenSSH_7.9p1 Debian-10+deb10u4
+Remote SSH supported authentication: none,password,publickey,hostbased,keyboard-interactive
+Remote SSH text/login banner: (not available)
+
+This is probably (a):
+
+- OpenSSH
+
+Concluded from remote connection attempt with credentials:
+
+Login:    OpenVASVT
+Password: OpenVASVT","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2254,2026-11-12 18:55:09+00,172.18.0.200,SSL/TLS: FTP Missing Support For AUTH TLS,0.0,21/tcp,,The remote FTP server does not support the 'AUTH TLS' command.,"",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2255,2026-11-12 18:55:09+00,172.18.0.202,SSL/TLS: FTP Missing Support For AUTH TLS,0.0,21/tcp,,The remote FTP server does not support the 'AUTH TLS' command.,"",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2256,2026-11-12 18:55:09+00,172.18.0.200,TCP Timestamps Information Disclosure,2.6,,,"It was detected that the host implements RFC1323/RFC7323.
+
+The following timestamps were retrieved with a delay of 1 seconds in-between:
+Packet 1: 1560211111
+Packet 2: 3329642298","To disable TCP timestamps on linux add the line
+  'net.ipv4.tcp_timestamps = 0' to /etc/sysctl.conf. Execute 'sysctl -p' to apply the settings at
+  runtime.
+
+  To disable TCP timestamps on Windows execute 'netsh int tcp set global timestamps=disabled'
+
+  Starting with Windows Server 2008 and Vista, the timestamp can not be completely disabled.
+
+  The default behavior of the TCP/IP stack on this Systems is to not use the Timestamp options when
+  initiating TCP connections, but use them if the TCP peer that is initiating communication includes
+  them in their synchronize (SYN) segment.
+
+  See the references for more information.",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2257,2026-11-12 18:55:09+00,172.18.0.202,Traceroute,0.0,,,"Network route from scanner (172.18.0.6) to target (172.18.0.202):
+
+172.18.0.6
+172.18.0.202
+
+Network distance between scanner and target: 2","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2258,2026-11-12 18:55:09+00,172.18.0.201,Traceroute,0.0,,,"Network route from scanner (172.18.0.6) to target (172.18.0.201):
+
+172.18.0.6
+172.18.0.201
+
+Network distance between scanner and target: 2","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2259,2026-11-12 18:55:09+00,172.18.0.200,Traceroute,0.0,,,"Network route from scanner (172.18.0.6) to target (172.18.0.200):
+
+172.18.0.6
+172.18.0.200
+
+Network distance between scanner and target: 2","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2260,2026-11-12 18:55:09+00,172.18.0.202,Unknown OS and Service Banner Reporting,0.0,,,"Unknown banners have been collected which might help to identify the OS running on this host. If these banners containing information about the host OS please report the following information to https://forum.greenbone.net/c/vulnerability-tests/7:
+
+Banner: 220 vsftpd 3.0.5
+Identified from: FTP banner on port 21/tcp","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2261,2026-11-12 18:55:09+00,172.18.0.200,Unknown OS and Service Banner Reporting,0.0,,,"Unknown banners have been collected which might help to identify the OS running on this host. If these banners containing information about the host OS please report the following information to https://forum.greenbone.net/c/vulnerability-tests/7:
+
+Banner: 220 vsftpd 3.0.3
+Identified from: FTP banner on port 21/tcp","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2262,2026-11-12 18:55:09+00,172.18.0.202,vsftpd FTP Server Detection (FTP),0.0,21/tcp,,"Detected vsftpd
+
+Version:       3.0.5
+Location:      /
+CPE:           cpe:/a:vsftpd_project:vsftpd:3.0.5
+
+Concluded from version/product identification result:
+220 vsftpd 3.0.5","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2263,2026-11-12 18:55:09+00,172.18.0.200,vsftpd FTP Server Detection (FTP),0.0,21/tcp,,"Detected vsftpd
+
+Version:       3.0.3
+Location:      /
+CPE:           cpe:/a:vsftpd_project:vsftpd:3.0.3
+
+Concluded from version/product identification result:
+220 vsftpd 3.0.3","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2267,2026-11-12 18:55:09+00,172.18.0.202,Weak MAC Algorithm(s) Supported (SSH),2.6,22/tcp,,"The remote SSH server supports the following weak client-to-server MAC algorithm(s):
+
+hmac-md5
+umac-64@openssh.com
+
+
+The remote SSH server supports the following weak server-to-client MAC algorithm(s):
+
+hmac-md5
+umac-64@openssh.com",Disable the reported weak MAC algorithm(s).,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2268,2026-11-12 18:55:09+00,172.18.0.201,Weak MAC Algorithm(s) Supported (SSH),2.6,22/tcp,,"The remote SSH server supports the following weak client-to-server MAC algorithm(s):
+
+hmac-md5
+umac-64@openssh.com
+
+
+The remote SSH server supports the following weak server-to-client MAC algorithm(s):
+
+hmac-md5
+umac-64@openssh.com",Disable the reported weak MAC algorithm(s).,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2269,2026-11-12 18:55:09+00,172.18.0.200,Weak MAC Algorithm(s) Supported (SSH),2.6,22/tcp,,"The remote SSH server supports the following weak client-to-server MAC algorithm(s):
+
+hmac-md5
+umac-64@openssh.com
+
+
+The remote SSH server supports the following weak server-to-client MAC algorithm(s):
+
+hmac-md5
+umac-64@openssh.com",Disable the reported weak MAC algorithm(s).,automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2270,2026-11-12 18:55:09+00,172.18.0.202,Web Application Scanning Consolidation / Info Reporting,0.0,80/tcp,,"The Hostname/IP ""vuln-srv3.greenbone-community-edition_default"" was used to access the remote host.
+
+Generic web application scanning is disabled for this host via the ""Enable generic web application scanning"" option within the ""Global variable settings"" of the scan config in use.
+
+Requests to this service are done via HTTP/1.1.
+
+This service seems to be able to host PHP scripts.
+
+This service seems to be able to host ASP scripts.
+
+The User-Agent ""Mozilla/5.0 [en] (X11, U; OpenVAS-VT <version replaced>)"" was used to access the remote host.
+
+Historic /scripts and /cgi-bin are not added to the directories used for web application scanning. You can enable this again with the ""Add historic /scripts and /cgi-bin to directories for CGI scanning"" option within the ""Global variable settings"" of the scan config in use.
+
+The following directories were used for web application scanning:
+
+http://vuln-srv3.greenbone-community-edition_default/
+http://vuln-srv3.greenbone-community-edition_default/backup
+
+While this is not, in and of itself, a bug, you should manually inspect these directories to ensure that they are in compliance with company security standards
+
+The following directories were excluded from web application scanning because the ""Regex pattern to exclude directories from CGI scanning"" setting of the VT ""Global variable settings"" (OID: 1.3.6.1.4.1.25623.1.0.12288) for this scan was: ""/(index\.php|image|img|css|js$|js/|javascript|style|theme|icon|jquery|graphic|grafik|picture|bilder|thumbnail|media/|skins?/)""
+
+http://vuln-srv3.greenbone-community-edition_default/icons
+
+Directory listing/indexing found at:
+
+http://vuln-srv3.greenbone-community-edition_default/backup/
+
+The following CGIs were discovered:
+
+Syntax : cginame (arguments [default value])
+
+http://vuln-srv3.greenbone-community-edition_default/backup/ (C=S;O [A] C=N;O [D] C=M;O [A] C=D;O [A] )","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
+2271,2026-11-12 18:55:09+00,172.18.0.201,Web Application Scanning Consolidation / Info Reporting,0.0,80/tcp,,"The Hostname/IP ""vuln-srv2.greenbone-community-edition_default"" was used to access the remote host.
+
+Generic web application scanning is disabled for this host via the ""Enable generic web application scanning"" option within the ""Global variable settings"" of the scan config in use.
+
+Requests to this service are done via HTTP/1.1.
+
+This service seems to be able to host PHP scripts.
+
+This service seems to be able to host ASP scripts.
+
+The User-Agent ""Mozilla/5.0 [en] (X11, U; OpenVAS-VT <version replaced>)"" was used to access the remote host.
+
+Historic /scripts and /cgi-bin are not added to the directories used for web application scanning. You can enable this again with the ""Add historic /scripts and /cgi-bin to directories for CGI scanning"" option within the ""Global variable settings"" of the scan config in use.
+
+The following directories were used for web application scanning:
+
+http://vuln-srv2.greenbone-community-edition_default/
+
+While this is not, in and of itself, a bug, you should manually inspect these directories to ensure that they are in compliance with company security standards","",automated,scan_20261112_155403,2026-11-12 19:14:05.442231+00
