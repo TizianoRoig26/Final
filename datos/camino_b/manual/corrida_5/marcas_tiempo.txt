@@ -1,0 +1,4 @@
+T0_inicio 2026-11-12T22:31:46.862Z
+T1_nmap_fin 2026-11-12T22:34:06.195Z
+T2_lanzamiento 2026-11-12T22:34:06.199Z
+T3_comando_retorna 2026-11-12T23:02:24.000Z

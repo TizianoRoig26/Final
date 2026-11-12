@@ -1,0 +1,15 @@
+{
+  "report_id": "0f2f5d57-d3e0-4812-8ee6-baa495ca0741",
+  "task_id": "5430ddba-9679-4978-9c9e-cb13ba884893",
+  "task_name": "n8n_manual_scan_M5_task",
+  "scan_start_utc": null,
+  "scan_end_utc": null,
+  "archivos_generados": {
+    "reporte_openvas_primario.xml": 1340261,
+    "reporte_openvas_primario.csv": 0,
+    "reporte_openvas_defecto.xml": 914177,
+    "reporte_openvas_defecto.csv": 0
+  },
+  "total_hallazgos_primario": 0,
+  "total_hallazgos_defecto": 0
+}
