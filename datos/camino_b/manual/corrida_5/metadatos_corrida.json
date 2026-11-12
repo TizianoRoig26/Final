@@ -1,0 +1,44 @@
+{
+  "condicion": "Manual",
+  "corrida_numero": 5,
+  "operador": "Tiziano Roig",
+  "greenbone_task_id": "5430ddba-9679-4978-9c9e-cb13ba884893",
+  "greenbone_task_name": "n8n_manual_scan_M5_task",
+  "greenbone_report_id": "0f2f5d57-d3e0-4812-8ee6-baa495ca0741",
+  "filtro_primario": "levels=chmlg rows=-1 min_qod=0",
+  "filtro_defecto": "min_qod=70 rows=-1",
+  "marcas_tiempo": {
+    "T0_inicio": "2026-11-12T22:31:46.862Z",
+    "T1_nmap_fin": "2026-11-12T22:34:06.195Z",
+    "T2_lanzamiento": "2026-11-12T22:34:06.199Z",
+    "gvmd_start_time_utc": "2026-11-12 22:35:05+00",
+    "gvmd_end_time_utc": "2026-11-12 23:02:24+00",
+    "T3_comando_retorna": "2026-11-12T23:02:24.000Z"
+  },
+  "duraciones": {
+    "nmap_segundos": 139.28,
+    "T_escaneo_gvmd_segundos": 1639.0,
+    "T_escaneo_gvmd_min_seg": "27m 19s",
+    "T_medido_desde_lanzamiento_segundos": 1697.8,
+    "T_medido_desde_lanzamiento_min_seg": "28m 18s",
+    "T_medido_total_segundos": 1837.1,
+    "T_medido_total_min_seg": "30m 37s",
+    "T_operador_total_segundos": 1837.1,
+    "T_operador_total_min_seg": "30m 37s"
+  },
+  "efectividad": {
+    "total_hallazgos_primario": 272,
+    "total_hallazgos_defecto": 91,
+    "core_detectados": 28,
+    "core_total": 28,
+    "core_porcentaje": 100.0,
+    "ampliado_detectados": 4,
+    "ampliado_total": 10,
+    "ampliado_porcentaje": 40.0,
+    "total_detectados": 32,
+    "total_referencia": 38,
+    "total_porcentaje": 84.2
+  },
+  "versiones_referencia": "datos/camino_b/ficha_tecnica/",
+  "incidentes": "Ninguno. Corrida manual M5 completada exitosamente."
+}
