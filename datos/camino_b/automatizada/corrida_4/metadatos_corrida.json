@@ -1,0 +1,52 @@
+{
+  "condicion": "Automatizada",
+  "corrida_numero": 4,
+  "operador": "Tiziano Roig",
+  "scan_id": "scan_20261112_185047",
+  "n8n_execution_id": 406,
+  "n8n_workflow_id": "eZcFfWr0YiA2pAE3",
+  "greenbone_task_id": "5f92e88e-c967-4fe6-9851-ee4f90c728da",
+  "greenbone_task_name": "n8n_scan_20261112_185047_task",
+  "greenbone_report_id": "3e045fe0-2f08-4da7-8e1f-0791dffcaee9",
+  "filtro_primario": "levels=chmlg rows=-1 min_qod=0",
+  "filtro_defecto": "min_qod=70 rows=-1",
+  "marcas_tiempo": {
+    "T0_inicio": "2026-11-12T21:50:35.775Z",
+    "T0b_curl_retorna": "2026-11-12T21:50:35.913Z",
+    "gvmd_start_time_utc": "2026-11-12 21:51:06+00",
+    "gvmd_end_time_utc": "2026-11-12 22:14:18+00",
+    "n8n_stopped_at_utc": "2026-11-12 22:14:35.354"
+  },
+  "duraciones": {
+    "T_medido_segundos": 1422.2,
+    "T_medido_min_seg": "23m 42s",
+    "T_flujo_segundos": 1439.6,
+    "T_flujo_min_seg": "24m 00s",
+    "diferencia_frente_M4_total_segundos": -206.8,
+    "ahorro_porcentual_frente_M4_total": "-12.7 %",
+    "diferencia_frente_M4_lanzamiento_segundos": 333.2,
+    "variacion_porcentual_frente_M4_lanzamiento": "+30.6 %"
+  },
+  "efectividad": {
+    "total_hallazgos_primario": 272,
+    "total_hallazgos_defecto": 91,
+    "total_hallazgos_postgresql": 169,
+    "desglose_postgresql": {
+      "criticas": 23,
+      "altas": 23,
+      "medias": 49,
+      "bajas_info": 74
+    },
+    "core_detectados": 28,
+    "core_total": 28,
+    "core_porcentaje": 100.0,
+    "ampliado_detectados": 4,
+    "ampliado_total": 10,
+    "ampliado_porcentaje": 40.0,
+    "total_detectados": 32,
+    "total_referencia": 38,
+    "total_porcentaje": 84.2
+  },
+  "versiones_referencia": "datos/camino_b/ficha_tecnica/",
+  "incidentes": "Ninguno. Corrida completada con persistencia total en PostgreSQL (169 registros, 23 críticas)."
+}
