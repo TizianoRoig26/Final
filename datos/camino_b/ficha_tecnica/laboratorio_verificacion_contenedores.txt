@@ -1,0 +1,66 @@
+=== Host cat /proc/sys/net/ipv4/tcp_timestamps (Valor: 1) ===
+
+=== vuln-srv1 (172.18.0.200) sshd config ===
+permitrootlogin yes
+ciphers 3des-cbc,aes128-cbc,aes192-cbc,aes256-cbc
+macs hmac-md5,hmac-sha1,umac-64@openssh.com
+
+=== vuln-srv1 vsftpd.conf ===
+listen=YES
+listen_ipv6=NO
+anonymous_enable=YES
+anon_root=/var/ftp
+local_enable=YES
+write_enable=YES
+local_umask=022
+dirmessage_enable=YES
+use_localtime=YES
+xferlog_enable=YES
+connect_from_port_20=YES
+ftpd_banner=vsftpd 3.0.3
+ssl_enable=NO
+pasv_enable=YES
+pasv_min_port=21100
+pasv_max_port=21110
+
+=== vuln-srv2 (172.18.0.201) sshd config ===
+permitrootlogin yes
+ciphers 3des-cbc,aes128-cbc,aes192-cbc,aes256-cbc
+macs hmac-md5,hmac-sha1,umac-64@openssh.com
+
+=== vuln-srv2 httpd -v ===
+Server version: Apache/2.4.49 (Unix)
+Server built:   Sep 28 2021 07:46:54
+
+=== vuln-srv3 (172.18.0.202) sshd config ===
+permitrootlogin yes
+ciphers 3des-cbc,aes128-cbc,aes192-cbc,aes256-cbc
+macs hmac-md5,hmac-sha1,umac-64@openssh.com
+
+=== vuln-srv3 apache2 -v ===
+Server version: Apache/2.4.41 (Ubuntu)
+Server built:   2025-04-02T18:34:29
+
+=== vuln-srv3 vsftpd.conf ===
+listen=YES
+listen_ipv6=NO
+anonymous_enable=YES
+anon_root=/var/ftp
+local_enable=YES
+write_enable=YES
+local_umask=022
+dirmessage_enable=YES
+use_localtime=YES
+xferlog_enable=YES
+connect_from_port_20=YES
+ftpd_banner=vsftpd 3.0.5
+ssl_enable=NO
+pasv_enable=YES
+pasv_min_port=21200
+pasv_max_port=21210
+
+=== vuln-srv3 /secretos check ===
+total 12
+drwxr-xr-x 2 root root 4096 Nov  5 22:42 .
+drwxr-xr-x 1 root root 4096 Nov  5 22:42 ..
+-rw-r--r-- 1 root root   32 Nov  5 22:42 config.txt

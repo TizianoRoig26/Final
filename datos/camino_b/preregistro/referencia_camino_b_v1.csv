@@ -1,0 +1,39 @@
+id,host,puerto,tipo_hallazgo,nombre_esperado,cve_esperado,cvss_esperado,fuente,regla_coincidencia
+1,172.18.0.200,21/tcp,B,FTP Unencrypted Cleartext Login,N/A,4.8,vsftpd.conf,name_contains:cleartext login
+2,172.18.0.200,21/tcp,A,Anonymous FTP Login Reporting,CVE-1999-0497,6.4,vsftpd.conf,cve:CVE-1999-0497
+3,172.18.0.200,21/tcp,C,FTP Banner Detection (vsftpd 3.0.3),N/A,0.0,vsftpd version,name_contains:FTP Banner
+4,172.18.0.200,22/tcp,B,Weak Encryption Algorithm(s) Supported (SSH),N/A,4.3,sshd_config,name_contains:Weak Encryption Algorithm
+5,172.18.0.200,22/tcp,B,Weak MAC Algorithm(s) Supported (SSH),N/A,2.6,sshd_config,name_contains:Weak MAC Algorithm
+6,172.18.0.200,22/tcp,C,OpenSSH Detection Consolidation (OpenSSH 7.9p1),N/A,0.0,sshd version,name_contains:OpenSSH Detection Consolidation
+7,172.18.0.200,general/icmp,D,ICMP Timestamp Reply Information Disclosure,CVE-1999-0524,2.1,kernel net,cve:CVE-1999-0524
+8,172.18.0.200,general/tcp,D,TCP Timestamps Information Disclosure,N/A,2.6,kernel net,name_contains:TCP Timestamps
+9,172.18.0.201,80/tcp,A,Apache HTTP Server 2.4.49 Directory Traversal / RCE,CVE-2021-41773,9.8,httpd.conf & bin,cve:CVE-2021-41773
+10,172.18.0.201,80/tcp,A,HTTP Debugging Methods (TRACE/TRACK) Enabled,CVE-2003-1567,5.8,httpd.conf,cve:CVE-2003-1567
+11,172.18.0.201,80/tcp,B,HTTP Security Headers Detection (Falta HSTS/CSP/X-Frame),N/A,0.0,httpd.conf,name_contains:Security Headers Detection
+12,172.18.0.201,80/tcp,C,Allowed HTTP Methods Enumeration,N/A,0.0,httpd options,name_contains:Allowed HTTP Methods
+13,172.18.0.201,80/tcp,C,HTTP Server Banner Enumeration (Apache/2.4.49),N/A,0.0,httpd banner,name_contains:Server Banner Enumeration
+14,172.18.0.201,22/tcp,B,Weak Encryption Algorithm(s) Supported (SSH),N/A,4.3,sshd_config,name_contains:Weak Encryption Algorithm
+15,172.18.0.201,22/tcp,B,Weak MAC Algorithm(s) Supported (SSH),N/A,2.6,sshd_config,name_contains:Weak MAC Algorithm
+16,172.18.0.201,22/tcp,C,OpenSSH Detection Consolidation (OpenSSH 7.9p1),N/A,0.0,sshd version,name_contains:OpenSSH Detection Consolidation
+17,172.18.0.201,general/icmp,D,ICMP Timestamp Reply Information Disclosure,CVE-1999-0524,2.1,kernel net,cve:CVE-1999-0524
+18,172.18.0.202,21/tcp,B,FTP Unencrypted Cleartext Login,N/A,4.8,vsftpd.conf,name_contains:cleartext login
+19,172.18.0.202,21/tcp,A,Anonymous FTP Login Reporting,CVE-1999-0497,6.4,vsftpd.conf,cve:CVE-1999-0497
+20,172.18.0.202,21/tcp,C,FTP Banner Detection (vsftpd 3.0.5),N/A,0.0,vsftpd version,name_contains:FTP Banner
+21,172.18.0.202,80/tcp,B,HTTP Security Headers Detection (Falta HSTS/CSP),N/A,0.0,apache2.conf,name_contains:Security Headers Detection
+22,172.18.0.202,80/tcp,C,Allowed HTTP Methods Enumeration,N/A,0.0,apache2 options,name_contains:Allowed HTTP Methods
+23,172.18.0.202,80/tcp,C,HTTP Server Banner Enumeration (Apache/2.4.41),N/A,0.0,apache2 banner,name_contains:Server Banner Enumeration
+24,172.18.0.202,22/tcp,B,Weak Encryption Algorithm(s) Supported (SSH),N/A,4.3,sshd_config,name_contains:Weak Encryption Algorithm
+25,172.18.0.202,22/tcp,B,Weak MAC Algorithm(s) Supported (SSH),N/A,2.6,sshd_config,name_contains:Weak MAC Algorithm
+26,172.18.0.202,22/tcp,C,OpenSSH Detection Consolidation (OpenSSH 8.2p1),N/A,0.0,sshd version,name_contains:OpenSSH Detection Consolidation
+27,172.18.0.202,general/icmp,D,ICMP Timestamp Reply Information Disclosure,CVE-1999-0524,2.1,kernel net,cve:CVE-1999-0524
+28,172.18.0.202,general/tcp,D,TCP Timestamps Information Disclosure,N/A,2.6,kernel net,name_contains:TCP Timestamps
+101,172.18.0.200,22/tcp,E,SSH Password Authentication / PermitRootLogin Enabled,N/A,5.0,sshd_config,name_contains:SSH Password Authentication
+102,172.18.0.201,22/tcp,E,SSH Password Authentication / PermitRootLogin Enabled,N/A,5.0,sshd_config,name_contains:SSH Password Authentication
+103,172.18.0.202,22/tcp,E,SSH Password Authentication / PermitRootLogin Enabled,N/A,5.0,sshd_config,name_contains:SSH Password Authentication
+104,172.18.0.201,80/tcp,E,Apache ServerSignature / ServerTokens Information Disclosure,N/A,5.0,httpd.conf,name_contains:Server Tokens|ServerSignature
+105,172.18.0.202,80/tcp,E,Apache ServerSignature / ServerTokens Information Disclosure,N/A,5.0,apache2.conf,name_contains:Server Tokens|ServerSignature
+106,172.18.0.201,80/tcp,E,Directory Listing Enabled (Options Indexes),N/A,5.0,httpd.conf,name_contains:Directory Listing|Autoindex
+107,172.18.0.202,80/tcp,E,Directory Listing Enabled (Options Indexes),N/A,5.0,apache2.conf,name_contains:Directory Listing|Autoindex
+108,172.18.0.202,80/tcp,E,Sensitive Directory / File Exposure (/secretos/config.txt),N/A,5.0,filesystem web,name_contains:backup|secretos|config
+109,172.18.0.201,80/tcp,E,Apache HTTP Server 2.4.49 / 2.4.50 RCE Bypass,CVE-2021-42013,9.8,httpd.conf & bin,cve:CVE-2021-42013
+110,172.18.0.200,general/tcp,E,Operating System End of Life (EOL) Detection - Debian 10,N/A,7.5,os release,name_contains:End of Life|EOL

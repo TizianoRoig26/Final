@@ -1,0 +1,7 @@
+       name        |    value     
+-------------------+--------------
+ update_nvti_cache | 0
+ nvts_check_time   | 1782691728
+ nvts_feed_version | 202603130719
+(3 rows)
+
