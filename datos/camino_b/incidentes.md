@@ -16,3 +16,4 @@ Este documento registra cronológicamente cualquier anomalía técnica, fallo de
 | N° Incidente | Fecha / Hora (UTC) | Corrida Afectada | Tipo de Evento | Descripción Técnica y Causa Raíz | Acción Correctiva Aplicada | Estado |
 |---|---|---|---|---|---|---|
 | `INC-00` | 2026-11-12 18:14 | Calibración Previa | Parámetro GMP | Invocación de `get_report` en gvm-script con retorno pretransformado de lxml | Se ajustó `export_openvas_report.gmp.py` para usar `etree.tostring` directo y preservar objetos con `KEEP_GVM_OBJECTS=1`. | Resuelto |
+| `INC-01` | 2026-11-12 23:25 | Corrida A5 (Intento 1) | Reinicio de Máquina | Reinicio del sistema anfitrión durante la ventana de ejecución de A5, afectando tareas en segundo plano. | Se preservan los artefactos del intento 1 en `corrida_5_intento1_reinicio/` y se repite la corrida A5 en limpio. | Resuelto |

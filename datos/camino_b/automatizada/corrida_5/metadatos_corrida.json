@@ -2,32 +2,32 @@
   "condicion": "Automatizada",
   "corrida_numero": 5,
   "operador": "Tiziano Roig",
-  "scan_id": "scan_20261112_200844",
-  "n8n_execution_id": 414,
+  "scan_id": "scan_20261112_203906",
+  "n8n_execution_id": 419,
   "n8n_workflow_id": "eZcFfWr0YiA2pAE3",
-  "greenbone_task_id": "e07e8b2d-eab0-4adc-9e54-604d3044ef68",
-  "greenbone_task_name": "n8n_scan_20261112_200844_task",
-  "greenbone_report_id": "82228b49-6bb9-42d6-ae65-9347a7be987c",
+  "greenbone_task_id": "86cd855a-a5ce-4c8e-a036-b9df913dc961",
+  "greenbone_task_name": "n8n_scan_20261112_203906_task",
+  "greenbone_report_id": "b3240e89-c6e8-470c-bff5-712c1c25e90a",
   "filtro_primario": "levels=chmlg rows=-1 min_qod=0",
   "filtro_defecto": "min_qod=70 rows=-1",
   "marcas_tiempo": {
-    "T0_inicio": "2026-11-12T23:08:32.765Z",
-    "T0b_curl_retorna": "2026-11-12T23:08:32.953Z",
-    "gvmd_start_time_utc": "2026-11-12 23:09:03+00",
-    "gvmd_end_time_utc": "2026-11-12 23:26:42+00",
-    "n8n_stopped_at_utc": "2026-11-12 23:27:00.934"
+    "T0_inicio": "2026-11-12T23:38:54.286Z",
+    "T0b_curl_retorna": "2026-11-12T23:38:54.505Z",
+    "gvmd_start_time_utc": "2026-11-12 23:39:43+00",
+    "gvmd_end_time_utc": "2026-11-12 23:56:25+00",
+    "n8n_stopped_at_utc": "2026-11-12 23:56:45.109"
   },
   "duraciones": {
-    "T_medido_segundos": 1089.2,
-    "T_medido_min_seg": "18m 09s",
-    "T_flujo_segundos": 1108.2,
-    "T_flujo_min_seg": "18m 28s",
-    "diferencia_frente_M5_escaneo_segundos": -549.8,
-    "ahorro_porcentual_frente_M5_escaneo": "-33.5 %",
-    "diferencia_frente_M5_lanzamiento_segundos": -608.6,
-    "ahorro_porcentual_frente_M5_lanzamiento": "-35.8 %",
-    "diferencia_frente_M5_total_segundos": -747.9,
-    "ahorro_porcentual_frente_M5_total": "-40.7 %"
+    "T_medido_segundos": 1050.7,
+    "T_medido_min_seg": "17m 31s",
+    "T_flujo_segundos": 1070.8,
+    "T_flujo_min_seg": "17m 51s",
+    "diferencia_frente_M5_escaneo_segundos": -588.3,
+    "ahorro_porcentual_frente_M5_escaneo": "-35.9 %",
+    "diferencia_frente_M5_lanzamiento_segundos": -647.1,
+    "ahorro_porcentual_frente_M5_lanzamiento": "-38.1 %",
+    "diferencia_frente_M5_total_segundos": -786.4,
+    "ahorro_porcentual_frente_M5_total": "-42.8 %"
   },
   "efectividad": {
     "total_hallazgos_primario": 272,
@@ -50,5 +50,5 @@
     "total_porcentaje": 84.2
   },
   "versiones_referencia": "datos/camino_b/ficha_tecnica/",
-  "incidentes": "Ninguno. Corrida final completada con persistencia total en PostgreSQL (169 registros, 23 críticas). Réplica experimental de 10 corridas finalizada con éxito."
+  "incidentes": "Corrida final A5 repetida exitosamente tras el incidente INC-01 (reinicio del anfitrión). Los artefactos del intento 1 se preservan en datos/camino_b/automatizada/corrida_5_intento1_reinicio/."
 }

@@ -1,13 +1,13 @@
 {
-  "report_id": "82228b49-6bb9-42d6-ae65-9347a7be987c",
-  "task_id": "e07e8b2d-eab0-4adc-9e54-604d3044ef68",
-  "task_name": "n8n_scan_20261112_200844_task",
+  "report_id": "b3240e89-c6e8-470c-bff5-712c1c25e90a",
+  "task_id": "86cd855a-a5ce-4c8e-a036-b9df913dc961",
+  "task_name": "n8n_scan_20261112_203906_task",
   "scan_start_utc": null,
   "scan_end_utc": null,
   "archivos_generados": {
-    "reporte_openvas_primario.xml": 1335962,
+    "reporte_openvas_primario.xml": 1338150,
     "reporte_openvas_primario.csv": 0,
-    "reporte_openvas_defecto.xml": 909878,
+    "reporte_openvas_defecto.xml": 912066,
     "reporte_openvas_defecto.csv": 0
   },
   "total_hallazgos_primario": 0,

@@ -1,0 +1,1213 @@
+From: from@example.com
+To: to@example.com
+Subject: Reporte de Vulnerabilidades - 12/11/2026, 06:51:06
+Message-ID: <2891fb7c-bc6a-bb6e-f1f0-6191a206561f@example.com>
+Content-Transfer-Encoding: quoted-printable
+Date: Thu, 12 Nov 2026 22:14:32 +0000
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+# Informe de Escaneo de Vulnerabilidades
+
+**ID de Escaneo**: =
+scan_20261112_185047
+**Fecha del Escaneo**: 12/11/2026, 18:51:06
+**Hosts Escaneados**: 3 (172.18.0.200, 172.18.0.201, 172.18.0.202)
+**Total de Vulnerabilidades**: 169
+
+---
+
+## Resumen Ejecutivo
+
+| Severidad | Cantidad | Porcentaje |
+|-----------|----------|------------|
+| Critica (9.0-10.0) | 23 | 13.6% |
+| Alta (7.0-8.9) | 23 | 13.6% |
+| Media (4.0-6.9) | 49 | 29.0% |
+| Baja e Informativa (0.0-3.9) | 74 | 43.=
+8% |
+
+---
+
+## Vulnerabilidades Criticas
+
+### 1. Apache HTTP Server 2.4.0 - =
+2.4.46 Multiple Vulnerabilities - Linux
+
+**Host**: 172.18.0.202:80/tcp
+**Severidad**: 9.8/10.0
+**CVE**: CVE-2020-35452, CVE-2021-26690, =
+CVE-2021-26691
+
+**Descripcion**:
+Installed version: 2.4.41
+Fixed version:     2.4.48
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.48 or later.
+
+---
+
+
+### 2. Apache HTTP Server 2.4.0 - 2.4.55 HTTP Request Smuggling =
+Vulnerability - Linux
+
+**Host**: 172.18.0.201:80/tcp
+**Severidad**: 9.8/10.0
+**CVE**: CVE-2023-25690
+
+**Descripcion**:
+Installed version: 2.4.49
+Fixed version:     2.4.56
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.56 or later.
+
+---
+
+
+### 3. Apache HTTP Server 2.4.0 -=
+ 2.4.55 HTTP Request Smuggling Vulnerability - Linux
+
+**Host**: 172.18.0.202:80/tcp
+**Severidad**: 9.8/10.0
+**CVE**: CVE-2023-25690
+
+**Descripcion**:
+Installed version: 2.4.41
+Fixed version:     2.4.56
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.56 or later.
+
+---
+
+
+### 4. Apache HTTP Server 2.4.49 - 2.4.50 Directory Traversal / RCE =
+Vulnerability - Active Check
+
+**Host**: 172.18.0.201:80/tcp
+**Severidad**: 9.8/10.0
+**CVE**: CVE-2021-42013
+
+**Descripcion**:
+It was possible to read "etc/passwd" through http://vuln-srv2.=
+greenbone-community-edition_default/cgi-bin/.%%32%65/.%%32%65/.%%32%65/.=
+%%32%65/.%%32%65/.%%32%65/etc/passwd
+
+Result:
+
+root:x:0:0:root:/root:/bin/b=
+ash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sy...
+
+**Solucion Recomendada**:
+Update to version 2.4.51 or later.
+
+---
+
+
+### 5. Apache HTTP Server 2.4.49 =
+- 2.4.50 Directory Traversal / RCE Vulnerability - Linux
+
+**Host**: 172.18.0.201:80/tcp
+**Severidad**: 9.8/10.0
+**CVE**: CVE-2021-42013
+
+**Descripcion**:
+Installed version: 2.4.49
+Fixed version:     2.4.51
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.51 or later.
+
+---
+
+
+### 6. Apache HTTP Server 2.4.49 Directory Traversal / RCE Vulnerability - =
+Active Check
+
+**Host**: 172.18.0.201:80/tcp
+**Severidad**: 9.8/10.0
+**CVE**: CVE-2021-41773
+
+**Descripcion**:
+It was possible to read =
+"etc/passwd" through http://vuln-srv2.greenbone-community-edition_default/c=
+gi-bin/.%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd
+
+Result:
+
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nol=
+ogin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3...
+
+**Solucion Recomendada**:
+Update to version 2.4.50 or later.
+
+---
+
+
+### 7. Apache HTTP Server 2.4.49 Multiple Vulnerabilities - Linux
+
+**Host**: 172.18.0.201:80/tcp
+**Severidad**: 9.8/10.0
+**CVE**: CVE-2021-41524, CVE-2021-41773
+
+**Descripcion**:
+Installed version: 2.4.49
+Fixed version:     2.4.50
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.50 or later.
+
+---
+
+
+### 8. Apache HTTP Server < 2.4.=
+49 Multiple Vulnerabilities - Linux
+
+**Host**: 172.18.0.202:80/tcp
+**Severidad**: 9.8/10.0
+**CVE**: CVE-2021-34798, CVE-2021-39275, =
+CVE-2021-40438
+
+**Descripcion**:
+Installed version: 2.4.41
+Fixed version:     2.4.49
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.49 or later.
+
+---
+
+
+### 9. Apache HTTP Server < 2.4.54 Multiple Vulnerabilities - Linux
+
+**Host**: 172.18.0.202:80/tcp
+**Severidad**: 9.8/10.0
+**CVE**: CVE-2022-26377, CVE-2022-28614, CVE-2022-28615, CVE-2022-29404, =
+CVE-2022-30556, CVE-2022-31813
+
+**Descripcion**:
+Installed version: 2.4.41
+Fixed version:     2.4.54
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.54 or later.
+
+---
+
+
+### 10. Apache HTTP Server < 2.4.54 Multiple Vulnerabilities - Linux
+
+**Host**: 172.18.0.201:80/tcp
+**Severidad**: 9.8/10.0
+**CVE**: CVE-2022-26377, CVE-2022-28614, CVE-2022-28615, CVE-2022-29404, =
+CVE-2022-30556, CVE-2022-31813
+
+**Descripcion**:
+Installed version: 2.4.49
+Fixed version:     2.4.54
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.54 or later.
+
+---
+*...y 13 vulnerabilidades criticas adicionales.*
+
+
+## Vulnerabilidades =
+Altas
+
+### 1. Apache HTTP Server 2.4.17 < 2.4.49 'mod_proxy' HTTP/2 Request=
+ Smuggling Vulnerability - Linux
+
+**Host**: 172.18.0.202:80/tcp
+**Severidad**: 7.5/10.0
+**CVE**: CVE-2021-33193
+
+**Descripcion**:
+Installed version: 2.4.41
+Fixed version:     2.4.49
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.49 or later.
+
+---
+
+
+### 2. Apache HTTP Server 2.4.30 =
+- 2.4.55 HTTP Request Smuggling Vulnerability - Linux
+
+**Host**: 172.18.0.202:80/tcp
+**Severidad**: 7.5/10.0
+**CVE**: CVE-2023-27522
+
+**Descripcion**:
+Installed version: 2.4.41
+Fixed version:     2.4.56
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.56 or later.
+
+---
+
+
+### 3. Apache HTTP Server 2.4.30 - 2.4.55 HTTP Request Smuggling =
+Vulnerability - Linux
+
+**Host**: 172.18.0.201:80/tcp
+**Severidad**: 7.5/10.0
+**CVE**: CVE-2023-27522
+
+**Descripcion**:
+Installed version: 2.4.49
+Fixed version:     2.4.56
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.56 or later.
+
+---
+
+
+### 4. Apache HTTP Server 2.4.30 =
+< 2.4.49 DoS Vulnerability - Linux
+
+**Host**: 172.18.0.202:80/tcp
+**Severidad**: 7.5/10.0
+**CVE**: CVE-2021-36160
+
+**Descripcion**:
+Installed version: 2.4.41
+Fixed version:     2.4.49
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.49 or later.
+
+---
+
+
+### 5. Apache HTTP Server 2.4.41 =
+- 2.4.46 NULL Pointer Dereference Vulnerability - Linux
+
+**Host**: 172.18.0.202:80/tcp
+**Severidad**: 7.5/10.0
+**CVE**: CVE-2020-13950
+
+**Descripcion**:
+Installed version: 2.4.41
+Fixed version:     2.4.48
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.48 or later.
+
+---
+
+
+### 6. Apache HTTP Server 2.4.7 - 2.4.51 Multiple Vulnerabilities - Linux
+
+**Host**: 172.18.0.202:80/tcp
+**Severidad**: 8.2/10.0
+**CVE**: CVE-2021-44224
+
+**Descripcion**:
+Installed version: 2.4.41
+Fixed version:     2.4.52
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.52 or later.
+
+---
+
+
+### 7. Apache HTTP Server 2.4.7 - 2.4.51 Multiple Vulnerabilities - Linux
+
+**Host**: 172.18.0.201:80/tcp
+**Severidad**: 8.2/10.0
+**CVE**: CVE-2021-44224
+
+**Descripcion**:
+Installed version: 2.4.49
+Fixed version:     2.4.52
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.52 or later.
+
+---
+
+
+### 8. Apache HTTP Server < 2.4.58 'mod_macro' Out-of-bounds Read =
+Vulnerability - Linux
+
+**Host**: 172.18.0.202:80/tcp
+**Severidad**: 7.5/10.0
+**CVE**: CVE-2023-31122
+
+**Descripcion**:
+Installed version: 2.4.41
+Fixed version:     2.4.58
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.58 or later.
+
+---
+
+
+### 9. Apache HTTP Server < 2.4.=
+58 'mod_macro' Out-of-bounds Read Vulnerability - Linux
+
+**Host**: 172.18.0.201:80/tcp
+**Severidad**: 7.5/10.0
+**CVE**: CVE-2023-31122
+
+**Descripcion**:
+Installed version: 2.4.49
+Fixed version:     2.4.58
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.58 or later.
+
+---
+
+
+### 10. Apache HTTP Server < 2.4.59 Multiple Vulnerabilities - Linux
+
+**Host**: 172.18.0.201:80/tcp
+**Severidad**: 7.5/10.0
+**CVE**: CVE-2023-38709, CVE-2024-24795, CVE-2024-27316
+
+**Descripcion**:
+Installed version: 2.4.49
+Fixed version:     2.4.59
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.59 or later.
+
+---
+*...y 13 vulnerabilidades altas =
+adicionales.*
+
+
+## Vulnerabilidades Medias
+
+### 1. Anonymous FTP Login =
+Reporting
+
+**Host**: 172.18.0.202:21/tcp
+**Severidad**: 6.4/10.0
+**CVE**: CVE-1999-0497
+
+**Descripcion**:
+It was possible to login to the =
+remote FTP service with the following anonymous account(s):
+
+anonymous:anonymous@example.com
+ftp:anonymous@example.com
+
+Here are the contents of the remote FTP directory listing:
+
+Account "anonymous":
+
+-rw-r--r--    1 0        0              40 Nov 11 =
+22:55 leeme.txt
+...
+
+**Solucion Recomendada**:
+If you do not want to share =
+files, you should disable anonymous
+  logins.
+
+---
+
+
+### 2. Anonymous FTP Login Reporting
+
+**Host**: 172.18.0.200:21/tcp
+**Severidad**: 6.4/10.0
+**CVE**: CVE-1999-0497
+
+**Descripcion**:
+It was possible to login to the remote FTP service with the following =
+anonymous account(s):
+
+anonymous:anonymous@example.com
+ftp:anonymous@example.com
+
+Here are the contents of the remote FTP =
+directory listing:
+
+Account "anonymous":
+
+-rw-r--r--    1 0        0       =
+       40 Nov 11 22:55 leeme.txt
+...
+
+**Solucion Recomendada**:
+If you do not want to share files, you should disable anonymous
+  logins.
+
+---
+
+
+### 3. Apache HTTP Server 2.4.0 < 2.4.42 Multiple Vulnerabilities - =
+Linux
+
+**Host**: 172.18.0.202:80/tcp
+**Severidad**: 6.1/10.0
+**CVE**: CVE-2020-1927, CVE-2020-1934
+
+**Descripcion**:
+Installed version: 2.4.41
+Fixed version:     2.4.42
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.42 or later.
+
+---
+
+
+### 4. Apache HTTP Server 2.4.17 =
+- 2.4.57 DoS Vulnerability - Linux
+
+**Host**: 172.18.0.202:80/tcp
+**Severidad**: 5.9/10.0
+**CVE**: CVE-2023-45802
+
+**Descripcion**:
+Installed version: 2.4.41
+Fixed version:     2.4.58
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.58 or later.
+
+---
+
+
+### 5. Apache HTTP Server 2.4.17 =
+- 2.4.57 DoS Vulnerability - Linux
+
+**Host**: 172.18.0.201:80/tcp
+**Severidad**: 5.9/10.0
+**CVE**: CVE-2023-45802
+
+**Descripcion**:
+Installed version: 2.4.49
+Fixed version:     2.4.58
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.58 or later.
+
+---
+
+
+### 6. Apache HTTP Server 2.4.17 =
+< 2.4.64 DoS Vulnerability - Linux
+
+**Host**: 172.18.0.201:80/tcp
+**Severidad**: 5/10.0
+**CVE**: CVE-2025-53020
+
+**Descripcion**:
+Installed version: 2.4.49
+Fixed version:     2.4.64
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.64 or later.
+
+---
+
+
+### 7. Apache HTTP Server 2.4.17 =
+< 2.4.64 DoS Vulnerability - Linux
+
+**Host**: 172.18.0.202:80/tcp
+**Severidad**: 5/10.0
+**CVE**: CVE-2025-53020
+
+**Descripcion**:
+Installed version: 2.4.41
+Fixed version:     2.4.64
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.64 or later.
+
+---
+
+
+### 8. Apache HTTP Server 2.4.26 =
+< 2.4.64 DoS Vulnerability - Linux
+
+**Host**: 172.18.0.202:80/tcp
+**Severidad**: 5/10.0
+**CVE**: CVE-2025-49630
+
+**Descripcion**:
+Installed version: 2.4.41
+Fixed version:     2.4.64
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.64 or later.
+
+---
+
+
+### 9. Apache HTTP Server 2.4.26 =
+< 2.4.64 DoS Vulnerability - Linux
+
+**Host**: 172.18.0.201:80/tcp
+**Severidad**: 5/10.0
+**CVE**: CVE-2025-49630
+
+**Descripcion**:
+Installed version: 2.4.49
+Fixed version:     2.4.64
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.64 or later.
+
+---
+
+
+### 10. Apache HTTP Server 2.4.35=
+ < 2.4.64 Access Control Bypass Vulnerability - Linux
+
+**Host**: 172.18.0.201:80/tcp
+**Severidad**: 5/10.0
+**CVE**: CVE-2025-23048
+
+**Descripcion**:
+Installed version: 2.4.49
+Fixed version:     2.4.64
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.64 or later.
+
+---
+
+
+### 11. Apache HTTP Server 2.4.35=
+ < 2.4.64 Access Control Bypass Vulnerability - Linux
+
+**Host**: 172.18.0.202:80/tcp
+**Severidad**: 5/10.0
+**CVE**: CVE-2025-23048
+
+**Descripcion**:
+Installed version: 2.4.41
+Fixed version:     2.4.64
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.64 or later.
+
+---
+
+
+### 12. Apache HTTP Server 2.4.39=
+ - 2.4.46 Unexpected URL Matching Vulnerability - Linux
+
+**Host**: 172.18.0.202:80/tcp
+**Severidad**: 5.3/10.0
+**CVE**: CVE-2021-30641
+
+**Descripcion**:
+Installed version: 2.4.41
+Fixed version:     2.4.48
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.48 or later.
+
+---
+
+
+### 13. Apache HTTP Server 2.4.6 - 2.4.46 Tunneling Misconfiguration =
+Vulnerability - Linux
+
+**Host**: 172.18.0.202:80/tcp
+**Severidad**: 5.3/10.0
+**CVE**: CVE-2019-17567
+
+**Descripcion**:
+Installed version: 2.4.41
+Fixed version:     2.4.48
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.48 or later.
+
+---
+
+
+### 14. Apache HTTP Server 2.4.7 =
+- 2.4.65 Authentication Bypass Vulnerability - Linux
+
+**Host**: 172.18.0.202:80/tcp
+**Severidad**: 5.8/10.0
+**CVE**: CVE-2025-66200
+
+**Descripcion**:
+Installed version: 2.4.41
+Fixed version:     2.4.66
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.66 or later.
+
+---
+
+
+### 15. Apache HTTP Server 2.4.7 - 2.4.65 Authentication Bypass =
+Vulnerability - Linux
+
+**Host**: 172.18.0.201:80/tcp
+**Severidad**: 5.8/10.0
+**CVE**: CVE-2025-66200
+
+**Descripcion**:
+Installed version: 2.4.49
+Fixed version:     2.4.66
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.66 or later.
+
+---
+*...y 34 vulnerabilidades medias =
+adicionales.*
+
+
+## Vulnerabilidades Bajas e Informativas
+
+### 1. Allowed HTTP Methods Enumeration
+
+**Host**: 172.18.0.201:80/tcp
+**Severidad**: 0/10.0
+**CVE**: N/A
+
+**Descripcion**:
+The following list contains the URLs and corresponding supported HTTP =
+methods.
+
+URL                                                   | HTTP =
+Methods
+-------------------------------------------------------------------=
+---------------------------------------------------
+http://vuln-srv2.greenbone-commu...
+
+**Solucion Recomendada**:
+*Sin solucion especificada.*
+
+---
+
+
+### 2. Allowed HTTP Methods Enumeration
+
+**Host**: 172.18.0.202:80/tcp
+**Severidad**: 0/10.0
+**CVE**: N/A
+
+**Descripcion**:
+The following list contains the URLs and corresponding =
+supported HTTP methods.
+
+URL                                               =
+    | HTTP Methods
+--------------------------------------------------------=
+--------------------------------------------------------
+http://vuln-srv3.greenbone-community-e...
+
+**Solucion Recomendada**:
+*Sin solucion especificada.*
+
+---
+
+
+### 3. Apache HTTP Server 2.4.30 - 2.4.=
+65 Integer Overflow Vulnerability - Linux
+
+**Host**: 172.18.0.202:80/tcp
+**Severidad**: 2.6/10.0
+**CVE**: CVE-2025-55753
+
+**Descripcion**:
+Installed version: 2.4.41
+Fixed version:     2.4.66
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.66 or later.
+
+---
+
+
+### 4. Apache HTTP Server 2.4.30 =
+- 2.4.65 Integer Overflow Vulnerability - Linux
+
+**Host**: 172.18.0.=
+201:80/tcp
+**Severidad**: 2.6/10.0
+**CVE**: CVE-2025-55753
+
+**Descripcion**:
+Installed version: 2.4.49
+Fixed version:     2.4.66
+Installation
+path / port:       80/tcp
+
+**Solucion Recomendada**:
+Update to version 2.4.66 or later.
+
+---
+
+
+### 5. Apache HTTP Server =
+Detection Consolidation
+
+**Host**: 172.18.0.201
+**Severidad**: 0/10.0
+**CVE**: N/A
+
+**Descripcion**:
+Detected Apache HTTP Server
+
+Version:       2.4.49
+Location:      80/tcp
+CPE:           =
+cpe:/a:apache:http_server:2.4.49
+
+Concluded from version/product =
+identification result:
+Server: Apache/2.4.49 (Unix)
+
+**Solucion Recomendada**:
+*Sin solucion especificada.*
+
+---
+
+
+### 6. Apache HTTP Server Detection Consolidation
+
+**Host**: 172.18.0.202
+**Severidad**: 0/10.0
+**CVE**: N/A
+
+**Descripcion**:
+Detected Apache HTTP Server
+
+Version:       2.4.41
+Location:      80/tcp
+CPE:           cpe:/a:apache:http_server:2.4.41
+
+Concluded from =
+version/product identification result:
+Server: Apache/2.4.41 (Ubuntu)
+
+**Solucion Recomendada**:
+*Sin solucion especificada.*
+
+---
+
+
+### 7. CPE Inventory
+
+**Host**: 172.18.0.201
+**Severidad**: 0/10.0
+**CVE**: N/A
+
+**Descripcion**:
+172.18.0.201|cpe:/a:apache:http_server:2.4.=
+49
+172.18.0.201|cpe:/a:ietf:secure_shell_protocol:2.0
+172.18.0.201|cpe:/a:openbsd:openssh:7.9p1
+172.18.0.201|cpe:/o:debian:debian=
+_linux:10
+
+**Solucion Recomendada**:
+*Sin solucion especificada.*
+
+---
+
+
+### 8. CPE Inventory
+
+**Host**: 172.18.0.202
+**Severidad**: 0/10.0
+**CVE**: N/A
+
+**Descripcion**:
+172.18.0.202|cpe:/a:apache:http_server:2.4.=
+41
+172.18.0.202|cpe:/a:ietf:secure_shell_protocol:2.0
+172.18.0.202|cpe:/a:openbsd:openssh:8.2p1
+172.18.0.202|cpe:/a:vsftpd_projec=
+t:vsftpd:3.0.5
+172.18.0.202|cpe:/o:canonical:ubuntu_linux:20.04
+
+**Solucion Recomendada**:
+*Sin solucion especificada.*
+
+---
+
+
+### 9. CPE Inventory
+
+**Host**: 172.18.0.200
+**Severidad**: 0/10.0
+**CVE**: N/A
+
+**Descripcion**:
+172.18.0.200|cpe:/a:ietf:secure_shell_protoc=
+ol:2.0
+172.18.0.200|cpe:/a:openbsd:openssh:7.9p1
+172.18.0.=
+200|cpe:/a:vsftpd_project:vsftpd:3.0.3
+172.18.0.200|cpe:/o:debian:debian_li=
+nux:10
+
+**Solucion Recomendada**:
+*Sin solucion especificada.*
+
+---
+
+
+### 10. FTP Banner Detection
+
+**Host**: 172.18.0.202:21/tcp
+**Severidad**: 0/10.0
+**CVE**: N/A
+
+**Descripcion**:
+Remote FTP server banner:
+
+220 vsftpd 3.0.5
+
+This is probably (a):
+
+- vsftpd
+
+Server operating system information collected via "SYST" command:
+
+215 UNIX Type: L8
+
+Server status information collected via "STAT" command:
+
+211-FTP server status:
+     Connected to 172.18.0.6
+     Logged in as ftp
+     ...
+
+**Solucion Recomendada**:
+*Sin solucion especificada.*
+
+---
+
+
+### 11. FTP Banner Detection
+
+**Host**: 172.18.0.200:21/tcp
+**Severidad**: 0/10.0
+**CVE**: N/A
+
+**Descripcion**:
+Remote FTP server banner:
+
+220 vsftpd 3.0.3
+
+This is probably (a):
+
+- vsftpd
+
+Server operating system information collected via "SYST" command:
+
+215 UNIX Type: L8
+
+Server status information collected via "STAT" command:
+
+211-FTP server status:
+     Connected to 172.18.0.6
+     Logged in as ftp
+     ...
+
+**Solucion Recomendada**:
+*Sin solucion especificada.*
+
+---
+
+
+### 12. Hostname Determination Reporting
+
+**Host**: 172.18.0.202
+**Severidad**: 0/10.0
+**CVE**: N/A
+
+**Descripcion**:
+Hostname determination for IP 172.18.0.202:
+
+Hostname|Source
+vuln-srv3.greenbone-community-edition_default|Reverse-DNS
+
+**Solucion Recomendada**:
+*Sin solucion especificada.*
+
+---
+
+
+### 13. Hostname Determination Reporting
+
+**Host**: 172.18.0.200
+**Severidad**: 0/10.0
+**CVE**: N/A
+
+**Descripcion**:
+Hostname determination for IP 172.18.0.200:
+
+Hostname|Source
+vuln-srv1.greenbone-community-edition_default|Reverse-DNS
+
+**Solucion Recomendada**:
+*Sin solucion especificada.*
+
+---
+
+
+### 14. Hostname Determination Reporting
+
+**Host**: 172.18.0.201
+**Severidad**: 0/10.0
+**CVE**: N/A
+
+**Descripcion**:
+Hostname determination for IP 172.18.0.201:
+
+Hostname|Source
+vuln-srv2.greenbone-community-edition_default|Reverse-DNS
+
+**Solucion Recomendada**:
+*Sin solucion especificada.*
+
+---
+
+
+### 15. HTTP Security Headers Detection
+
+**Host**: 172.18.0.202:80/tcp
+**Severidad**: 0/10.0
+**CVE**: N/A
+
+**Descripcion**:
+Missing Headers                   | More Information
+---------------------------------------------------------------------------=
+---------------------------------------------------------------------------=
+--------------------------------------------------------
+Content-Security-Policy           | http...
+
+**Solucion Recomendada**:
+*Sin solucion especificada.*
+
+---
+
+
+### 16. HTTP Security Headers Detection
+
+**Host**: 172.18.0.201:80/tcp
+**Severidad**: 0/10.0
+**CVE**: N/A
+
+**Descripcion**:
+Missing Headers                   | More Information
+---------------------------------------------------------------------------=
+---------------------------------------------------------------------------=
+--------------------------------------------------------
+Content-Security-Policy           | http...
+
+**Solucion Recomendada**:
+*Sin solucion especificada.*
+
+---
+
+
+### 17. HTTP Server Banner Enumeration
+
+**Host**: 172.18.0.202:80/tcp
+**Severidad**: 0/10.0
+**CVE**: N/A
+
+**Descripcion**:
+It was possible to enumerate the following HTTP server =
+banner(s):
+
+Server banner                  | Enumeration technique
+---------------------------------------------------------------------------=
+----------------------
+Server: Apache/2.4.41 (Ubuntu) | Invalid HTTP 00.5 =
+GET request (non-existent HTT...
+
+**Solucion Recomendada**:
+*Sin solucion especificada.*
+
+---
+
+
+### 18. HTTP Server Banner Enumeration
+
+**Host**: 172.18.0.201:80/tcp
+**Severidad**: 0/10.0
+**CVE**: N/A
+
+**Descripcion**:
+It was possible to enumerate the following HTTP server =
+banner(s):
+
+Server banner                | Enumeration technique
+---------------------------------------------------------------------------=
+--------------------
+Server: Apache/2.4.49 (Unix) | Invalid HTTP 00.5 GET =
+request (non-existent HTTP vers...
+
+**Solucion Recomendada**:
+*Sin solucion especificada.*
+
+---
+
+
+### 19. HTTP Server type and version
+
+**Host**: 172.18.0.202:80/tcp
+**Severidad**: 0/10.0
+**CVE**: N/A
+
+**Descripcion**:
+The remote HTTP Server banner is:
+
+Server: Apache/2.4.41 (Ubuntu)
+
+**Solucion Recomendada**:
+*Sin solucion especificada.*
+
+---
+
+
+### 20. HTTP Server type and version
+
+**Host**: 172.18.0.201:80/tcp
+**Severidad**: 0/10.0
+**CVE**: N/A
+
+**Descripcion**:
+The remote HTTP Server banner is:
+
+Server: Apache/2.4.49 (Unix)
+
+**Solucion Recomendada**:
+*Sin solucion especificada.*
+
+---
+*...y 54 vulnerabilidades bajas e =
+informativas adicionales.*
+
+
+---
+
+## Resumen por Host
+
+### 172.18.0.200
+- Total: 37 | Criticas: 2 | Altas: 4 | Medias: 10 | Bajas/Info: 21
+
+### 172.18.0.201
+- Total: 61 | Criticas: 12 | Altas: 8 | Medias: 17 | =
+Bajas/Info: 24
+
+### 172.18.0.202
+- Total: 71 | Criticas: 9 | Altas: 11 | =
+Medias: 22 | Bajas/Info: 29
+
+---
+
+## Recomendaciones Generales
+
+1. Priorizar la remediacion de vulnerabilidades criticas y altas de forma =
+inmediata.
+2. Aplicar parches y actualizaciones de seguridad para todos los=
+ servicios con hallazgos medios o superiores.
+3. Revisar banners expuestos,=
+ metodos HTTP innecesarios y configuraciones debiles para reducir la =
+superficie de ataque.
+4. Implementar politicas de actualizacion regular de =
+software y firmware.
+5. Realizar escaneos de seguimiento tras aplicar =
+correcciones para verificar la remediacion.
+
+---
+
+*Informe generado =
+automaticamente por el sistema de escaneo de vulnerabilidades TASTSERV*
+
+
+---
+This email was sent automatically with n8n
+https://n8n.io
