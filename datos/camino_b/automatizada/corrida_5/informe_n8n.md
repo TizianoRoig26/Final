@@ -1,9 +1,10 @@
-# Informe de Escaneo de Vulnerabilidades — Corrida A5 (Camino B)
+# Informe de Escaneo de Vulnerabilidades — Corrida A5 Repetida (Camino B)
 
-**ID de Escaneo**: scan_20261112_200844
-**Fecha del Escaneo**: 2026-11-12 23:09:03+00
+**ID de Escaneo**: scan_20261112_203906
+**Fecha del Escaneo**: 2026-11-12 23:39:43+00
 **Hosts Escaneados**: 3 (172.18.0.200, 172.18.0.201, 172.18.0.202)
 **Total de Vulnerabilidades**: 169
+**Nota Metodológica**: Corrida ejecutada en limpio tras el reinicio del host registrado en INC-01.
 
 ---
 

@@ -25,8 +25,8 @@ El diseño experimental consistió en una serie de **10 corridas alternadas ($M_
 
 2. **Eficiencia y Tiempos Pareados**:
    - **Tiempo medio manual ($T_{\text{medido}}$)**: **24 min 44 s (1.484,1 s)**.
-   - **Tiempo medio automatizado ($T_{\text{medido}}$)**: **19 min 34 s (1.173,7 s)**.
-   - **Ahorro neto de tiempo**: El flujo automatizado con n8n redujo el tiempo medio de escaneo en **5 min 10 s (-20.9%)**, eliminando adicionalmente los tiempos muertos de operador entre fases de descubrimiento (Nmap) y configuración de tareas.
+   - **Tiempo medio automatizado ($T_{\text{medido}}$)**: **19 min 26 s (1.166,0 s)**.
+   - **Ahorro neto de tiempo**: El flujo automatizado con n8n redujo el tiempo medio de escaneo en **5 min 18 s (-21.4%)**, eliminando adicionalmente los tiempos muertos de operador entre fases de descubrimiento (Nmap) y configuración de tareas.
 
 3. **Resolución de la Discrepancia de Filtrado (Dictamen C1)**:
    - Se demostró empíricamente que la aparente discrepancia entre los reportes de septiembre (20-22 hallazgos) y los actuales (~272 hallazgos brutos / 169 registros en BD) se debió exclusivamente a los filtros de visualización aplicados por OpenVAS/Greenbone:
@@ -73,9 +73,10 @@ Datos consolidados extraídos de [`datos/camino_b/ensayo/tiempos_replica_camino_
 | **4** | $M_4$ | Manual | 21:19:37 | 21:46:47 | **27m 09s** (1.629 s)* | *Base Par 4* | 28 / 28 (100%) | 23 | 272 | — |
 | **4** | $A_4$ | Automatizada | 21:50:35 | 22:14:18 | **23m 42s** (1.422 s) | **-3m 27s (-12.7%)** | 28 / 28 (100%) | 23 | 272 | 169 |
 | **5** | $M_5$ | Manual | 22:31:46 | 23:02:24 | **30m 37s** (1.837 s)* | *Base Par 5* | 28 / 28 (100%) | 23 | 272 | — |
-| **5** | $A_5$ | Automatizada | 23:08:32 | 23:26:42 | **18m 09s** (1.089 s) | **-12m 28s (-40.7%)** | 28 / 28 (100%) | 23 | 272 | 169 |
+| **5** | $A_5$ | Automatizada | 23:38:54 | 23:56:25 | **17m 31s** (1.051 s)** | **-9m 48s (-35.9%)** | 28 / 28 (100%) | 23 | 272 | 169 |
 
-*\*En $M_4$ y $M_5$ se incluye el tiempo de operación manual (descubrimiento e inspección humana); el tiempo de escaneo puro de gvmd fue de 17m 40s en $M_4$ y 27m 19s en $M_5$.*
+*\*En $M_4$ y $M_5$ se incluye el tiempo de operación manual (descubrimiento e inspección humana); el tiempo de escaneo puro de gvmd fue de 17m 40s en $M_4$ y 27m 19s en $M_5$.*  
+*\*\*En $A_5$ se presenta la corrida ejecutada en limpio tras el incidente INC-01 (reinicio del anfitrión); los artefactos del intento 1 se preservan intactos bajo sellado SHA-256 en `corrida_5_intento1_reinicio/`.*
 
 ### Comparativa Estadística Resumida
 
@@ -83,10 +84,10 @@ Datos consolidados extraídos de [`datos/camino_b/ensayo/tiempos_replica_camino_
 ========================================================================================
 MÉTRICA TEMPORAL                       CONDICIÓN MANUAL          CONDICIÓN AUTOMATIZADA
 ========================================================================================
-Media de Duración (T_medido):          1.484,1 s (24 min 44 s)   1.173,7 s (19 min 34 s)
-Desviación Estándar (s):               284,5 s                   162,1 s
-Coeficiente de Variación (CV):         19.2 %                    13.8 %
-Ahorro Medio de la Automatización:     -310,4 s (-5 min 10 s, -20.9% de reducción)
+Media de Duración (T_medido):          1.484,1 s (24 min 44 s)   1.166,0 s (19 min 26 s)
+Desviación Estándar (s):               274,1 s                   162,2 s
+Coeficiente de Variación (CV):         18.5 %                    13.9 %
+Ahorro Medio de la Automatización:     -318,1 s (-5 min 18 s, -21.4% de reducción)
 ========================================================================================
 ```
 
@@ -159,7 +160,8 @@ Cada corrida fue empaquetada con sus reportes XML y CSV duales, volcados de Post
 | **$M_4$** | [`camino-b-M4`](file:///home/tizi/n8n-stack/.git/refs/tags/camino-b-M4) | `734347b` | `d0939eff0aa15a28dae96b36c512722880dc01c4cf6ab1f39ac1fbb8091f6d2a` |
 | **$A_4$** | [`camino-b-A4`](file:///home/tizi/n8n-stack/.git/refs/tags/camino-b-A4) | `b984286` | `fd21ed89291ed8994076715ed1818d59a926353ebfc6945a74b1ce4de6f45b19` |
 | **$M_5$** | [`camino-b-M5`](file:///home/tizi/n8n-stack/.git/refs/tags/camino-b-M5) | `9f18d7b` | `d1e9a61600a7a2222c070a6fbb361be425d9c831a4aed28dc74e445bf1e12023` |
-| **$A_5$** | [`camino-b-A5`](file:///home/tizi/n8n-stack/.git/refs/tags/camino-b-A5) | `c727249` | `e8ecb8a96d6b4b9d8a8f003a5f154a2bde3f0e9659bd556aeca3dcf7c053dd89` |
+| **$A_5$ (Int. 1)** | — | *INC-01* | `e8ecb8a96d6b4b9d8a8f003a5f154a2bde3f0e9659bd556aeca3dcf7c053dd89` |
+| **$A_5$ (Oficial)** | [`camino-b-A5`](file:///home/tizi/n8n-stack/.git/refs/tags/camino-b-A5) | *(HEAD)* | `47d3fc17c74c843fa5772b3c29056f8568adfc2d06343e0ab7274f9ab94b7123` |
 
 > [!NOTE]
 > Observar que los reportes de $M_2$ y $M_3$ generaron **hashes SHA-256 bit-a-bit idénticos** (`f5670518...`), demostrando la absoluta estabilidad y determinismo del motor OpenVAS en condiciones ambientales constantes.
@@ -205,3 +207,4 @@ git tag -n -l "camino-b-*"
 
 ---
 *Informe generado automáticamente y validado formalmente como parte de la entrega de defensa técnica de tesis.*
+
