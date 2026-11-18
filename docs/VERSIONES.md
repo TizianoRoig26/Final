@@ -98,7 +98,7 @@ Durante las iteraciones de la documentación preliminar existió una errata sobr
 
 ## 5. Esquema de Base de Datos y Persistencia (`db/`)
 
-El archivo [ddl_vulnerability_scans.sql](file:///home/tizi/n8n-stack/db/ddl_vulnerability_scans.sql) define el esquema normalizado en PostgreSQL:
+El archivo [ddl_vulnerability_scans.sql](../db/ddl_vulnerability_scans.sql) define el esquema normalizado en PostgreSQL:
 - Clave primaria subrogada (`SERIAL PRIMARY KEY`).
 - Campo `scan_date` con marca temporal y zona horaria (`TIMESTAMP WITH TIME ZONE`).
 - Índices B-tree en `host`, `scan_date` y `severity` para acelerar las consultas agregadas y reportes ejecutivos.
@@ -109,7 +109,7 @@ El archivo [ddl_vulnerability_scans.sql](file:///home/tizi/n8n-stack/db/ddl_vuln
 ## 6. Saneamiento de Seguridad y Buenas Prácticas
 
 1. **Rotación Criptográfica de Contraseñas**:
-   - PostgreSQL: Contraseña de 24 caracteres aleatorios (`cPU3MX00cQED7Vc4rlo6Df9B`).
+   - PostgreSQL: Rotada el 17/11/2026; valor no publicado.
    - Greenbone/GMP: Contraseña de usuario `admin` rotada y aislada en `.gvm.env`.
    - Mailtrap: Credenciales sandbox revocadas y documentadas como variables de plantilla.
 2. **Reescritura de Historial Git**:

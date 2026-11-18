@@ -6,9 +6,9 @@ services:
     environment:
       - POSTGRES_DB=${POSTGRES_DB:-security_scans}
       - POSTGRES_USER=${POSTGRES_USER:-n8n_user}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-cPU3MX00cQED7Vc4rlo6Df9B}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:?POSTGRES_PASSWORD requerida}
     ports:
-      - "${POSTGRES_PORT:-5433}:5432"
+      - "127.0.0.1:${POSTGRES_PORT:-5433}:5432"
     volumes:
       - ../../db:/docker-entrypoint-initdb.d:ro
       - postgres_data:/var/lib/postgresql/data
@@ -21,24 +21,18 @@ services:
       retries: 5
 
   n8n:
-    image: n8nio/n8n:latest
+    image: n8nio/n8n:2.10.4@sha256:4dfbc931452471c15a760b987711d37364470344db47f1546f98402728e77612
     container_name: n8n
     restart: unless-stopped
-    user: root
     ports:
-      - "${N8N_PORT:-5678}:5678"
+      - "127.0.0.1:${N8N_PORT:-5678}:5678"
     volumes:
       - ~/.n8n:/home/node/.n8n
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /usr/bin/docker:/usr/local/bin/docker:ro
       - ../../scripts:/scripts:ro
       - /tmp:/tmp
     environment:
       - N8N_USER_FOLDER=/home/node
-      - N8N_BASIC_AUTH_ACTIVE=${N8N_BASIC_AUTH_ACTIVE:-false}
       - N8N_COMMUNITY_PACKAGES_ENABLED=true
-      - NODE_FUNCTION_ALLOW_BUILTIN=*
-      - NODE_FUNCTION_ALLOW_EXTERNAL=*
       - GENERIC_TIMEZONE=${GENERIC_TIMEZONE:-America/Argentina/Mendoza}
       - TZ=${TZ:-America/Argentina/Mendoza}
       - EXECUTIONS_TIMEOUT=-1

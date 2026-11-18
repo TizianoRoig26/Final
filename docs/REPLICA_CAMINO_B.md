@@ -4,8 +4,8 @@
 **Proyecto**: TASTSERV — Automatización de Escaneos de Seguridad con n8n y OpenVAS  
 **Fecha de Ejecución**: 12 de Noviembre de 2026  
 **Entorno**: Monomáquina física (vbox), versiones de software y feeds congelados  
-**Etiqueta de Prerregistro**: [`camino-b-prereg`](file:///home/tizi/n8n-stack/.git/refs/tags/camino-b-prereg)  
-**Etiqueta de Cierre**: [`camino-b-A5`](file:///home/tizi/n8n-stack/.git/refs/tags/camino-b-A5)  
+**Etiqueta de Prerregistro**: `camino-b-prereg`  
+**Etiqueta de Cierre**: `camino-b-A5`  
 **Hash de Integridad Global**: `datos/camino_b/SHA256SUMS_global.txt` (140 archivos certificados)
 
 ---
@@ -41,7 +41,7 @@ El diseño experimental consistió en una serie de **10 corridas alternadas ($M_
 
 ## 2. Ficha Técnica y Condiciones Experimentales Congeladas
 
-Las pruebas se desarrollaron bajo condiciones de laboratorio estrictamente controladas, registradas en [`datos/camino_b/ficha_tecnica/`](file:///home/tizi/n8n-stack/datos/camino_b/ficha_tecnica/):
+Las pruebas se desarrollaron bajo condiciones de laboratorio estrictamente controladas, registradas en [`datos/camino_b/ficha_tecnica/`](../datos/camino_b/ficha_tecnica/):
 
 | Componente | Especificación Técnica Registrada |
 |---|---|
@@ -60,7 +60,7 @@ Las pruebas se desarrollaron bajo condiciones de laboratorio estrictamente contr
 
 ## 3. Matriz Cuantitativa de Tiempos y Rendimiento Pareado
 
-Datos consolidados extraídos de [`datos/camino_b/ensayo/tiempos_replica_camino_b.csv`](file:///home/tizi/n8n-stack/datos/camino_b/ensayo/tiempos_replica_camino_b.csv):
+Datos consolidados extraídos de [`datos/camino_b/ensayo/tiempos_replica_camino_b.csv`](../datos/camino_b/ensayo/tiempos_replica_camino_b.csv):
 
 | Par | Corrida | Condición | Inicio UTC | Fin UTC | $T_{\text{medido}}$ | Diferencia Pareada | Core (28) | Críticas | Hallazgos Primario | Registros PostgreSQL |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -95,7 +95,7 @@ Ahorro Medio de la Automatización:     -318,1 s (-5 min 18 s, -21.4% de reducci
 
 ## 4. Matriz de Efectividad y Detección de Vulnerabilidades
 
-Evaluada contra el archivo congelado [`referencia_camino_b_v1.csv`](file:///home/tizi/n8n-stack/datos/camino_b/preregistro/referencia_camino_b_v1.csv) (SHA-256: `e47970c3bda9a52120138a2858a96169fda8257aea3a9ac0c2d3ff0c7996ed5e`).
+Evaluada contra el archivo congelado [`referencia_camino_b_v1.csv`](../datos/camino_b/preregistro/referencia_camino_b_v1.csv) (SHA-256: `e47970c3bda9a52120138a2858a96169fda8257aea3a9ac0c2d3ff0c7996ed5e`).
 
 ### 4.1. Resumen por Conjuntos
 
@@ -151,17 +151,17 @@ Cada corrida fue empaquetada con sus reportes XML y CSV duales, volcados de Post
 
 | Corrida | Etiqueta Git | Commit | Hash SHA-256 (`reporte_openvas_primario.csv`) |
 |:---:|---|:---:|---|
-| **$M_1$** | [`camino-b-M1`](file:///home/tizi/n8n-stack/.git/refs/tags/camino-b-M1) | `6c4113c` | `90cf6182103ea57cb90c6b12a8069d2d46e3be313c4c9247ea795d24b74e64ba` |
-| **$A_1$** | [`camino-b-A1`](file:///home/tizi/n8n-stack/.git/refs/tags/camino-b-A1) | `41724c1` | `75a7fcfe8070d6eaeb2434195155f949826f4f2ce9c222ffda5889606d1dc490` |
-| **$M_2$** | [`camino-b-M2`](file:///home/tizi/n8n-stack/.git/refs/tags/camino-b-M2) | `3da9df7` | `f56705182a3c89739a373de09aaf7b1148b5054468e88164114d3d3e02cd3801` |
-| **$A_2$** | [`camino-b-A2`](file:///home/tizi/n8n-stack/.git/refs/tags/camino-b-A2) | `b75ddbc` | `f2a4672380809d9b2a6facca6e04e62891d2440e8b73270f5d0dbe5d6e8a96cd` |
-| **$M_3$** | [`camino-b-M3`](file:///home/tizi/n8n-stack/.git/refs/tags/camino-b-M3) | `01f7f60` | `f56705182a3c89739a373de09aaf7b1148b5054468e88164114d3d3e02cd3801` |
-| **$A_3$** | [`camino-b-A3`](file:///home/tizi/n8n-stack/.git/refs/tags/camino-b-A3) | `09570d5` | `385773eea71213bc38fd296661c38b192c1a103ef2e4011c15239f1b44a44070` |
-| **$M_4$** | [`camino-b-M4`](file:///home/tizi/n8n-stack/.git/refs/tags/camino-b-M4) | `734347b` | `d0939eff0aa15a28dae96b36c512722880dc01c4cf6ab1f39ac1fbb8091f6d2a` |
-| **$A_4$** | [`camino-b-A4`](file:///home/tizi/n8n-stack/.git/refs/tags/camino-b-A4) | `b984286` | `fd21ed89291ed8994076715ed1818d59a926353ebfc6945a74b1ce4de6f45b19` |
-| **$M_5$** | [`camino-b-M5`](file:///home/tizi/n8n-stack/.git/refs/tags/camino-b-M5) | `9f18d7b` | `d1e9a61600a7a2222c070a6fbb361be425d9c831a4aed28dc74e445bf1e12023` |
+| **$M_1$** | `camino-b-M1` | `6c4113c` | `90cf6182103ea57cb90c6b12a8069d2d46e3be313c4c9247ea795d24b74e64ba` |
+| **$A_1$** | `camino-b-A1` | `41724c1` | `75a7fcfe8070d6eaeb2434195155f949826f4f2ce9c222ffda5889606d1dc490` |
+| **$M_2$** | `camino-b-M2` | `3da9df7` | `f56705182a3c89739a373de09aaf7b1148b5054468e88164114d3d3e02cd3801` |
+| **$A_2$** | `camino-b-A2` | `b75ddbc` | `f2a4672380809d9b2a6facca6e04e62891d2440e8b73270f5d0dbe5d6e8a96cd` |
+| **$M_3$** | `camino-b-M3` | `01f7f60` | `f56705182a3c89739a373de09aaf7b1148b5054468e88164114d3d3e02cd3801` |
+| **$A_3$** | `camino-b-A3` | `09570d5` | `385773eea71213bc38fd296661c38b192c1a103ef2e4011c15239f1b44a44070` |
+| **$M_4$** | `camino-b-M4` | `734347b` | `d0939eff0aa15a28dae96b36c512722880dc01c4cf6ab1f39ac1fbb8091f6d2a` |
+| **$A_4$** | `camino-b-A4` | `b984286` | `fd21ed89291ed8994076715ed1818d59a926353ebfc6945a74b1ce4de6f45b19` |
+| **$M_5$** | `camino-b-M5` | `9f18d7b` | `d1e9a61600a7a2222c070a6fbb361be425d9c831a4aed28dc74e445bf1e12023` |
 | **$A_5$ (Int. 1)** | — | *INC-01* | `e8ecb8a96d6b4b9d8a8f003a5f154a2bde3f0e9659bd556aeca3dcf7c053dd89` |
-| **$A_5$ (Oficial)** | [`camino-b-A5`](file:///home/tizi/n8n-stack/.git/refs/tags/camino-b-A5) | *(HEAD)* | `47d3fc17c74c843fa5772b3c29056f8568adfc2d06343e0ab7274f9ab94b7123` |
+| **$A_5$ (Oficial)** | `camino-b-A5` | *(HEAD)* | `47d3fc17c74c843fa5772b3c29056f8568adfc2d06343e0ab7274f9ab94b7123` |
 
 > [!NOTE]
 > Observar que los reportes de $M_2$ y $M_3$ generaron **hashes SHA-256 bit-a-bit idénticos** (`f5670518...`), demostrando la absoluta estabilidad y determinismo del motor OpenVAS en condiciones ambientales constantes.

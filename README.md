@@ -9,6 +9,7 @@ Repositorio oficial y reproducible del proyecto de grado **TASTSERV** (*Total Au
 ```text
 /
 ├── README.md                    ← Qué es, cómo reproducir y tabla de versiones
+├── .gitattributes               ← Reglas * -text para preservar hashes en Windows/Linux
 ├── workflows/
 │   ├── experimento-2026-09.json ← Workflow de septiembre (versionId 6c2dd8e7…)
 │   └── actual-20261105.json     ← Workflow en vivo (versionId ab9345e2…)
@@ -22,12 +23,21 @@ Repositorio oficial y reproducible del proyecto de grado **TASTSERV** (*Total Au
 ├── db/
 │   └── ddl_vulnerability_scans.sql ← DDL formal de la tabla en PostgreSQL
 ├── datos/
-│   ├── tiempos_corridas.xlsx    ← Excel original de tiempos y métricas de tesis
+│   ├── tiempos_corridas.xlsx    ← planilla de registro transcripta
+│   │                              Nota: planilla real del equipo (SHA-256 78bd2ea8…1601),
+│   │                              reemplaza el 12/11/2026 a la planilla de práctica descripta en la declaración
+│   │                              (la planilla simulada previa fue retirada del repositorio)
 │   ├── hallazgos_20261105.csv   ← CSV con los 146 hallazgos de la corrida 05/11
-│   └── SHA256SUMS.txt          ← Sumas de verificación SHA-256 de los datos
+│   ├── Declaración sobre el origen de los registros y archivos del trabajo «TastServ».pdf ← Declaración formal de autores sobre origen de registros
+│   ├── series/                  ← Series experimentales hmlg y chmlg en CSV
+│   ├── camino_b/                ← Réplica pareada M1–A5, ficha técnica, prerregistro y SHA256SUMS_global.txt
+│   └── SHA256SUMS.txt           ← Sumas de verificación SHA-256 de los datos
 ├── evidencia/
 │   └── 2026-11-05/              ← Capturas de pantalla y correo de reporte de escaneo
 └── docs/
+    ├── CORRECCIONES.md          ← Fe de erratas y trazabilidad metodológica/seguridad
+    ├── DISENO_LABORATORIO.md    ← Diseño del laboratorio vulnerable y topología
+    ├── REPLICA_CAMINO_B.md      ← Informe técnico de la réplica pareada Camino B
     └── VERSIONES.md             ← Registro detallado de cambios entre septiembre y hoy
 ```
 
@@ -80,7 +90,7 @@ TASTSERV es un pipeline integral para la automatización de escaneos de ciberseg
 
 ## Tabla de Versiones
 
-Para un desglose exhaustivo de cada cambio técnico, consultar [docs/VERSIONES.md](file:///home/tizi/n8n-stack/docs/VERSIONES.md).
+Para un desglose exhaustivo de cada cambio técnico, consultar [docs/VERSIONES.md](docs/VERSIONES.md).
 
 | Parámetro | Versión Septiembre 2026 (`experimento-2026-09`) | Versión Actual (`actual-20261105`) |
 |---|---|---|
@@ -153,7 +163,7 @@ docker network create --subnet=172.18.0.0/16 greenbone-community-edition_default
    ```bash
    docker compose up -d
    ```
-3. El esquema se carga automáticamente al inicio desde [db/ddl_vulnerability_scans.sql](file:///home/tizi/n8n-stack/db/ddl_vulnerability_scans.sql). En caso de configurarlo manualmente:
+3. El esquema se carga automáticamente al inicio desde [db/ddl_vulnerability_scans.sql](db/ddl_vulnerability_scans.sql). En caso de configurarlo manualmente:
    ```bash
    docker exec -i security_db psql -U n8n_user -d security_scans < ../../db/ddl_vulnerability_scans.sql
    ```
@@ -179,14 +189,15 @@ docker network create --subnet=172.18.0.0/16 greenbone-community-edition_default
 ### Paso 6: Importar y Ejecutar el Workflow en n8n
 1. Abrir la interfaz web de n8n en `http://localhost:5678`.
 2. Crear un nuevo flujo y seleccionar **Import from File**.
-3. Cargar el archivo [workflows/actual-20261105.json](file:///home/tizi/n8n-stack/workflows/actual-20261105.json).
-4. Configurar las 3 credenciales en el gestor de n8n:
-   - **SSH Password**: Credencial local o de host para lanzar Nmap y gvm-tools.
-   - **PostgreSQL**: Host `security_db` (puerto interno `5432` o `host.docker.internal:5433`), base de datos `security_scans`, usuario `n8n_user`.
+3. Cargar el archivo [workflows/actual-20261105.json](workflows/actual-20261105.json).
+4. Configurar las credenciales en el gestor de n8n (incluyendo User Management en la UI para acceso administrativo):
+   - **SSH Password / Private Key**: Credencial de host para lanzar Nmap y `gvm-tools`.
+   - **PostgreSQL**: Host `security_db` (puerto interno `5432` o `127.0.0.1:5433`), base de datos `security_scans`, usuario `n8n_user`.
    - **SMTP**: Servidor Mailtrap o SMTP corporativo.
-5. Hacer clic en **Test workflow** o disparar mediante Webhook:
+   - **HTTP Header Auth (`Webhook Scan Header Auth`)**: Token secreto requerido por el nodo `Webhook - Trigger Scan`.
+5. Hacer clic en **Test workflow** o disparar mediante Webhook autenticado:
    ```bash
-   curl -X POST http://localhost:5678/webhook/trigger-scan
+   curl -X POST http://127.0.0.1:5678/webhook/trigger-scan -H "<Header-Auth>: <tu_token>"
    ```
 6. Verificar que los resultados se persistan en la tabla `vulnerability_scans` y se reciba el correo de resumen.
 
@@ -194,14 +205,17 @@ docker network create --subnet=172.18.0.0/16 greenbone-community-edition_default
 
 ## Verificación de Integridad de Datos
 
-Los archivos de datos originales y los reportes experimentales cuentan con sumas criptográficas generadas con SHA-256 en [datos/SHA256SUMS.txt](file:///home/tizi/n8n-stack/datos/SHA256SUMS.txt):
+Los archivos de datos originales, la declaración de autores, la fe de erratas (`docs/CORRECCIONES.md`) y los reportes experimentales de `datos/camino_b/` cuentan con sumas criptográficas SHA-256 en [datos/SHA256SUMS.txt](datos/SHA256SUMS.txt) y [datos/camino_b/SHA256SUMS_global.txt](datos/camino_b/SHA256SUMS_global.txt):
 
 ```bash
-cd datos
-sha256sum -c SHA256SUMS.txt
+cd datos && sha256sum -c SHA256SUMS.txt
+cd camino_b && sha256sum -c SHA256SUMS_global.txt
 ```
-Salida esperada:
+Salida esperada para `SHA256SUMS.txt`:
 ```
-tiempos_corridas.xlsx: CORRECTO (OK)
-hallazgos_20261105.csv: CORRECTO (OK)
+tiempos_corridas.xlsx: OK
+hallazgos_20261105.csv: OK
+Declaración sobre el origen de los registros y archivos del trabajo «TastServ».pdf: OK
+...
+../docs/CORRECCIONES.md: OK
 ```
