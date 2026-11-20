@@ -1,0 +1,21 @@
+host,port,vulnerability_name,severity,cve
+192.168.100.1,general/CPE-T,CPE Inventory,0,""
+192.168.100.1,general/tcp,OS Detection Consolidation and Reporting,0,""
+192.168.100.1,general/tcp,Hostname Determination Reporting,0,""
+192.168.100.1,general/tcp,Traceroute,0,""
+192.168.100.209,22/tcp,Prefix Truncation Attacks in SSH Specification (Terrapin Attack),5.9,"CVE-2023-48795, CVE-2024-41909"
+192.168.100.209,22/tcp,OpenSSH Information Disclosure Vulnerability (CVE-2016-20012),5.3,CVE-2016-20012
+192.168.100.209,22/tcp,Weak MAC Algorithm(s) Supported (SSH),2.6,""
+192.168.100.209,22/tcp,OpenBSD OpenSSH < 10.1 Multiple Vulnerabilities,2.4,"CVE-2025-61984, CVE-2025-61985"
+192.168.100.209,22/tcp,Services,0,""
+192.168.100.209,22/tcp,SSH Server type and version,0,""
+192.168.100.209,22/tcp,SSH Protocol Algorithms Supported,0,""
+192.168.100.209,22/tcp,SSH Protocol Versions Supported,0,""
+192.168.100.209,22/tcp,PQC Key Exchange (KEX) Algorithm(s) Supported (SSH),0,""
+192.168.100.209,general/CPE-T,CPE Inventory,0,""
+192.168.100.209,general/icmp,ICMP Timestamp Reply Information Disclosure,2.1,CVE-1999-0524
+192.168.100.209,general/tcp,TCP Timestamps Information Disclosure,2.6,""
+192.168.100.209,general/tcp,Hostname Determination Reporting,0,""
+192.168.100.209,general/tcp,OS Detection Consolidation and Reporting,0,""
+192.168.100.209,general/tcp,OpenSSH Detection Consolidation,0,""
+192.168.100.209,general/tcp,Traceroute,0,""

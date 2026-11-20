@@ -30,7 +30,8 @@ Repositorio oficial y reproducible del proyecto de grado **TASTSERV** (*Total Au
 │   ├── hallazgos_20261105.csv   ← CSV con los 146 hallazgos de la corrida 05/11
 │   ├── Declaración sobre el origen de los registros y archivos del trabajo «TastServ».pdf ← Declaración formal de autores sobre origen de registros
 │   ├── series/                  ← Series experimentales hmlg y chmlg en CSV
-│   ├── camino_b/                ← Réplica pareada M1–A5, ficha técnica, prerregistro y SHA256SUMS_global.txt
+│   ├── reportes_septiembre/     ← Respaldo histórico crudo de reportes de septiembre (auditoría previa, fuera de Camino B)
+│   ├── camino_b/                ← Réplica pareada M1–A5, ficha técnica, prerregistro, tabla_reportes_gvmd.csv y SHA256SUMS_global.txt
 │   └── SHA256SUMS.txt           ← Sumas de verificación SHA-256 de los datos
 ├── evidencia/
 │   └── 2026-11-05/              ← Capturas de pantalla y correo de reporte de escaneo
@@ -92,12 +93,12 @@ TASTSERV es un pipeline integral para la automatización de escaneos de ciberseg
 
 Para un desglose exhaustivo de cada cambio técnico, consultar [docs/VERSIONES.md](docs/VERSIONES.md).
 
-| Parámetro | Versión Septiembre 2026 (`experimento-2026-09`) | Versión Actual (`actual-20261105`) |
+| Parámetro | Versión Septiembre 2026 (`experimento-2026-09`) | Versión Actual (`entrega-defensa-20261118`) |
 |---|---|---|
 | **Archivo Workflow** | `workflows/experimento-2026-09.json` | `workflows/actual-20261105.json` |
 | **versionId n8n** | `6c2dd8e7-2cf4-452c-91cd-97834774432b` | `ab9345e2-b451-481a-9101-ee1624da8691` |
-| **Git Tag** | `experimento-2026-09` | `entrega-defensa-20261110` (previa: `pre-defensa-20261105`) |
-| **Commit Base** | `945a79eb0b1c067a6645ccab38b77fc4fa8d0729` | `0cb131258c585ea3232a1cf51bfd81c6e23ae754` |
+| **Git Tag** | `experimento-2026-09` | `entrega-defensa-20261118` (previas: `entrega-defensa-20261110`, `pre-defensa-20261105`) |
+| **Commit Base** | `945a79eb0b1c067a6645ccab38b77fc4fa8d0729` | `2c23ed22a58c3f0955ab77a7d5be63306be35753` (workflow base: `0cb131258c585ea3232a1cf51bfd81c6e23ae754`) |
 | **Filtro GMP** | `rows=-1 levels=hmlg min_qod=0` (omite críticas) | `levels=chmlg rows=-1 min_qod=0` (captura total) |
 | **Hallazgos Capturados** | 146 vulnerabilidades | 169 vulnerabilidades (incluye 23 críticas + CVE-2021-41773) |
 | **Triggers de Inicio** | Solo `Schedule Trigger` (02:00 AM) | `Schedule` + `Webhook POST` + `Manual Trigger` |

@@ -47,7 +47,7 @@ Las pruebas se desarrollaron bajo condiciones de laboratorio estrictamente contr
 |---|---|
 | **Anfitrión Físico** | CPU AMD Ryzen / Intel x86_64, 12 GB RAM asignados, Ubuntu Linux 6.8.0-52-generic |
 | **Virtualización** | Docker Engine `26.1.5`, Docker Compose `v5.1.0` |
-| **Plataforma de Automatización** | n8n versión `1.70.0` (contenedor `n8n-docker-cve-n8n-1` / `n8n`) |
+| **Plataforma de Automatización** | n8n `1.70.0` registrado en la ficha de la serie; `docker_ps` registra `n8nio/n8n:latest` en `0.0.0.0:5678`; el compose publicado fija `2.10.4@sha256:4dfbc931452471c15a760b987711d37364470344db47f1546f98402728e77612` en `127.0.0.1` (no acredita la versión ejecutada). |
 | **Motor de Vulnerabilidades** | Greenbone Community Containers (Release `24.10`) |
 | **Firmas de Vulnerabilidades** | Greenbone NVT Feed versión `202603130719` (congelado) |
 | **Herramienta de Descubrimiento** | Nmap versión `7.95` |

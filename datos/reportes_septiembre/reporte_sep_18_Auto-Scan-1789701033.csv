@@ -1,0 +1,112 @@
+host,port,vulnerability_name,severity,cve
+192.168.56.10,21/tcp,FTP Unencrypted Cleartext Login,4.8,""
+192.168.56.10,21/tcp,vsftpd FTP Server Detection (FTP),0,""
+192.168.56.10,21/tcp,SSL/TLS: FTP Missing Support For AUTH TLS,0,""
+192.168.56.10,21/tcp,Services,0,""
+192.168.56.10,21/tcp,FTP Banner Detection,0,""
+192.168.56.10,22/tcp,"OpenBSD OpenSSH < 4.4p1, 8.5p1 - 9.7p1 RCE Vulnerability (regreSSHion)",8.1,CVE-2024-6387
+192.168.56.10,22/tcp,"Diffie-Hellman Ephemeral Key Exchange DoS Vulnerability (SSH, D(HE)ater)",7.5,"CVE-2002-20001, CVE-2022-40735, CVE-2024-41996"
+192.168.56.10,22/tcp,OpenBSD OpenSSH 6.8p1 - 9.9p1 MitM Vulnerability,6.8,CVE-2025-26465
+192.168.56.10,22/tcp,OpenBSD OpenSSH 9.5p1 - 9.9p1 DoS Vulnerability,5.9,CVE-2025-26466
+192.168.56.10,22/tcp,Prefix Truncation Attacks in SSH Specification (Terrapin Attack),5.9,"CVE-2023-48795, CVE-2024-41909"
+192.168.56.10,22/tcp,OpenSSH Information Disclosure Vulnerability (CVE-2016-20012),5.3,CVE-2016-20012
+192.168.56.10,22/tcp,OpenBSD OpenSSH 7.4 - 9.9 Unspecified Vulnerability,3.8,CVE-2025-32728
+192.168.56.10,22/tcp,OpenBSD OpenSSH 9.5p1 - 9.7p1 Information Disclosure Vulnerability,3.3,CVE-2024-39894
+192.168.56.10,22/tcp,Weak MAC Algorithm(s) Supported (SSH),2.6,""
+192.168.56.10,22/tcp,OpenBSD OpenSSH < 10.1 Multiple Vulnerabilities,2.4,"CVE-2025-61984, CVE-2025-61985"
+192.168.56.10,22/tcp,SSH Protocol Algorithms Supported,0,""
+192.168.56.10,22/tcp,PQC Key Exchange (KEX) Algorithm(s) Supported (SSH),0,""
+192.168.56.10,22/tcp,SSH Protocol Versions Supported,0,""
+192.168.56.10,22/tcp,SSH Server type and version,0,""
+192.168.56.10,22/tcp,Services,0,""
+192.168.56.10,80/tcp,Apache HTTP Server < 2.4.60 Multiple Vulnerabilities - Linux,9.8,"CVE-2024-36387, CVE-2024-38473, CVE-2024-38474, CVE-2024-38475, CVE-2024-38476, CVE-2024-38477, CVE-2024-39573"
+192.168.56.10,80/tcp,Apache HTTP Server < 2.4.59 Multiple Vulnerabilities - Linux,7.5,"CVE-2023-38709, CVE-2024-24795, CVE-2024-27316"
+192.168.56.10,80/tcp,Apache HTTP Server 2.4.7 - 2.4.65 Authentication Bypass Vulnerability - Linux,5.8,CVE-2025-66200
+192.168.56.10,80/tcp,Apache HTTP Server < 2.4.64 Multiple Vulnerabilities - Linux,5,"CVE-2024-42516, CVE-2024-43204, CVE-2024-47252, CVE-2025-49812"
+192.168.56.10,80/tcp,Apache HTTP Server 2.4.26 < 2.4.64 DoS Vulnerability - Linux,5,CVE-2025-49630
+192.168.56.10,80/tcp,Apache HTTP Server 2.4.17 < 2.4.64 DoS Vulnerability - Linux,5,CVE-2025-53020
+192.168.56.10,80/tcp,Apache HTTP Server 2.4.35 < 2.4.64 Access Control Bypass Vulnerability - Linux,5,CVE-2025-23048
+192.168.56.10,80/tcp,Apache HTTP Server < 2.4.66 SSI Vulnerability - Linux,4.3,CVE-2025-58098
+192.168.56.10,80/tcp,Apache HTTP Server 2.4.x < 2.4.66 Improper Neutralization Vulnerability - Linux,4.3,CVE-2025-65082
+192.168.56.10,80/tcp,Apache HTTP Server 2.4.30 - 2.4.65 Integer Overflow Vulnerability - Linux,2.6,CVE-2025-55753
+192.168.56.10,80/tcp,Services,0,""
+192.168.56.10,80/tcp,Web Application Scanning Consolidation / Info Reporting,0,""
+192.168.56.10,80/tcp,HTTP Server type and version,0,""
+192.168.56.10,80/tcp,Allowed HTTP Methods Enumeration,0,""
+192.168.56.10,80/tcp,HTTP Server Banner Enumeration,0,""
+192.168.56.10,80/tcp,HTTP Security Headers Detection,0,""
+192.168.56.10,general/CPE-T,CPE Inventory,0,""
+192.168.56.10,general/icmp,ICMP Timestamp Reply Information Disclosure,2.1,CVE-1999-0524
+192.168.56.10,general/tcp,TCP Timestamps Information Disclosure,2.6,""
+192.168.56.10,general/tcp,Hostname Determination Reporting,0,""
+192.168.56.10,general/tcp,OS Detection Consolidation and Reporting,0,""
+192.168.56.10,general/tcp,Apache HTTP Server Detection Consolidation,0,""
+192.168.56.10,general/tcp,OpenSSH Detection Consolidation,0,""
+192.168.56.10,general/tcp,Traceroute,0,""
+192.168.56.101,22/tcp,Prefix Truncation Attacks in SSH Specification (Terrapin Attack),5.9,"CVE-2023-48795, CVE-2024-41909"
+192.168.56.101,22/tcp,OpenSSH Information Disclosure Vulnerability (CVE-2016-20012),5.3,CVE-2016-20012
+192.168.56.101,22/tcp,Weak MAC Algorithm(s) Supported (SSH),2.6,""
+192.168.56.101,22/tcp,OpenBSD OpenSSH < 10.1 Multiple Vulnerabilities,2.4,"CVE-2025-61984, CVE-2025-61985"
+192.168.56.101,22/tcp,PQC Key Exchange (KEX) Algorithm(s) Supported (SSH),0,""
+192.168.56.101,22/tcp,SSH Protocol Versions Supported,0,""
+192.168.56.101,22/tcp,SSH Protocol Algorithms Supported,0,""
+192.168.56.101,22/tcp,SSH Server type and version,0,""
+192.168.56.101,22/tcp,Services,0,""
+192.168.56.101,5678/tcp,Backup File Scanner (HTTP) - Unreliable Detection Reporting,5,""
+192.168.56.101,5678/tcp,Response Time / No 404 Error Code Check,0,""
+192.168.56.101,5678/tcp,Web Application Scanning Consolidation / Info Reporting,0,""
+192.168.56.101,5678/tcp,Services,0,""
+192.168.56.101,5678/tcp,HTTP Security Headers Detection,0,""
+192.168.56.101,5678/tcp,Allowed HTTP Methods Enumeration,0,""
+192.168.56.101,general/CPE-T,CPE Inventory,0,""
+192.168.56.101,general/icmp,ICMP Timestamp Reply Information Disclosure,2.1,CVE-1999-0524
+192.168.56.101,general/tcp,TCP Timestamps Information Disclosure,2.6,""
+192.168.56.101,general/tcp,OS Detection Consolidation and Reporting,0,""
+192.168.56.101,general/tcp,Traceroute,0,""
+192.168.56.101,general/tcp,Hostname Determination Reporting,0,""
+192.168.56.101,general/tcp,OpenSSH Detection Consolidation,0,""
+192.168.56.101,general/tcp,Generic HTTP Directory Traversal / File Inclusion (Web Root) - Active Check,-3,"CVE-2010-10012, CVE-2010-2307, CVE-2010-4231, CVE-2014-2323, CVE-2015-2166, CVE-2015-5688, CVE-2017-11456, CVE-2017-16806, CVE-2018-10201, CVE-2018-10956, CVE-2018-14064, CVE-2018-18778, CVE-2018-19326, CVE-2018-7490, CVE-2018-7719, CVE-2018-8727, CVE-2019-18922, CVE-2019-20085, CVE-2019-25333, CVE-2019-25352, CVE-2019-25355, CVE-2019-7315, CVE-2019-9726, CVE-2020-12447, CVE-2020-15050, CVE-2020-24571, CVE-2020-36939, CVE-2020-5410, CVE-2021-3019, CVE-2021-40978, CVE-2021-41773, CVE-2021-42013, CVE-2022-26233, CVE-2022-38794, CVE-2022-45269, CVE-2023-22855, CVE-2023-46307, CVE-2023-7327, CVE-2024-11303, CVE-2024-41628, CVE-2024-46327, CVE-2024-4956, CVE-2024-58310, CVE-2024-6049, CVE-2024-6394, CVE-2024-6746, CVE-2025-46096, CVE-2025-5598, CVE-2025-59099, CVE-2025-61666, CVE-2026-1523, CVE-2026-25766, CVE-2026-25872"
+192.168.56.102,21/tcp,FTP Unencrypted Cleartext Login,4.8,""
+192.168.56.102,21/tcp,SSL/TLS: FTP Missing Support For AUTH TLS,0,""
+192.168.56.102,21/tcp,FTP Banner Detection,0,""
+192.168.56.102,21/tcp,vsftpd FTP Server Detection (FTP),0,""
+192.168.56.102,21/tcp,Services,0,""
+192.168.56.102,22/tcp,"OpenBSD OpenSSH < 4.4p1, 8.5p1 - 9.7p1 RCE Vulnerability (regreSSHion)",8.1,CVE-2024-6387
+192.168.56.102,22/tcp,"Diffie-Hellman Ephemeral Key Exchange DoS Vulnerability (SSH, D(HE)ater)",7.5,"CVE-2002-20001, CVE-2022-40735, CVE-2024-41996"
+192.168.56.102,22/tcp,OpenBSD OpenSSH 6.8p1 - 9.9p1 MitM Vulnerability,6.8,CVE-2025-26465
+192.168.56.102,22/tcp,OpenBSD OpenSSH 9.5p1 - 9.9p1 DoS Vulnerability,5.9,CVE-2025-26466
+192.168.56.102,22/tcp,Prefix Truncation Attacks in SSH Specification (Terrapin Attack),5.9,"CVE-2023-48795, CVE-2024-41909"
+192.168.56.102,22/tcp,OpenSSH Information Disclosure Vulnerability (CVE-2016-20012),5.3,CVE-2016-20012
+192.168.56.102,22/tcp,OpenBSD OpenSSH 7.4 - 9.9 Unspecified Vulnerability,3.8,CVE-2025-32728
+192.168.56.102,22/tcp,OpenBSD OpenSSH 9.5p1 - 9.7p1 Information Disclosure Vulnerability,3.3,CVE-2024-39894
+192.168.56.102,22/tcp,Weak MAC Algorithm(s) Supported (SSH),2.6,""
+192.168.56.102,22/tcp,OpenBSD OpenSSH < 10.1 Multiple Vulnerabilities,2.4,"CVE-2025-61984, CVE-2025-61985"
+192.168.56.102,22/tcp,SSH Protocol Versions Supported,0,""
+192.168.56.102,22/tcp,Services,0,""
+192.168.56.102,22/tcp,PQC Key Exchange (KEX) Algorithm(s) Supported (SSH),0,""
+192.168.56.102,22/tcp,SSH Server type and version,0,""
+192.168.56.102,22/tcp,SSH Protocol Algorithms Supported,0,""
+192.168.56.102,80/tcp,Apache HTTP Server < 2.4.60 Multiple Vulnerabilities - Linux,9.8,"CVE-2024-36387, CVE-2024-38473, CVE-2024-38474, CVE-2024-38475, CVE-2024-38476, CVE-2024-38477, CVE-2024-39573"
+192.168.56.102,80/tcp,Apache HTTP Server < 2.4.59 Multiple Vulnerabilities - Linux,7.5,"CVE-2023-38709, CVE-2024-24795, CVE-2024-27316"
+192.168.56.102,80/tcp,Apache HTTP Server 2.4.7 - 2.4.65 Authentication Bypass Vulnerability - Linux,5.8,CVE-2025-66200
+192.168.56.102,80/tcp,Apache HTTP Server 2.4.17 < 2.4.64 DoS Vulnerability - Linux,5,CVE-2025-53020
+192.168.56.102,80/tcp,Apache HTTP Server 2.4.26 < 2.4.64 DoS Vulnerability - Linux,5,CVE-2025-49630
+192.168.56.102,80/tcp,Apache HTTP Server < 2.4.64 Multiple Vulnerabilities - Linux,5,"CVE-2024-42516, CVE-2024-43204, CVE-2024-47252, CVE-2025-49812"
+192.168.56.102,80/tcp,Apache HTTP Server 2.4.35 < 2.4.64 Access Control Bypass Vulnerability - Linux,5,CVE-2025-23048
+192.168.56.102,80/tcp,Apache HTTP Server 2.4.x < 2.4.66 Improper Neutralization Vulnerability - Linux,4.3,CVE-2025-65082
+192.168.56.102,80/tcp,Apache HTTP Server < 2.4.66 SSI Vulnerability - Linux,4.3,CVE-2025-58098
+192.168.56.102,80/tcp,Apache HTTP Server 2.4.30 - 2.4.65 Integer Overflow Vulnerability - Linux,2.6,CVE-2025-55753
+192.168.56.102,80/tcp,Services,0,""
+192.168.56.102,80/tcp,HTTP Server Banner Enumeration,0,""
+192.168.56.102,80/tcp,HTTP Server type and version,0,""
+192.168.56.102,80/tcp,Allowed HTTP Methods Enumeration,0,""
+192.168.56.102,80/tcp,HTTP Security Headers Detection,0,""
+192.168.56.102,80/tcp,Web Application Scanning Consolidation / Info Reporting,0,""
+192.168.56.102,general/CPE-T,CPE Inventory,0,""
+192.168.56.102,general/icmp,ICMP Timestamp Reply Information Disclosure,2.1,CVE-1999-0524
+192.168.56.102,general/tcp,TCP Timestamps Information Disclosure,2.6,""
+192.168.56.102,general/tcp,OS Detection Consolidation and Reporting,0,""
+192.168.56.102,general/tcp,Apache HTTP Server Detection Consolidation,0,""
+192.168.56.102,general/tcp,Traceroute,0,""
+192.168.56.102,general/tcp,OpenSSH Detection Consolidation,0,""
+192.168.56.102,general/tcp,Hostname Determination Reporting,0,""

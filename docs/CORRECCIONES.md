@@ -33,3 +33,12 @@ En cumplimiento de la revisión de seguridad de entrega (observación C9), se el
   - Eliminados `user: root`, el montaje de `/var/run/docker.sock` y `/usr/bin/docker`, `NODE_FUNCTION_ALLOW_BUILTIN=*`, `NODE_FUNCTION_ALLOW_EXTERNAL=*` y `N8N_BASIC_AUTH_ACTIVE` (el workflow actual opera vía SSH y usa `httpHeaderAuth` en el webhook más User Management nativo de n8n).
 - **Observación C6 (`infra/greenbone/docker-compose.yml`)**:
   - Los 21 servicios quedaron fijados con sus digests inmutables `@sha256:...` registrados en `datos/camino_b/ficha_tecnica/docker_images_digests.txt`.
+
+---
+
+### [20/11/2026] — Incorporación de evidencia histórica de septiembre, tabla GVMD y cierre de trazabilidad (aportes propuestos por Luca)
+
+- **`datos/reportes_septiembre/` (10 archivos CSV)**: Se incorporan como respaldo histórico de auditoría las exportaciones CSV crudas de reportes previos de septiembre (`reporte_sep_8` a `reporte_sep_31`). Estos archivos abarcan redes previas al protocolo de Camino B (`192.168.100.x`, `192.168.56.x` y `172.18.0.x`), con contenido idéntico entre `reporte_sep_13_Auto-Scan-1789675482.csv` y `reporte_sep_14_Auto-Scan-1789676453.csv` (SHA-256 `da79acc9...`), y **no integran** la serie formal de noviembre registrada en `datos/camino_b/registro_escaneos.csv`.
+- **`datos/camino_b/tabla_reportes_gvmd.csv`**: Se agrega la tabla consolidada de los 17 escaneos de noviembre con identificadores `report_uuid`, `task_uuid`, hosts, marcas temporales UTC y fuentes cruzadas con `registro_escaneos.csv`.
+- **Corrección de integridad (`corrida_5_intento1_reinicio/SHA256SUMS_corrida.txt`)**: Se corrigió el hash de `metadatos_corrida.json` (`ec13f64d...` -> `be526f11...`) y se actualizaron `datos/camino_b/SHA256SUMS_global.txt` y `datos/SHA256SUMS.txt` (manteniendo la cobertura sobre `../docs/CORRECCIONES.md`).
+- **Trazabilidad documental**: Se registró `INC-02` en `datos/camino_b/incidentes.md` (commit `b6460d8` posterior a A2), se precisó la versión de n8n en `docs/REPLICA_CAMINO_B.md` y se sumó el hito `entrega-defensa-20261118` en `docs/VERSIONES.md` y `README.md`.

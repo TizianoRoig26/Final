@@ -6,7 +6,7 @@ Este documento detalla exhaustivamente las diferencias arquitectónicas, de conf
 
 ## 1. Tabla Comparativa Resumen
 
-| Dimensión / Componente | Versión Septiembre 2026 (`experimento-2026-09`) | Versión Actual (`actual-20261105` / `entrega-defensa-20261110`) | Impacto / Justificación Técnica |
+| Dimensión / Componente | Versión Septiembre 2026 (`experimento-2026-09`) | Versión Actual (`entrega-defensa-20261118`) | Impacto / Justificación Técnica |
 |---|---|---|---|
 | **Workflow n8n: ID de Versión** | `6c2dd8e7-2cf4-452c-91cd-97834774432b` | `ab9345e2-b451-481a-9101-ee1624da8691` | Exportación en vivo desde la base de datos SQLite de n8n. |
 | **Workflow n8n: Nodos de Disparo** | Solo `Schedule Trigger` (cron diario a las 02:00). | `Schedule Trigger` + `Webhook - Trigger Scan` (`/webhook/trigger-scan`) + `When clicking 'Test workflow'` (manual trigger). | Permite disparar escaneos bajo demanda desde APIs/Webhooks o desde la interfaz gráfica sin esperar la ejecución del cron. |
@@ -126,4 +126,5 @@ El archivo [ddl_vulnerability_scans.sql](../db/ddl_vulnerability_scans.sql) defi
 | **`experimento-2026-09`** | Annotated | `945a79eb0b1c067a6645ccab38b77fc4fa8d0729` | Congelamiento de la base experimental de la tesis (septiembre de 2026). |
 | **`pre-defensa-20261105`** | Annotated | `ea31cf69d47ced34df6ac883a4fcaf688ec86214` | Hito de saneamiento de credenciales, rotación de PostgreSQL y respuestas preliminares. |
 | **`entrega-defensa-20261110`** | Annotated | `0cb131258c585ea3232a1cf51bfd81c6e23ae754` | Versión final para defensa: workflow vivo exportado (`ab9345e2`), filtro GMP `chmlg` y scripts sincronizados. |
+| **`entrega-defensa-20261118`** | Annotated | `2c23ed22a58c3f0955ab77a7d5be63306be35753` | Consolidación para defensa: réplica pareada Camino B, fe de erratas, digests fijados (C6), endurecimiento de n8n (C9) y protección de hashes. |
 
